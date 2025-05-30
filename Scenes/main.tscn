@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=6 format=3 uid="uid://cpnt6wx4xrtx5"]
+
+[ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bicdqojg47ja1" path="res://Scenes/Player.tscn" id="2_8gbba"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
+
+[sub_resource type="Sky" id="Sky_8gbba"]
+sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
+
+[sub_resource type="Environment" id="Environment_jjvhh"]
+background_mode = 2
+sky = SubResource("Sky_8gbba")
 
 [node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jjvhh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.863167, 0.504919, 0, -0.504919, 0.863167, 0, 64.2763, 190.867)
+sky_mode = 1
+
+[node name="Terrain" parent="." instance=ExtResource("1_bo1nx")]
+
+[node name="Player" parent="." instance=ExtResource("2_8gbba")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.50175, 8.45756, -4.80098)
