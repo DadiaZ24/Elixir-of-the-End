@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch2hcei3n4etc"]
+
+[ext_resource type="Script" uid="uid://c150efny4gxu7" path="res://addons/zylann.hterrain/hterrain.gd" id="1_0ac8p"]
+[ext_resource type="Resource" uid="uid://bppdk1fmk6vku" path="res://DataTerrain/data.hterrain" id="2_xx0be"]
+[ext_resource type="Script" uid="uid://hw0eb270vv0c" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_kli7b"]
+[ext_resource type="Texture2D" uid="uid://w22o7wwn8hlk" path="res://Texture/stylized_sand/Stylized_Sand_001_basecolor.jpg" id="4_ph32v"]
+[ext_resource type="Texture2D" uid="uid://l8wbsybgolht" path="res://slot0_normal_roughness.png" id="5_4glq7"]
+
+[sub_resource type="Resource" id="Resource_aaxyt"]
+script = ExtResource("3_kli7b")
+mode = 0
+textures = [[ExtResource("4_ph32v")], [ExtResource("5_4glq7")]]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ac8p"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xx0be"]
+
+[node name="Terrain" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_0ac8p")
+map_scale = Vector3(0.5, 0.5, 0.5)
+centered = true
+_terrain_data = ExtResource("2_xx0be")
+chunk_size = 16
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+physics_material = null
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_aaxyt")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
+shader_params/u_specular = 0.5
+metadata/_custom_type_script = "uid://c150efny4gxu7"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2054, -3.01633, -43.5053)
+mesh = SubResource("BoxMesh_0ac8p")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.37072, 0)
+mesh = SubResource("BoxMesh_xx0be")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6147, 8.78086, 20.2619)
