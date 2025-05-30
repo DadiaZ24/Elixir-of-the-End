@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqobyow56dehj"]
+
+[ext_resource type="Script" uid="uid://crelm1u00jujm" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cwxlw1i4iyvsl" path="res://textures/ChatGPT Image May 30, 2025, 08_45_23 PM.png" id="2_48xlc"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+texture = ExtResource("2_48xlc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 537.0
+offset_right = 688.0
+offset_bottom = 600.0
+
+[node name="playButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 537.0
+offset_right = 463.0
+offset_bottom = 599.0
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../exitButton")
+flat = true
+
+[node name="exitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 513.0
+offset_top = 537.0
+offset_right = 688.0
+offset_bottom = 599.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../playButton")
+flat = true
+
+[connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]
