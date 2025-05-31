@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=16 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Environment" uid="uid://d3lwdwg4xbrfm" path="res://Resources/DefaultEnv.tres" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dq2isirkrgjwi" path="res://Scenes/water.tscn" id="2_jjvhh"]
 [ext_resource type="AudioStream" uid="uid://cbvbxjy5u6uf3" path="res://Sounds/ambient.wav" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://b5f0s10nfu5er" path="res://Scenes/water_flipped.tscn" id="5_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
@@ -29,6 +30,9 @@ sky_mode = 1
 
 [node name="Water" parent="Terrain" instance=ExtResource("2_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0967, -46.8539, -24.6197)
+
+[node name="WaterFlipped" parent="Terrain" instance=ExtResource("5_wsu2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.097, -46.854, -31.6306)
 
 [node name="QuickSand" parent="Terrain" instance=ExtResource("10_hptm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.7523, -47.1528, -88.8389)
@@ -122,6 +126,8 @@ stream = ExtResource("12_jkdf5")
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.8206, 7.21525, -45.2964)
 
+[connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
+[connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
 [connection signal="body_entered" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_entered"]
 [connection signal="body_exited" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_exited"]
 [connection signal="time_out" from="UI/TimeBar" to="." method="_on_time_bar_time_out"]
