@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://db1jrej7vnp5k"]
+
+[ext_resource type="Texture2D" uid="uid://dt54j7abbtmdc" path="res://assets/texturas/Rocks_Material_BaseColor.1001.png" id="1_rjx15"]
+[ext_resource type="Texture2D" uid="uid://ulnqkqdghked" path="res://assets/texturas/Rocks_Material_Height.1001.png" id="2_ixhmx"]
+[ext_resource type="Texture2D" uid="uid://cdi8cn3gwt67i" path="res://assets/texturas/Rocks_Material_Metallic.1001.png" id="3_dsiya"]
+[ext_resource type="Texture2D" uid="uid://ctmu7kcgck5j5" path="res://assets/texturas/Rocks_Material_Normal.1001.png" id="4_2sqvc"]
+[ext_resource type="Texture2D" uid="uid://dappop07w1vjy" path="res://assets/texturas/Rocks_Material_Roughness.1001.png" id="5_4l0ng"]
+
+[resource]
+albedo_texture = ExtResource("1_rjx15")
+metallic = 1.0
+metallic_texture = ExtResource("3_dsiya")
+roughness_texture = ExtResource("5_4l0ng")
+normal_enabled = true
+normal_scale = -0.44
+normal_texture = ExtResource("4_2sqvc")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_ixhmx")
