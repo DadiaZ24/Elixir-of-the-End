@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=12 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dq2isirkrgjwi" path="res://Scenes/water.tscn" id="2_jjvhh"]
 [ext_resource type="AudioStream" uid="uid://cbvbxjy5u6uf3" path="res://Sounds/ambient.wav" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
+[ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 
@@ -37,6 +40,18 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.4066, 8.79594, 6.05423)
 stream = ExtResource("5_kry3j")
 volume_db = 30.0
 autoplay = true
+
+[node name="potion_tent" parent="." instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.4698, 4.07892, 66.8184)
+
+[node name="NormalTent" parent="." instance=ExtResource("7_344ge")]
+transform = Transform3D(0.343047, 0, 0.692904, 0, 0.741, 0, -0.722716, 0, 0.328896, -83.465, 3.44094, 83.6963)
+
+[node name="MasterTent" parent="." instance=ExtResource("8_ynf5e")]
+transform = Transform3D(0.815219, 0, -0.579153, 0, 1, 0, 0.579153, 0, 0.815219, -86.1721, 3.88849, 48.9946)
+
+[node name="NormalTent2" parent="." instance=ExtResource("7_344ge")]
+transform = Transform3D(0.347885, 0, 0.937537, 0, 1, 0, -0.937537, 0, 0.347885, -75.5449, 3.41563, 84.508)
 
 [connection signal="body_entered" from="Terrain/water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/water" to="Player" method="_on_water_body_exited"]
