@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 signal toggle_inventory()
+signal toggle_alchemy()
+
 @export var inventory_data: InventoryData
 
 
@@ -26,6 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		toggle_inventory.emit()
+		toggle_alchemy.emit()
 		return
 		
 	if inventory_is_open:
