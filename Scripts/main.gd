@@ -25,3 +25,7 @@ func toggle_inventory_interface() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _on_time_bar_time_out():
+	print("Time is up! You lose!")
+	#get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

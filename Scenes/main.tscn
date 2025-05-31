@@ -1,29 +1,35 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=25 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_8gbba"]
+[ext_resource type="Environment" uid="uid://d3lwdwg4xbrfm" path="res://Resources/DefaultEnv.tres" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dq2isirkrgjwi" path="res://Scenes/water.tscn" id="2_jjvhh"]
 [ext_resource type="AudioStream" uid="uid://cbvbxjy5u6uf3" path="res://Sounds/ambient.wav" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://b5f0s10nfu5er" path="res://Scenes/water_flipped.tscn" id="5_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="9_ynf5e"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
-
-[sub_resource type="Sky" id="Sky_8gbba"]
-sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
-
-[sub_resource type="Environment" id="Environment_jjvhh"]
-background_mode = 2
-sky = SubResource("Sky_8gbba")
+[ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
+[ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="12_jkdf5"]
+[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scenes/time_bar.gd" id="13_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://p8gotahwy1ky" path="res://Scenes/assets/box.tscn" id="14_h1bgf"]
+[ext_resource type="PackedScene" uid="uid://bw7v4vifj4jts" path="res://Scenes/assets/fireplace.tscn" id="15_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="16_b3802"]
+[ext_resource type="PackedScene" uid="uid://mhkc6apqbxph" path="res://Scenes/assets/vaso_1.tscn" id="17_fevyy"]
+[ext_resource type="PackedScene" uid="uid://c8sa1mcqg1x4f" path="res://Scenes/assets/vaso_2.tscn" id="18_hibaj"]
+[ext_resource type="PackedScene" uid="uid://boe53wt73s1yj" path="res://Scenes/assets/cactus.tscn" id="19_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
+[ext_resource type="PackedScene" uid="uid://dxbc335unrbp8" path="res://Scenes/assets/cactus_3.tscn" id="21_3pmx8"]
+[ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jjvhh")
+environment = ExtResource("2_21xkr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.863167, 0.504919, 0, -0.504919, 0.863167, 0, 64.2763, 190.867)
@@ -31,30 +37,186 @@ sky_mode = 1
 
 [node name="Terrain" parent="." instance=ExtResource("1_bo1nx")]
 
-[node name="water" parent="Terrain" instance=ExtResource("2_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2054, -48.2028, -43.5053)
+[node name="Water" parent="Terrain" instance=ExtResource("2_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0967, -46.8539, -24.6197)
 
-[node name="Player" parent="." instance=ExtResource("2_8gbba")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.4066, 8.79594, 6.05423)
+[node name="WaterFlipped" parent="Terrain" instance=ExtResource("5_wsu2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.097, -46.854, -31.6306)
+
+[node name="QuickSand" parent="Terrain" instance=ExtResource("10_hptm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.7523, -47.1528, -88.8389)
 
 [node name="Ambient Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_kry3j")
 volume_db = 30.0
 autoplay = true
 
-[node name="potion_tent" parent="." instance=ExtResource("6_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.4698, 4.07892, 66.8184)
-
-[node name="NormalTent" parent="." instance=ExtResource("7_344ge")]
-transform = Transform3D(0.343047, 0, 0.692904, 0, 0.741, 0, -0.722716, 0, 0.328896, -83.465, 3.44094, 83.6963)
-
-[node name="MasterTent" parent="." instance=ExtResource("8_ynf5e")]
-transform = Transform3D(0.815219, 0, -0.579153, 0, 1, 0, 0.579153, 0, 0.815219, -86.1721, 3.88849, 48.9946)
-
-[node name="NormalTent2" parent="." instance=ExtResource("7_344ge")]
-transform = Transform3D(0.347885, 0, 0.937537, 0, 1, 0, -0.937537, 0, 0.347885, -75.5449, 3.41563, 84.508)
-
 [node name="InventoryUI" parent="." instance=ExtResource("9_ynf5e")]
 
-[connection signal="body_entered" from="Terrain/water" to="Player" method="_on_water_body_entered"]
-[connection signal="body_exited" from="Terrain/water" to="Player" method="_on_water_body_exited"]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("11_fdnlq")
+
+[node name="TutorialPanel" type="Panel" parent="UI"]
+offset_right = 282.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="UI/TutorialPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 283.0
+offset_bottom = 44.0
+bbcode_enabled = true
+scroll_active = false
+
+[node name="TutorialFinished" type="AudioStreamPlayer3D" parent="UI/TutorialPanel"]
+stream = ExtResource("12_jkdf5")
+
+[node name="QuestPanel" type="Panel" parent="UI"]
+visible = false
+offset_right = 314.0
+offset_bottom = 118.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/QuestPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 295.0
+offset_bottom = 109.0
+
+[node name="Stone" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Find the Philosopher Stone"
+
+[node name="Potion" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Find the Potion of Everlasting Life"
+
+[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI/QuestPanel"]
+stream = ExtResource("12_jkdf5")
+
+[node name="TimeBar" type="ProgressBar" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 47.0
+grow_horizontal = 2
+max_value = 900.0
+step = 1.0
+show_percentage = false
+script = ExtResource("13_wsu2k")
+
+[node name="TimeLabel" type="Label" parent="UI/TimeBar"]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI"]
+stream = ExtResource("12_jkdf5")
+
+[node name="Player" parent="." instance=ExtResource("2_8gbba")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.8206, 7.21525, -45.2964)
+
+[node name="Assets" type="Node" parent="."]
+
+[node name="Camp" type="Node" parent="Assets"]
+
+[node name="potion_tent" parent="Assets/Camp" instance=ExtResource("6_21xkr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -95.4698, 3.4617, 64.2719)
+
+[node name="NormalTent" parent="Assets/Camp" instance=ExtResource("7_344ge")]
+transform = Transform3D(0.857618, 0, 1.73362, 0, 1.852, 0, -1.80679, 0, 0.822884, -83.8981, 3.43525, 80.8745)
+
+[node name="MasterTent" parent="Assets/Camp" instance=ExtResource("8_ynf5e")]
+transform = Transform3D(0.85627, 0.0477826, -1.8068, -0.0204632, 1.99943, 0.043179, 1.80731, 0, 0.856514, -84.9383, 3.88849, 44.4274)
+
+[node name="NormalTent2" parent="Assets/Camp" instance=ExtResource("7_344ge")]
+transform = Transform3D(0.426163, 0, 1.95407, 0, 2, 0, -1.95407, 0, 0.426163, -68.5687, 2.81808, 85.522)
+
+[node name="box" parent="Assets/Camp" instance=ExtResource("14_h1bgf")]
+transform = Transform3D(-0.700436, 0, -0.713715, 0, 1, 0, 0.713715, 0, -0.700436, -85.9464, 3.72682, 57.5816)
+
+[node name="Fireplace2" parent="Assets/Camp" instance=ExtResource("15_wsu2k")]
+
+[node name="vaso3" parent="Assets/Camp" instance=ExtResource("16_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0909, 5.83332, 57.7452)
+
+[node name="vaso1" parent="Assets/Camp" instance=ExtResource("17_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.7852, 3.5394, 67.3654)
+
+[node name="vaso2" parent="Assets/Camp" instance=ExtResource("17_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.8265, 3.49193, 68.6406)
+
+[node name="vaso4" parent="Assets/Camp" instance=ExtResource("18_hibaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.8895, 3.43515, 70.172)
+
+[node name="vaso5" parent="Assets/Camp" instance=ExtResource("17_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.9466, 3.80796, 61.0461)
+
+[node name="vaso6" parent="Assets/Camp" instance=ExtResource("18_hibaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6224, 3.08649, 78.2732)
+
+[node name="vaso7" parent="Assets/Camp" instance=ExtResource("18_hibaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4083, 3.3357, 75.9373)
+
+[node name="box2" parent="Assets/Camp" instance=ExtResource("14_h1bgf")]
+transform = Transform3D(0.100344, 0, -0.994953, 0, 1, 0, 0.994953, 0, 0.100344, -58.3788, 3.07095, 73.5258)
+
+[node name="box3" parent="Assets/Camp" instance=ExtResource("14_h1bgf")]
+transform = Transform3D(0.11081, 0, -0.993842, 0, 1, 0, 0.993842, 0, 0.11081, -58.3345, 5.17745, 73.251)
+
+[node name="box4" parent="Assets/Camp" instance=ExtResource("14_h1bgf")]
+transform = Transform3D(0.6915, 0, -0.722376, 0, 1, 0, 0.722376, 0, 0.6915, -66.9249, 3.44317, 54.2852)
+
+[node name="box5" parent="Assets/Camp" instance=ExtResource("14_h1bgf")]
+transform = Transform3D(-0.728801, 0, -0.684725, 0, 1, 0, 0.684725, 0, -0.728801, -64.9885, 3.19202, 56.9638)
+
+[node name="Cactus" type="Node" parent="Assets"]
+
+[node name="Cactus" parent="Assets/Cactus" instance=ExtResource("19_ee4r6")]
+transform = Transform3D(1.26159, 0, -2.72184, 0, 3, 0, 2.72184, 0, 1.26159, -50.7145, 3.16588, 74.8937)
+
+[node name="cactus2" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -63.9207, 3.48528, 45.7775)
+
+[node name="cactus3" parent="Assets/Cactus" instance=ExtResource("21_3pmx8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.49654, 3.13989, -78.7157)
+
+[node name="Cactus2" parent="Assets/Cactus" instance=ExtResource("19_ee4r6")]
+transform = Transform3D(1.07285, 0, 2.25809, 0, 2.5, 0, -2.25809, 0, 1.07285, -9.05855, 4.70855, 47.09)
+
+[node name="Cactus3" parent="Assets/Cactus" instance=ExtResource("19_ee4r6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 11.0008, 4.70291, 40.3729)
+
+[node name="cactus4" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.38517, 4.95125, 54.3075)
+
+[node name="cactus5" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(-0.148528, 0, -3.99724, 0, 4, 0, 3.99724, 0, -0.148528, -4.00105, 4.13935, 64.0352)
+
+[node name="cactus6" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.347707, 4.51985, 37.5932)
+
+[node name="cactus7" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(2.82245, 0, -2.06973, 0, 3.5, 0, 2.06973, 0, 2.82245, -73.6116, 3.23868, -2.2684)
+
+[node name="Cactus4" parent="Assets/Cactus" instance=ExtResource("19_ee4r6")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -68.1479, 3.26309, 5.49426)
+
+[node name="cactus8" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(0.353074, 0, -3.98439, 0, 4, 0, 3.98439, 0, 0.353074, -66.1556, 3.2151, -11.6419)
+
+[node name="flower" parent="." instance=ExtResource("22_u50mg")]
+transform = Transform3D(1.45618, -0.232951, -0.274347, 0.00381382, 1.15333, -0.959066, 0.359886, 0.930353, 1.12024, -6.75203, 5.84344, -78.1705)
+
+[connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
+[connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
+[connection signal="body_entered" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_entered"]
+[connection signal="body_exited" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_exited"]
+[connection signal="time_out" from="UI/TimeBar" to="." method="_on_time_bar_time_out"]

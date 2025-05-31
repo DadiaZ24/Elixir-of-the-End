@@ -140,14 +140,14 @@ shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qq3op"]
+lightmap_size_hint = Vector2i(1004, 1506)
 material = SubResource("ShaderMaterial_4glq7")
 size = Vector3(100, 100, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ua7hw"]
 size = Vector3(100, 100, 100)
 
-[node name="Area3D" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2054, 2.87178, -43.5053)
+[node name="Water" type="Area3D"]
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.518727, 0)

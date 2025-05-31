@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ft2ec2e81n0"]
+
+[ext_resource type="Material" uid="uid://0dkhxy18j436" path="res://assets/material/mat_objetos.tres" id="1_ubumm"]
+[ext_resource type="ArrayMesh" uid="uid://dvd48de1l1yka" path="res://assets/rug2.obj" id="2_8rcjl"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gjycg"]
+data = PackedVector3Array(-3.4199, 0.0875, -2.1759, -3.4199, 0, -2.1759, 3.4199, 0.0875, -2.1759, 3.4199, 0.0875, -2.1759, -3.4199, 0, -2.1759, 3.4199, 0, -2.1759, -3.4199, 0.0875, 2.1759, -3.4199, 0.0875, -2.1759, 3.4199, 0.0875, 2.1759, 3.4199, 0.0875, 2.1759, -3.4199, 0.0875, -2.1759, 3.4199, 0.0875, -2.1759, -3.4199, 0.0875, 2.1759, -3.4199, 0, 2.1759, -3.4199, 0.0875, -2.1759, -3.4199, 0.0875, -2.1759, -3.4199, 0, 2.1759, -3.4199, 0, -2.1759, 3.4199, 0.0875, 2.1759, 3.4199, 0, 2.1759, -3.4199, 0.0875, 2.1759, -3.4199, 0.0875, 2.1759, 3.4199, 0, 2.1759, -3.4199, 0, 2.1759, 3.4199, 0.0875, -2.1759, 3.4199, 0, -2.1759, 3.4199, 0.0875, 2.1759, 3.4199, 0.0875, 2.1759, 3.4199, 0, -2.1759, 3.4199, 0, 2.1759)
+
+[node name="rug2" type="StaticBody3D"]
+
+[node name="Rug2" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_ubumm")
+mesh = ExtResource("2_8rcjl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_gjycg")

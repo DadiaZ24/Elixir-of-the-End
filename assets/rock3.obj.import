@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnvb7sw4fyd0c"
+path="res://.godot/imported/rock3.obj-c97af8a8f94d68eeb6a99701715e7902.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock3.obj-c97af8a8f94d68eeb6a99701715e7902.mesh"]
+
+source_file="res://assets/rock3.obj"
+dest_files=["res://.godot/imported/rock3.obj-c97af8a8f94d68eeb6a99701715e7902.mesh", "res://.godot/imported/rock3.obj-c97af8a8f94d68eeb6a99701715e7902.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
