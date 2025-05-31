@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://o3ki1l4sxilj"]
+
+[ext_resource type="Material" uid="uid://cbhax34qapx6o" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
+[ext_resource type="ArrayMesh" uid="uid://b54n6g0moexcf" path="res://assets/trianglefloor.obj" id="2_aficd"]
+
+[node name="floor_triangle" type="Node3D"]
+
+[node name="Trianglefloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35848, 0, -1.87436)
+material_override = ExtResource("1_a4wyh")
+mesh = ExtResource("2_aficd")
+surface_material_override/0 = ExtResource("1_a4wyh")
