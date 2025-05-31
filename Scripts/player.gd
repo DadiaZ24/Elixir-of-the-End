@@ -5,6 +5,7 @@ signal toggle_inventory()
 
 
 const SPEED = 10
+const SPRINT_MULTIPLIER:= 1.5
 const JUMP_VELOCITY = 3
 @onready var world_env: WorldEnvironment = $"../WorldEnvironment"
 var default_env = preload("res://Resources/DefaultEnv.tres")
@@ -15,6 +16,7 @@ var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 @onready var swim = $Swim
 @export var water_surface_y: float
 
+var is_sprinting = false
 var is_inside_water = false
 var is_underwater = false
 var is_inside_quicksand = false
@@ -124,9 +126,14 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var ground_direction = (neck.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
+
+		is_sprinting = Input.is_action_pressed("ui_sprint")
+		var current_speed = SPEED
+		if is_sprinting:
+			current_speed *= SPRINT_MULTIPLIER
 		if ground_direction:
-			velocity.x = ground_direction.x * SPEED
-			velocity.z = ground_direction.z * SPEED
+			velocity.x = ground_direction.x * current_speed
+			velocity.z = ground_direction.z * current_speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
