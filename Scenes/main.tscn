@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
-[ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="11_fdnlq"]
 [ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="12_jkdf5"]
-[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scenes/time_bar.gd" id="13_wsu2k"]
+[ext_resource type="Script" path="res://Scenes/time_bar.gd" id="13_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://p8gotahwy1ky" path="res://Scenes/assets/box.tscn" id="14_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://bw7v4vifj4jts" path="res://Scenes/assets/fireplace.tscn" id="15_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="16_b3802"]
@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://c8sa1mcqg1x4f" path="res://Scenes/assets/vaso_2.tscn" id="18_hibaj"]
 [ext_resource type="PackedScene" uid="uid://boe53wt73s1yj" path="res://Scenes/assets/cactus.tscn" id="19_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
-[ext_resource type="PackedScene" uid="uid://dxbc335unrbp8" path="res://Scenes/assets/cactus_3.tscn" id="21_3pmx8"]
-[ext_resource type="PackedScene" uid="uid://bairubxbmkr5y" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
+[ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
+[ext_resource type="PackedScene" uid="uid://bt50mg0gc0amu" path="res://Scenes/alchemy/alchemy_ui.tscn" id="25_u50mg"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -218,17 +218,7 @@ transform = Transform3D(0.353074, 0, -3.98439, 0, 4, 0, 3.98439, 0, 0.353074, -6
 [node name="flower" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
 transform = Transform3D(1.45618, -0.232951, -0.274347, 0.00381382, 1.15333, -0.959066, 0.359886, 0.930353, 1.12024, -6.75203, 5.84344, -78.1705)
 
-[node name="flower4" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(1.36199, -0.462402, -0.425641, -0.0958104, 0.851238, -1.23134, 0.621132, 1.14524, 0.743391, -6.90083, 5.18321, -77.7883)
-
-[node name="flower3" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(0.477193, -0.910176, -1.09265, 0.00381382, 1.15333, -0.959066, 1.42206, 0.302329, 0.369226, -7.18573, 5.84344, -78.5652)
-
-[node name="flower2" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(1.42895, 0.288874, 0.353072, 0.00381382, 1.15333, -0.959066, -0.456169, 0.914535, 1.09797, -6.05285, 5.84344, -78.1464)
-
-[node name="cactus3" parent="Assets/Flower" instance=ExtResource("21_3pmx8")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.49654, 3.13989, -78.7157)
+[node name="AlchemyUI" parent="." instance=ExtResource("25_u50mg")]
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]

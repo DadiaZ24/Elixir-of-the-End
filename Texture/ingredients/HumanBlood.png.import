@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuunjxgpubvit"
-path="res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"
+uid="uid://du4k2c0myt0hy"
+path="res://.godot/imported/HumanBlood.png-5d9a92f1756496f5564331e577fb4d56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/ingredients/Gem.png"
-dest_files=["res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"]
+source_file="res://Texture/ingredients/HumanBlood.png"
+dest_files=["res://.godot/imported/HumanBlood.png-5d9a92f1756496f5564331e577fb4d56.ctex"]
 
 [params]
 
