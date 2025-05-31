@@ -127,39 +127,41 @@ func _physics_process(delta: float) -> void:
 		if not is_inside_quicksand:
 			mud.stop()
 			swim.stop()
+
 			# Apply gravity when not on the floor
 			if not is_on_floor():
 				velocity += get_gravity() * delta
 
-		# Jumping
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and tutorial.is_action_allowed("ui_accept"):
-			velocity.y = JUMP_VELOCITY
+			# Jumping
+			if Input.is_action_just_pressed("ui_accept") and is_on_floor() and tutorial.is_action_allowed("ui_accept"):
+				velocity.y = JUMP_VELOCITY
 
-		# Ground movement (XZ only)
-		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		var ground_direction = (neck.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			# Ground movement (XZ only)
+			var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+			var ground_direction = (neck.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-		is_sprinting = Input.is_action_pressed("ui_sprint")
-		var current_speed = SPEED
-		if is_sprinting:
-			current_speed *= SPRINT_MULTIPLIER
+			is_sprinting = Input.is_action_pressed("ui_sprint")
+			var current_speed = SPEED
+			if is_sprinting:
+				current_speed *= SPRINT_MULTIPLIER
 
-		if ground_direction:
-			velocity.x = ground_direction.x * current_speed
-			velocity.z = ground_direction.z * current_speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
+			if ground_direction:
+				velocity.x = ground_direction.x * current_speed
+				velocity.z = ground_direction.z * current_speed
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				velocity.z = move_toward(velocity.z, 0, SPEED)
 
-		# Footsteps (only if not in quicksand)
-		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-		if input_vector.length() > 0.1:
-			if not footsteps.is_playing():
-				footsteps.play()
-		else:
-			if footsteps.is_playing():
-				footsteps.stop()
+			# Footsteps (only if not in quicksand)
+			input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+			input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+			if input_vector.length() > 0.1:
+				if not footsteps.is_playing():
+					footsteps.play()
+			else:
+				if footsteps.is_playing():
+					footsteps.stop()
+
 
 	move_and_slide()
 
