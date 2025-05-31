@@ -71,15 +71,15 @@ func _physics_process(delta: float) -> void:
 	
 	if is_inside_quicksand:
 		velocity += quicksand_gravity * delta
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("ui_up") and tutorial.is_action_allowed("ui_up"):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down"):
+		if Input.is_action_pressed("ui_down") and tutorial.is_action_allowed("ui_down"):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("ui_right") and tutorial.is_action_allowed("ui_right"):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("ui_left") and tutorial.is_action_allowed("ui_left"):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") and tutorial.is_action_allowed("ui_accept"):
 			velocity.y = quicksamd_jump_trace
 		
 		direction = direction.normalized()
@@ -89,17 +89,17 @@ func _physics_process(delta: float) -> void:
 	if is_inside_water:
 		velocity += swim_gravity * delta
 		# Full 3D movement for swimming
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("ui_up") and tutorial.is_action_allowed("ui_up"):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down"):
+		if Input.is_action_pressed("ui_down") and tutorial.is_action_allowed("ui_down"):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("ui_left") and tutorial.is_action_allowed("ui_left"):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("ui_right") and tutorial.is_action_allowed("ui_right"):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_accept"):
+		if Input.is_action_pressed("ui_accept") and tutorial.is_action_allowed("ui_accept"):
 			direction += Vector3.UP
-		if Input.is_action_pressed("swim_down"):
+		if Input.is_action_pressed("ui_sprint") and tutorial.is_action_allowed("ui_sprint"):
 			direction -= Vector3.UP
 
 		if direction != Vector3.ZERO:
