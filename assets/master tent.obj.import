@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bj8nd1g1my484"
+path="res://.godot/imported/master tent.obj-f5578d9f41aa61e81062979a1c9b0c6b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/master tent.obj-f5578d9f41aa61e81062979a1c9b0c6b.mesh"]
+
+source_file="res://assets/master tent.obj"
+dest_files=["res://.godot/imported/master tent.obj-f5578d9f41aa61e81062979a1c9b0c6b.mesh", "res://.godot/imported/master tent.obj-f5578d9f41aa61e81062979a1c9b0c6b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
