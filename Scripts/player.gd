@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 signal toggle_inventory()
+@export var inventory_data: InventoryData
+
 
 const SPEED = 10
 const JUMP_VELOCITY = 4.5
@@ -17,7 +19,7 @@ var swim_up_speed = 2.0
 var inventory_is_open := false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("tab"):
+	if Input.is_action_just_pressed("inventory_open"):
 		inventory_is_open = !inventory_is_open
 		if inventory_is_open:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

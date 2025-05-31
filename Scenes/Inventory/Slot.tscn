@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://erf743ynmnls"]
+[gd_scene load_steps=2 format=3 uid="uid://erf743ynmnls"]
+
+[ext_resource type="Script" uid="uid://csg4jmyudnxrc" path="res://Scripts/inventory/slot.gd" id="1_cuqsf"]
 
 [node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_cuqsf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

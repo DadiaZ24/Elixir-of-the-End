@@ -1,4 +1,17 @@
 extends Node3D
 
-func _ready():
-	print("_")
+@onready var player: CharacterBody3D = $Player
+@onready var inventory_interface: Control = $InventoryUI/InventoryInterface
+
+func _ready() -> void:
+	player.toggle_inventory.connect(toggle_inventory_interface)
+	inventory_interface.set_player_inventory_data(player.inventory_data)
+
+
+func toggle_inventory_interface() -> void:
+	inventory_interface.visible = not inventory_interface.visible
+	
+	if inventory_interface.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

@@ -1,8 +1,8 @@
 extends Control
 
 var grabbed_slot_data: SlotData
-@onready var player_inventory: PanelContainer = $Inventory
-@onready var grabbed_slot: PanelContainer = $Slot
+@onready var player_inventory: PanelContainer = $PlayerInventory
+@onready var grabbed_slot: PanelContainer = $GrabbedSlot
 
 func _physics_process(delta: float) -> void:
 	if grabbed_slot.visible:
