@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsm8dyfxdlsiv"]
+[gd_scene load_steps=6 format=3 uid="uid://dsm8dyfxdlsiv"]
 
-[ext_resource type="Script" uid="uid://b0kepri7k6ocv" path="res://Scripts/player.gd" id="1_rpqav"]
-[ext_resource type="Environment" uid="uid://c4wfogotpvpeg" path="res://Resources/UnderWaterEnv.tres" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://bg1bj8nf7k86" path="res://Scripts/player.gd" id="1_rpqav"]
+[ext_resource type="AudioStream" uid="uid://cjtt5ak506fsq" path="res://Sounds/walking.wav" id="3_dewec"]
+[ext_resource type="AudioStream" uid="uid://bakj4m54b0ulk" path="res://Sounds/swim.wav" id="3_gntrk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qbkls"]
 
@@ -11,9 +12,6 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_rpqav")
-
-[node name="UnderWaterEnv" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_kyqiw")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -31,3 +29,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00597286, 0.741281, -0.014
 transform = Transform3D(1, 0, 0, 0, 1.48221, 0, 0, 0, 1, -0.177482, -1.15015, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 9
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_dewec")
+autoplay = true
+
+[node name="Swim" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gntrk")
+volume_db = -30.0
