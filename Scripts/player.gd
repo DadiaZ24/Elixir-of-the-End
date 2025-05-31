@@ -5,6 +5,8 @@ const SPEED = 10
 const JUMP_VELOCITY = 4.5
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
+@onready var footsteps = $Footsteps
+@onready var swim = $Swim
 
 var is_underwater = false
 var swim_speed = 4.0
@@ -26,7 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
-
+	var input_vector = Vector2.ZERO
 	if is_underwater:
 		velocity += swim_gravity * delta
 		# Full 3D movement for swimming
@@ -42,7 +44,12 @@ func _physics_process(delta: float) -> void:
 			direction += Vector3.UP
 		if Input.is_action_pressed("swim_down"):
 			direction -= Vector3.UP
-
+		if direction != Vector3.ZERO:
+			if not swim.is_playing():
+				swim.play()
+		else:
+			if swim.is_playing():
+				swim.stop()
 		direction = direction.normalized()
 
 		# Apply smooth swimming movement
@@ -67,6 +74,16 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
+
+		#Footsteps
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		if input_vector.length() > 0.1:
+			if not footsteps.is_playing():
+				footsteps.play()
+		else:
+			if footsteps.is_playing():
+				footsteps.stop()
 
 	move_and_slide()
 
