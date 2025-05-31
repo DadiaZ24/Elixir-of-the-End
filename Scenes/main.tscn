@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=14 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="9_ynf5e"]
+[ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="12_jkdf5"]
+[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scenes/time_bar.gd" id="13_wsu2k"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -49,5 +52,70 @@ transform = Transform3D(0.347885, 0, 0.937537, 0, 1, 0, -0.937537, 0, 0.347885, 
 
 [node name="InventoryUI" parent="." instance=ExtResource("9_ynf5e")]
 
-[connection signal="body_entered" from="Terrain/water" to="Player" method="_on_water_body_entered"]
-[connection signal="body_exited" from="Terrain/water" to="Player" method="_on_water_body_exited"]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("11_fdnlq")
+
+[node name="TutorialPanel" type="Panel" parent="UI"]
+offset_right = 282.0
+offset_bottom = 51.0
+
+[node name="Label" type="RichTextLabel" parent="UI/TutorialPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 283.0
+offset_bottom = 44.0
+bbcode_enabled = true
+scroll_active = false
+
+[node name="TutorialFinished" type="AudioStreamPlayer3D" parent="UI/TutorialPanel"]
+stream = ExtResource("12_jkdf5")
+
+[node name="QuestPanel" type="Panel" parent="UI"]
+visible = false
+offset_right = 314.0
+offset_bottom = 118.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/QuestPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 295.0
+offset_bottom = 109.0
+
+[node name="Stone" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Find the Philosopher Stone"
+
+[node name="Potion" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Find the Potion of Everlasting Life"
+
+[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI/QuestPanel"]
+stream = ExtResource("12_jkdf5")
+
+[node name="TimeBar" type="ProgressBar" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 47.0
+grow_horizontal = 2
+max_value = 900.0
+step = 1.0
+show_percentage = false
+script = ExtResource("13_wsu2k")
+
+[node name="TimeLabel" type="Label" parent="UI/TimeBar"]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI"]
+stream = ExtResource("12_jkdf5")
+
+[connection signal="time_out" from="UI/TimeBar" to="." method="_on_time_bar_time_out"]
