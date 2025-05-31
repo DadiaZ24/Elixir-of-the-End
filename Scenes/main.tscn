@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=8 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dq2isirkrgjwi" path="res://Scenes/water.tscn" id="2_jjvhh"]
 
@@ -14,6 +15,7 @@ background_mode = 2
 sky = SubResource("Sky_8gbba")
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_jjvhh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjvhh")
