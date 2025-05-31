@@ -2,9 +2,13 @@ extends CharacterBody3D
 
 
 const SPEED = 10
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 3
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
+@onready var world_environment: WorldEnvironment = $"../WorldEnvironment"
+var default_env = preload("res://Resources/DefaultEnv.tres")
+var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
+
 
 var is_underwater = false
 var swim_speed = 4.0
@@ -74,8 +78,11 @@ func _physics_process(delta: float) -> void:
 func _on_water_body_entered(body: Node3D) -> void:
 	if body == self:
 		is_underwater = true
+		world_environment.environment = underwater_env
 
 
 func _on_water_body_exited(body: Node3D) -> void:
 	if body == self:
 		is_underwater = false
+		world_environment.environment = default_env
+		
