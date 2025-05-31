@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxhfr3m2f1k0y"]
+[gd_scene load_steps=4 format=3 uid="uid://c8sa1mcqg1x4f"]
 
 [ext_resource type="Material" uid="uid://0dkhxy18j436" path="res://assets/material/mat_objetos.tres" id="1_7f830"]
 [ext_resource type="ArrayMesh" uid="uid://d08k63nilq3n2" path="res://assets/vaso2.obj" id="2_a5hll"]

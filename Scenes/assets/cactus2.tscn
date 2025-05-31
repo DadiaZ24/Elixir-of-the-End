@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://by3cbnnubqkii"]
+[gd_scene load_steps=4 format=3 uid="uid://bg5d3vq3f1e2q"]
 
 [ext_resource type="Material" uid="uid://0dkhxy18j436" path="res://assets/material/mat_objetos.tres" id="1_7p1xk"]
 [ext_resource type="ArrayMesh" uid="uid://ciqxkrj8p0l7d" path="res://assets/cactus2.obj" id="2_meuwd"]
