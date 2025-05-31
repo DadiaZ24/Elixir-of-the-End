@@ -57,3 +57,7 @@ ui_le={
 "deadzone": 0.2,
 "events": []
 }
+tab={
+"deadzone": 0.2,
+"events": []
+}

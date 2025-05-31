@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal toggle_inventory()
 
 const SPEED = 10
 const JUMP_VELOCITY = 4.5
@@ -13,8 +14,21 @@ var swim_speed = 4.0
 var water_drag = 4.0
 var swim_gravity = Vector3(0, -3.0, 0)
 var swim_up_speed = 2.0
+var inventory_is_open := false
 
 func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("tab"):
+		inventory_is_open = !inventory_is_open
+		if inventory_is_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		toggle_inventory.emit()
+		return
+		
+	if inventory_is_open:
+		return
+		
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif  event.is_action_pressed("ui_cancel"):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbqi0801oxgom"]
 
-[ext_resource type="Script" uid="uid://cdi4m1ofrv64x" path="res://lizard.gd" id="1_4qrxi"]
+[ext_resource type="Script" uid="uid://cdi4m1ofrv64x" path="res://Scripts/lizard.gd" id="1_4qrxi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lhscj"]
 
