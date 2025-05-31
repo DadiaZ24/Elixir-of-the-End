@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://clyco35mhmc2y"]
 
 [ext_resource type="Texture2D" uid="uid://u1gxywgp27gw" path="res://Texture/ingredients/Mineral.png" id="1_knq0d"]
-[ext_resource type="Script" uid="uid://dsxscwxvsrifx" path="res://Scripts/items/Philosopher'sStone_ingredient.gd" id="2_lbfrv"]
+[ext_resource type="Script" path="res://Scripts/items/Philosopher'sStone_ingredient.gd" id="2_lbfrv"]
 
 [resource]
 script = ExtResource("2_lbfrv")

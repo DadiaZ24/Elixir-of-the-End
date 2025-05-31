@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0wcekuc4x7k8"]
+
+[ext_resource type="PackedScene" uid="uid://erf743ynmnls" path="res://Scenes/Inventory/Slot.tscn" id="1_ccim0"]
+[ext_resource type="Script" uid="uid://7lvordoj1w28" path="res://Scripts/inventory/Crafting/CratingUI.gd" id="1_f5rk3"]
+
+[node name="CraftingUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f5rk3")
+
+[node name="CraftItem1" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 346.0
+offset_right = 1066.0
+offset_bottom = 410.0
+
+[node name="CraftItem2" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 343.0
+offset_right = 740.0
+offset_bottom = 407.0
+
+[node name="CraftItem3" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 91.0
+offset_right = 871.0
+offset_bottom = 155.0
+
+[node name="CraftButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 377.0
+offset_right = 916.0
+offset_bottom = 411.0
+text = "JOIN"
+
+[node name="ErrorPopup" type="PopupPanel" parent="."]
+
+[node name="Label" type="Label" parent="ErrorPopup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 284.0
+offset_bottom = 96.0
+text = "Nothing has been crafted! Try again!"
+
+[node name="CraftTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

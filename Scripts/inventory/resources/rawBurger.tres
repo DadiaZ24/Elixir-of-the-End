@@ -5,8 +5,7 @@
 
 [resource]
 script = ExtResource("1_tg5s6")
-type = 0
-name = ""
+name = "Raw Burger"
 stackable = true
 texture = ExtResource("2_6310s")
 metadata/_custom_type_script = "uid://j67qe2l2x621"

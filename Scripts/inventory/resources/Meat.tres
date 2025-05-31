@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=12 format=3 uid="uid://b383o4q1l2fke"]
+
+[ext_resource type="Script" uid="uid://dji6bgbrtafqk" path="res://Scripts/inventory/Crafting/CraftingInputSlotData.gd" id="1_lx8fl"]
+[ext_resource type="Script" uid="uid://brgc3eyoa03cv" path="res://Scripts/inventory/Crafting/craftingRecipe.gd" id="2_bxg2l"]
+[ext_resource type="Resource" uid="uid://dubilseh20kr" path="res://Scripts/inventory/resources/rawBurger.tres" id="2_xmiuv"]
+[ext_resource type="Resource" uid="uid://cpsyv3ovcdrhg" path="res://Scripts/inventory/resources/rawBurger2.tres" id="3_g10mj"]
+[ext_resource type="Resource" uid="uid://cjytw15784bvk" path="res://Scripts/inventory/resources/rawBurger3.tres" id="4_p0oyo"]
+[ext_resource type="Script" uid="uid://j67qe2l2x621" path="res://Scripts/inventory/ItemData.gd" id="5_gqsks"]
+[ext_resource type="Texture2D" uid="uid://c008chwhhhxwe" path="res://Texture/food/raw burger.png" id="6_6d3cr"]
+
+[sub_resource type="Resource" id="Resource_onw53"]
+script = ExtResource("1_lx8fl")
+item = ExtResource("2_xmiuv")
+amount = 1
+metadata/_custom_type_script = "uid://dji6bgbrtafqk"
+
+[sub_resource type="Resource" id="Resource_388e0"]
+script = ExtResource("1_lx8fl")
+item = ExtResource("3_g10mj")
+amount = 1
+metadata/_custom_type_script = "uid://dji6bgbrtafqk"
+
+[sub_resource type="Resource" id="Resource_1j428"]
+script = ExtResource("1_lx8fl")
+item = ExtResource("4_p0oyo")
+amount = 1
+metadata/_custom_type_script = "uid://dji6bgbrtafqk"
+
+[sub_resource type="Resource" id="Resource_ackco"]
+script = ExtResource("5_gqsks")
+name = "MeatBall"
+stackable = true
+texture = ExtResource("6_6d3cr")
+metadata/_custom_type_script = "uid://j67qe2l2x621"
+
+[resource]
+script = ExtResource("2_bxg2l")
+inputs = Array[ExtResource("1_lx8fl")]([SubResource("Resource_onw53"), SubResource("Resource_388e0"), SubResource("Resource_1j428")])
+output = SubResource("Resource_ackco")
+output_amount = 1
+metadata/_custom_type_script = "uid://brgc3eyoa03cv"

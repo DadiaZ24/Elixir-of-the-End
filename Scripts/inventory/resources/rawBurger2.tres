@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cpsyv3ovcdrhg"]
+
+[ext_resource type="Script" uid="uid://j67qe2l2x621" path="res://Scripts/inventory/ItemData.gd" id="1_qd5qo"]
+[ext_resource type="Texture2D" uid="uid://c008chwhhhxwe" path="res://Texture/food/raw burger.png" id="2_fa5wf"]
+
+[resource]
+script = ExtResource("1_qd5qo")
+name = "Raw Burger"
+stackable = true
+texture = ExtResource("2_fa5wf")
+metadata/_custom_type_script = "uid://j67qe2l2x621"
