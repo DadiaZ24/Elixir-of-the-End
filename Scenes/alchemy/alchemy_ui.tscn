@@ -7,3 +7,4 @@
 script = ExtResource("1_dnwik")
 
 [node name="Recipe" parent="." instance=ExtResource("2_dnwik")]
+visible = false
