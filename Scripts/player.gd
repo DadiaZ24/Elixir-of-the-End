@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 signal toggle_inventory()
 @export var inventory_data: InventoryData
+@onready var tutorial: CanvasLayer = $"../UI"
 
 
 const SPEED = 10
@@ -31,7 +32,7 @@ var inventory_is_open := false
 var quicksand_drag = 4.0
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("inventory_open"):
+	if Input.is_action_just_pressed("inventory_open") and tutorial.is_action_allowed("inventory_open"):
 		inventory_is_open = !inventory_is_open
 		if inventory_is_open:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -119,7 +120,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 
 		# Jumping
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and tutorial.is_action_allowed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
 
 		# Ground movement (XZ only)

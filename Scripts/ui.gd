@@ -12,12 +12,19 @@ var tutorial_steps = [
 	{"text": "Press [b]D[/b] to move right", "action": "ui_right"},
 	{"text": "Move your [b]mouse[/b] to look around", "action": "mouse_move"},
 	{"text": "Press [b]Space[/b] to jump", "action": "ui_accept"},
+	{"text": "Press [b]SHIFT[/b] to sprint", "action": "ui_sprint"},
 	{"text": "[color=lime][b]Tutorial Complete! You're ready.[/b][/color]", "action": ""}
 ]
 
 var current_step = 0
 var tutorial_active = true
 var mouse_move_detected := false
+
+func is_action_allowed(action_name: String) -> bool:
+	if not tutorial_active:
+		return true
+	return tutorial_steps[current_step]["action"] == action_name
+
 
 func _ready():
 	show_current_tutorial_step()
