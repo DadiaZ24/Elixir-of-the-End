@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://chhwwopsqwlai"]
+
+[ext_resource type="Texture2D" uid="uid://f0x2aayf6q8k" path="res://Texture/ingredients/HumanHair.png" id="1_o3357"]
+[ext_resource type="Script" uid="uid://dsxscwxvsrifx" path="res://Scripts/items/Philosopher'sStone_ingredient.gd" id="2_dxds7"]
+
+[resource]
+script = ExtResource("2_dxds7")
+icon = ExtResource("1_o3357")
+name = "HumanHair"
+recipe = Array[ExtResource("2_dxds7")]([])
+type = "Ingredient"
+description = ""
+metadata/_custom_type_script = "uid://dsxscwxvsrifx"

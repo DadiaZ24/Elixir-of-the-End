@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ga5p3xsm4afg"]
+
+[ext_resource type="Texture2D" uid="uid://bouufbk84ss6u" path="res://Texture/ingredients/LizardBlood.png" id="1_hgti4"]
+[ext_resource type="Script" uid="uid://dsxscwxvsrifx" path="res://Scripts/items/Philosopher'sStone_ingredient.gd" id="2_58yie"]
+
+[resource]
+script = ExtResource("2_58yie")
+icon = ExtResource("1_hgti4")
+name = "LizardBlood"
+recipe = Array[ExtResource("2_58yie")]([])
+type = "Ingredient"
+description = ""
+metadata/_custom_type_script = "uid://dsxscwxvsrifx"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7u8xs847wp73"
-path="res://.godot/imported/WaterPlant.jpg-ade921a0b4315f2370fba0ae3caa5b36.ctex"
+uid="uid://bouufbk84ss6u"
+path="res://.godot/imported/LizardBlood.png-9eeb6a7ea894f719676ad89798314e9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/ingredients/WaterPlant.jpg"
-dest_files=["res://.godot/imported/WaterPlant.jpg-ade921a0b4315f2370fba0ae3caa5b36.ctex"]
+source_file="res://Texture/ingredients/LizardBlood.png"
+dest_files=["res://.godot/imported/LizardBlood.png-9eeb6a7ea894f719676ad89798314e9c.ctex"]
 
 [params]
 

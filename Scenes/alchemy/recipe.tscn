@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmql04orogyl7" path="res://Scenes/alchemy/recipe_slot.tscn" id="1_63w43"]
 [ext_resource type="Script" uid="uid://rfb2eblte8xy" path="res://Scripts/alchemy/recipe.gd" id="1_nv85c"]
-[ext_resource type="Resource" uid="uid://cd0fu1q3fy8es" path="res://Scripts/alchemy/Resources/Philosopher'sStone.tres" id="2_eqy25"]
+[ext_resource type="Resource" uid="uid://c4tbxdnyissl3" path="res://Scripts/alchemy/Resources/Philosopher'sStone.tres" id="2_eqy25"]
 
 [node name="Recipe" type="Node2D"]
 visible = false

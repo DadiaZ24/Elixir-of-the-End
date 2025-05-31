@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuunjxgpubvit"
-path="res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"
+uid="uid://c1fmxlvwryumi"
+path="res://.godot/imported/ElixirOfImmortality.png-9333752f3cb40163e1bd9cf5c49de91e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/ingredients/Gem.png"
-dest_files=["res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"]
+source_file="res://Texture/Items/ElixirOfImmortality.png"
+dest_files=["res://.godot/imported/ElixirOfImmortality.png-9333752f3cb40163e1bd9cf5c49de91e.ctex"]
 
 [params]
 
