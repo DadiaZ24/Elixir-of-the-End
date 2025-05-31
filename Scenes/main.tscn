@@ -22,10 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://c8sa1mcqg1x4f" path="res://Scenes/assets/vaso_2.tscn" id="18_hibaj"]
 [ext_resource type="PackedScene" uid="uid://boe53wt73s1yj" path="res://Scenes/assets/cactus.tscn" id="19_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
-[ext_resource type="PackedScene" uid="uid://dxbc335unrbp8" path="res://Scenes/assets/cactus_3.tscn" id="21_3pmx8"]
-[ext_resource type="PackedScene" uid="uid://bairubxbmkr5y" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
+[ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
-[ext_resource type="PackedScene" uid="uid://do1nyiha7ho7b" path="res://Scenes/alchemy/alchemy_ui.tscn" id="25_u50mg"]
+[ext_resource type="PackedScene" uid="uid://bt50mg0gc0amu" path="res://Scenes/alchemy/alchemy_ui.tscn" id="25_u50mg"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -218,6 +217,8 @@ transform = Transform3D(0.353074, 0, -3.98439, 0, 4, 0, 3.98439, 0, 0.353074, -6
 
 [node name="flower" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
 transform = Transform3D(1.45618, -0.232951, -0.274347, 0.00381382, 1.15333, -0.959066, 0.359886, 0.930353, 1.12024, -6.75203, 5.84344, -78.1705)
+
+[node name="AlchemyUI" parent="." instance=ExtResource("25_u50mg")]
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
