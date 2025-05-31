@@ -56,6 +56,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.lerp(direction * swim_speed, water_drag * delta)
 
 	else:
+		swim.stop()
 		# Apply gravity when not on the floor
 		if not is_on_floor():
 			velocity += get_gravity() * delta
