@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://cd0fu1q3fy8es"]
+
+[ext_resource type="Texture2D" uid="uid://ci8k4ffuycqfl" path="res://Texture/Items/stone-nature-2d-color-illustrations-png.webp" id="1_5qhvw"]
+[ext_resource type="Script" uid="uid://dsxscwxvsrifx" path="res://Scripts/items/Philosopher'sStone_ingredient.gd" id="2_gum6l"]
+[ext_resource type="Resource" uid="uid://cf31a4xyh3qc3" path="res://Scripts/alchemy/Resources/CactusFlower.tres" id="3_amvix"]
+[ext_resource type="Resource" uid="uid://d32087um8ua5t" path="res://Scripts/alchemy/Resources/Gem.tres" id="4_h7dx4"]
+[ext_resource type="Resource" uid="uid://ulwswfiverum" path="res://Scripts/alchemy/Resources/WaterPlant.tres" id="5_wojs1"]
+
+[resource]
+script = ExtResource("2_gum6l")
+icon = ExtResource("1_5qhvw")
+name = "Philosopher's stone"
+recipe = Array[ExtResource("2_gum6l")]([ExtResource("3_amvix"), ExtResource("4_h7dx4"), ExtResource("5_wojs1")])
+type = "Item"
+description = "Ingredient used for alchemy"
+metadata/_custom_type_script = "uid://dsxscwxvsrifx"
