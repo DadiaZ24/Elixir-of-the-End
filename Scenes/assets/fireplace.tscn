@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw7v4vifj4jts"]
+
+[ext_resource type="PackedScene" path="res://Scenes/assets/rock_2.tscn" id="1_jwk0e"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/rock_3.tscn" id="2_mdbkv"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/rock_1.tscn" id="3_0ib5a"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/box.tscn" id="4_2y4or"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stvuf"]
+size = Vector3(4.1228, 3.70007, 4.27539)
+
+[node name="Fireplace" type="Node3D"]
+
+[node name="Fireplace" type="StaticBody3D" parent="."]
+
+[node name="rock8" parent="Fireplace" instance=ExtResource("1_jwk0e")]
+transform = Transform3D(0.999745, 0, 0.0225826, 0, 1, 0, -0.0225826, 0, 0.999745, -74.3174, 3.72344, 65.6331)
+
+[node name="rock2" parent="Fireplace" instance=ExtResource("1_jwk0e")]
+transform = Transform3D(0.00588174, 0.999983, 0, -0.999983, 0.00588174, 0, 0, 0, 1, -74.5911, 3.59503, 68.1478)
+
+[node name="rock3" parent="Fireplace" instance=ExtResource("1_jwk0e")]
+transform = Transform3D(0.974162, 0, -0.225852, 0.0370936, 0.986421, 0.159995, 0.222785, -0.164238, 0.960933, -75.5469, 3.78324, 67.7763)
+
+[node name="rock4" parent="Fireplace" instance=ExtResource("2_mdbkv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.857, 3.57368, 66.0242)
+
+[node name="rock5" parent="Fireplace" instance=ExtResource("2_mdbkv")]
+transform = Transform3D(0.575376, 0, -0.817889, 0, 1, 0, 0.817889, 0, 0.575376, -73.4398, 3.36015, 66.8852)
+
+[node name="rock1" parent="Fireplace" instance=ExtResource("3_0ib5a")]
+transform = Transform3D(-0.717021, 0.646915, 0.259579, 0.607037, 0.396475, 0.688705, 0.342617, 0.65139, -0.676982, -76.3982, 3.59246, 64.919)
+
+[node name="rock6" parent="Fireplace" instance=ExtResource("2_mdbkv")]
+transform = Transform3D(-0.0553223, 0.156572, -0.986116, 0.00877011, 0.987666, 0.156327, 0.99843, 0, -0.0560131, -75.1257, 3.6252, 64.3552)
+
+[node name="rock7" parent="Fireplace" instance=ExtResource("3_0ib5a")]
+transform = Transform3D(-0.3684, 0, -0.929667, 0, 1, 0, 0.929667, 0, -0.3684, -73.4136, 3.34052, 66.0417)
+
+[node name="box" parent="Fireplace" instance=ExtResource("4_2y4or")]
+transform = Transform3D(0.569179, 0, -0.822214, -0.0263571, 0.999486, -0.0182457, 0.821791, 0.0320562, 0.568887, -74.814, 1.24008, 65.8743)
+
+[node name="rock9" parent="Fireplace" instance=ExtResource("2_mdbkv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.8757, 3.67984, 64.8828)
+
+[node name="rock10" parent="Fireplace" instance=ExtResource("1_jwk0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.3921, 3.69863, 66.9605)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fireplace"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.8319, 2.72615, 65.8822)
+shape = SubResource("BoxShape3D_stvuf")
