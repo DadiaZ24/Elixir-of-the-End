@@ -1,13 +1,17 @@
 extends CharacterBody3D
 
-
 const SPEED = 10
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 3
+@onready var world_env: WorldEnvironment = $"../WorldEnvironment"
+var default_env = preload("res://Resources/DefaultEnv.tres")
+var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
 @onready var footsteps = $Footsteps
 @onready var swim = $Swim
+@export var water_surface_y: float
 
+var is_inside_water = false
 var is_underwater = false
 var swim_speed = 4.0
 var water_drag = 4.0
@@ -17,8 +21,9 @@ var swim_up_speed = 2.0
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif  event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.004)
@@ -29,7 +34,18 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
 	var input_vector = Vector2.ZERO
-	if is_underwater:
+	var camera_y = camera.global_transform.origin.y
+	var currently_submerged = is_inside_water and camera_y < water_surface_y
+
+	if currently_submerged and not is_underwater:
+		is_underwater = true
+		world_env.environment = underwater_env
+	elif not currently_submerged and is_underwater:
+		is_underwater = false
+		world_env.environment = default_env
+		
+
+	if is_inside_water:
 		velocity += swim_gravity * delta
 		# Full 3D movement for swimming
 		if Input.is_action_pressed("ui_up"):
@@ -44,6 +60,7 @@ func _physics_process(delta: float) -> void:
 			direction += Vector3.UP
 		if Input.is_action_pressed("swim_down"):
 			direction -= Vector3.UP
+
 		if direction != Vector3.ZERO:
 			if not swim.is_playing():
 				swim.play()
@@ -76,7 +93,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
-		#Footsteps
+		# Footsteps
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		if input_vector.length() > 0.1:
@@ -91,9 +108,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_water_body_entered(body: Node3D) -> void:
 	if body == self:
-		is_underwater = true
+		is_inside_water = true
 
 
 func _on_water_body_exited(body: Node3D) -> void:
 	if body == self:
+		is_inside_water = false
 		is_underwater = false
+		world_env.environment = default_env

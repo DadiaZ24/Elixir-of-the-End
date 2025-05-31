@@ -3,26 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_8gbba"]
+[ext_resource type="Environment" uid="uid://d3lwdwg4xbrfm" path="res://Resources/DefaultEnv.tres" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dq2isirkrgjwi" path="res://Scenes/water.tscn" id="2_jjvhh"]
 [ext_resource type="AudioStream" uid="uid://cbvbxjy5u6uf3" path="res://Sounds/ambient.wav" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
-
-[sub_resource type="Sky" id="Sky_8gbba"]
-sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
-
-[sub_resource type="Environment" id="Environment_jjvhh"]
-background_mode = 2
-sky = SubResource("Sky_8gbba")
-
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jjvhh")
+environment = ExtResource("2_21xkr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.863167, 0.504919, 0, -0.504919, 0.863167, 0, 64.2763, 190.867)
@@ -30,11 +22,12 @@ sky_mode = 1
 
 [node name="Terrain" parent="." instance=ExtResource("1_bo1nx")]
 
-[node name="water" parent="Terrain" instance=ExtResource("2_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2054, -48.2028, -43.5053)
+[node name="Water" parent="Terrain" instance=ExtResource("2_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0967, -46.8539, -24.6197)
 
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.4066, 8.79594, 6.05423)
+water_surface_y = 2.6
 
 [node name="Ambient Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_kry3j")
