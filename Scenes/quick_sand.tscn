@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk2k60h75kixb"]
+
+[ext_resource type="Texture2D" uid="uid://w22o7wwn8hlk" path="res://Texture/stylized_sand/Stylized_Sand_001_basecolor.jpg" id="1_7en7x"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7en7x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7en7x"]
+width = 357
+height = 172
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_7en7x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7en7x"]
+albedo_texture = ExtResource("1_7en7x")
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_7en7x")
+
+[sub_resource type="BoxMesh" id="BoxMesh_54ybj"]
+material = SubResource("StandardMaterial3D_7en7x")
+size = Vector3(100, 100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7en7x"]
+
+[node name="QuickSand" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_54ybj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("BoxShape3D_7en7x")

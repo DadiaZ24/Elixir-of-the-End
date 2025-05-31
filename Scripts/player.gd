@@ -13,10 +13,14 @@ var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 
 var is_inside_water = false
 var is_underwater = false
+var is_inside_quicksand = false
+var quicksand_gravity = Vector3(0, -3.0, 0)
+var swim_gravity = Vector3(0, -3.0, 0)
+var quicksand_mov_speed = 1.0
+var quicksamd_jump_trace = 2.0
 var swim_speed = 4.0
 var water_drag = 4.0
-var swim_gravity = Vector3(0, -3.0, 0)
-var swim_up_speed = 2.0
+var quicksand_drag = 4.0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -43,7 +47,23 @@ func _physics_process(delta: float) -> void:
 	elif not currently_submerged and is_underwater:
 		is_underwater = false
 		world_env.environment = default_env
+	
+	if is_inside_quicksand:
+		velocity += quicksand_gravity * delta
+		if Input.is_action_pressed("ui_up"):
+			direction -= neck.global_transform.basis.z
+		if Input.is_action_pressed("ui_down"):
+			direction += neck.global_transform.basis.z
+		if Input.is_action_pressed("ui_right"):
+			direction -= neck.global_transform.basis.x
+		if Input.is_action_pressed("ui_left"):
+			direction += neck.global_transform.basis.x
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.y = quicksamd_jump_trace
 		
+		direction = direction.normalized()
+		velocity = velocity.lerp(direction * quicksand_mov_speed, quicksand_drag * delta)
+
 
 	if is_inside_water:
 		velocity += swim_gravity * delta
@@ -116,3 +136,13 @@ func _on_water_body_exited(body: Node3D) -> void:
 		is_inside_water = false
 		is_underwater = false
 		world_env.environment = default_env
+
+
+func _on_quick_sand_body_entered(body: Node3D) -> void:
+	if body == self:
+		is_inside_quicksand = true
+
+
+func _on_quick_sand_body_exited(body: Node3D) -> void:
+	if body == self:
+		is_inside_quicksand = false

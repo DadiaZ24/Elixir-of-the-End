@@ -147,7 +147,6 @@ size = Vector3(100, 100, 100)
 size = Vector3(100, 100, 100)
 
 [node name="Water" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2054, 2.87178, -43.5053)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.518727, 0)

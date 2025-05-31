@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=11 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -25,9 +26,8 @@ sky_mode = 1
 [node name="Water" parent="Terrain" instance=ExtResource("2_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0967, -46.8539, -24.6197)
 
-[node name="Player" parent="." instance=ExtResource("2_8gbba")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.4066, 8.79594, 6.05423)
-water_surface_y = 2.6
+[node name="QuickSand" parent="Terrain" instance=ExtResource("10_hptm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.7523, -47.1528, -88.8389)
 
 [node name="Ambient Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_kry3j")
@@ -46,5 +46,8 @@ transform = Transform3D(0.815219, 0, -0.579153, 0, 1, 0, 0.579153, 0, 0.815219, 
 [node name="NormalTent2" parent="." instance=ExtResource("7_344ge")]
 transform = Transform3D(0.347885, 0, 0.937537, 0, 1, 0, -0.937537, 0, 0.347885, -75.5449, 3.41563, 84.508)
 
-[connection signal="body_entered" from="Terrain/water" to="Player" method="_on_water_body_entered"]
-[connection signal="body_exited" from="Terrain/water" to="Player" method="_on_water_body_exited"]
+[node name="Player" parent="." instance=ExtResource("2_8gbba")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.8206, 7.21525, -45.2964)
+
+[connection signal="body_entered" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_entered"]
+[connection signal="body_exited" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_exited"]
