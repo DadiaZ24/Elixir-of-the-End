@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var recipes = [
-	{ "ingredients": ["Lizard Blood", "Human Hair", "Something in the water"], "result": "Elixir of immortality" },
+	{ "ingredients": ["Lizard Blood", "Human Hair", "Water Plant"], "result": "Elixir of immortality" },
 	{ "ingredients": ["Mineral", "Gem", "Cactus Flower"], "result": "Philosopher's Stone" },]
 
 func check_combination():

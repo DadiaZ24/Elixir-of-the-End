@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://do1nyiha7ho7b"]
+[gd_scene load_steps=3 format=3 uid="uid://bt50mg0gc0amu"]
 
 [ext_resource type="Script" uid="uid://c2jpgvjb58ey6" path="res://Scripts/alchemy/alchemy_ui.gd" id="1_dnwik"]
 [ext_resource type="PackedScene" uid="uid://o6crk652smlw" path="res://Scenes/alchemy/recipe.tscn" id="2_dnwik"]
@@ -7,4 +7,3 @@
 script = ExtResource("1_dnwik")
 
 [node name="Recipe" parent="." instance=ExtResource("2_dnwik")]
-visible = false
