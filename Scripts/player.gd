@@ -17,6 +17,7 @@ var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 @onready var camera: Camera3D = $Neck/Camera3D
 @onready var footsteps = $Footsteps
 @onready var swim = $Swim
+@onready var mud = $Mud
 @export var water_surface_y: float
 
 var is_sprinting = false
@@ -85,6 +86,15 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept") and tutorial.is_action_allowed("ui_accept"):
 			velocity.y = quicksamd_jump_trace
 		
+		var is_moving := direction.length_squared() > 0.01
+		if is_moving:
+			if not mud.is_playing():
+				mud.play()
+			if footsteps.is_playing():
+				footsteps.stop()
+		else:
+			if mud.is_playing():
+				mud.stop()
 		direction = direction.normalized()
 		velocity = velocity.lerp(direction * quicksand_mov_speed, quicksand_drag * delta)
 
@@ -117,10 +127,12 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.lerp(direction * swim_speed, water_drag * delta)
 
 	else:
-		swim.stop()
-		# Apply gravity when not on the floor
-		if not is_on_floor():
-			velocity += get_gravity() * delta
+		if not is_inside_quicksand:
+			mud.stop()
+			swim.stop()
+			# Apply gravity when not on the floor
+			if not is_on_floor():
+				velocity += get_gravity() * delta
 
 		# Jumping
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and tutorial.is_action_allowed("ui_accept"):
@@ -130,11 +142,11 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var ground_direction = (neck.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-
 		is_sprinting = Input.is_action_pressed("ui_sprint")
 		var current_speed = SPEED
 		if is_sprinting:
 			current_speed *= SPRINT_MULTIPLIER
+
 		if ground_direction:
 			velocity.x = ground_direction.x * current_speed
 			velocity.z = ground_direction.z * current_speed
@@ -142,7 +154,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
-		# Footsteps
+		# Footsteps (only if not in quicksand)
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		if input_vector.length() > 0.1:
