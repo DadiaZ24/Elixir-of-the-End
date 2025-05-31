@@ -1,11 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ch2hcei3n4etc"]
 
 [ext_resource type="Script" uid="uid://c150efny4gxu7" path="res://addons/zylann.hterrain/hterrain.gd" id="1_0ac8p"]
-[ext_resource type="Resource" path="res://DataTerrain/data.hterrain" id="2_xx0be"]
+[ext_resource type="Resource" uid="uid://bppdk1fmk6vku" path="res://DataTerrain/data.hterrain" id="2_xx0be"]
 [ext_resource type="Script" uid="uid://hw0eb270vv0c" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_kli7b"]
 [ext_resource type="Texture2D" uid="uid://w22o7wwn8hlk" path="res://Texture/stylized_sand/Stylized_Sand_001_basecolor.jpg" id="4_ph32v"]
 [ext_resource type="Texture2D" uid="uid://l8wbsybgolht" path="res://slot0_normal_roughness.png" id="5_4glq7"]
-[ext_resource type="PackedScene" uid="uid://b67lurg57n230" path="res://Scenes/pathfinding.tscn" id="6_xx0be"]
 
 [sub_resource type="Resource" id="Resource_aaxyt"]
 script = ExtResource("3_kli7b")

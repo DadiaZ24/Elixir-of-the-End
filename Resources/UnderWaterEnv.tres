@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://c4wfogotpvpeg"]
+
+[resource]
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0470588, 0.317647, 0.466667, 1)
+fog_density = 0.15
+adjustment_enabled = true
+adjustment_saturation = 0.6
