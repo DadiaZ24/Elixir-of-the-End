@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ictjpnriaqmr"]
 
 [ext_resource type="Texture2D" uid="uid://bfl3jsotxctyf" path="res://assets/texturas/cristais_Crystal005Mat_BaseColor.1001.png" id="1_8b3gq"]
-[ext_resource type="Script" uid="uid://bb2o8d5aseahj" path="res://Scripts/crystal_2.gd" id="1_ik7wa"]
+[ext_resource type="Script" path="res://Scripts/items/crystal_2.gd" id="1_ik7wa"]
 [ext_resource type="ArrayMesh" uid="uid://cc8ifhhh2k35x" path="res://assets/crystal1.obj" id="2_ik7wa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kb7o2"]

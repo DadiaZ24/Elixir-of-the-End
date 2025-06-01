@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=35 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -12,30 +12,28 @@
 [ext_resource type="PackedScene" uid="uid://cf2n8c0exbu38" path="res://Scenes/EntrancePotion.tscn" id="7_kltya"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
-[ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
-[ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="12_jkdf5"]
-[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scripts/time_bar.gd" id="13_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://p8gotahwy1ky" path="res://Scenes/assets/box.tscn" id="14_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://dclfvtqeleick" path="res://Scenes/assets/rock_2.tscn" id="15_b3802"]
-[ext_resource type="PackedScene" path="res://Scenes/assets/fireplace.tscn" id="15_wsu2k"]
-[ext_resource type="PackedScene" uid="uid://c1pdep0g8ndnn" path="res://Scenes/assets/vaso_3.tscn" id="16_b3802"]
+[ext_resource type="PackedScene" uid="uid://bw7v4vifj4jts" path="res://Scenes/assets/fireplace.tscn" id="15_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="16_b3802"]
 [ext_resource type="PackedScene" uid="uid://bbjttm6bh4vhy" path="res://Scenes/assets/rock_3.tscn" id="16_fevyy"]
-[ext_resource type="PackedScene" uid="uid://3bfut7tb14t1" path="res://Scenes/assets/vaso_1.tscn" id="17_fevyy"]
+[ext_resource type="PackedScene" uid="uid://mhkc6apqbxph" path="res://Scenes/assets/vaso_1.tscn" id="17_fevyy"]
 [ext_resource type="PackedScene" uid="uid://8oq3ynxkkn5u" path="res://Scenes/assets/rock_1.tscn" id="17_hibaj"]
-[ext_resource type="PackedScene" uid="uid://bxhfr3m2f1k0y" path="res://Scenes/assets/vaso_2.tscn" id="18_hibaj"]
-[ext_resource type="PackedScene" uid="uid://cqaukytnk2ysx" path="res://Scenes/assets/cactus.tscn" id="19_ee4r6"]
-[ext_resource type="PackedScene" uid="uid://by3cbnnubqkii" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
+[ext_resource type="PackedScene" uid="uid://c8sa1mcqg1x4f" path="res://Scenes/assets/vaso_2.tscn" id="18_hibaj"]
+[ext_resource type="PackedScene" uid="uid://boe53wt73s1yj" path="res://Scenes/assets/cactus.tscn" id="19_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
-[ext_resource type="PackedScene" uid="uid://dbhdguuysiy1v" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
-[ext_resource type="PackedScene" uid="uid://c7in0x30rah6w" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
-[ext_resource type="PackedScene" uid="uid://dcccc8c3ctwnm" path="res://Scenes/assets/crystal_2.tscn" id="30_e08e2"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
+[ext_resource type="PackedScene" uid="uid://ictjpnriaqmr" path="res://Scenes/assets/crystal_2.tscn" id="30_e08e2"]
 [ext_resource type="PackedScene" uid="uid://bs3a8ncy0c5u4" path="res://Scenes/grass.tscn" id="31_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="31_kltya"]
-[ext_resource type="PackedScene" uid="uid://cuov52piosk0w" path="res://Scenes/assets/crystal.tscn" id="31_neg2b"]
+[ext_resource type="PackedScene" uid="uid://drgxa34ynyj2e" path="res://Scenes/assets/crystal.tscn" id="31_neg2b"]
 [ext_resource type="PackedScene" uid="uid://d3ehkfxm6b57s" path="res://Scenes/EntranceMaster.tscn" id="32"]
 [ext_resource type="PackedScene" uid="uid://dybxval7ls1f2" path="res://Scenes/assets/nenufar.tscn" id="33_r33sp"]
-[ext_resource type="PackedScene" path="res://Scenes/assets/lizzard.tscn" id="34_hdf80"]
+[ext_resource type="PackedScene" uid="uid://cym3ydyxheqmp" path="res://Scenes/assets/lizzard.tscn" id="34_hdf80"]
+[ext_resource type="PackedScene" uid="uid://uawou5qy8m1" path="res://Scenes/pop_ups.tscn" id="34_neg2b"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -65,75 +63,6 @@ transform = Transform3D(0.91706, 0, -0.398749, 0, 1, 0, 0.398749, 0, 0.91706, -9
 stream = ExtResource("5_kry3j")
 volume_db = 30.0
 autoplay = true
-
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("11_fdnlq")
-
-[node name="TutorialPanel" type="Panel" parent="UI"]
-anchors_preset = -1
-anchor_right = 0.0868056
-offset_right = 282.0
-offset_bottom = 51.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="RichTextLabel" parent="UI/TutorialPanel"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 373.0
-offset_bottom = 44.0
-bbcode_enabled = true
-scroll_active = false
-
-[node name="TutorialFinished" type="AudioStreamPlayer3D" parent="UI/TutorialPanel"]
-stream = ExtResource("12_jkdf5")
-
-[node name="QuestPanel" type="Panel" parent="UI"]
-visible = false
-offset_right = 314.0
-offset_bottom = 118.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/QuestPanel"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 295.0
-offset_bottom = 109.0
-
-[node name="Stone" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
-layout_mode = 2
-text = "Find the Philosopher Stone"
-
-[node name="Potion" type="CheckBox" parent="UI/QuestPanel/VBoxContainer"]
-layout_mode = 2
-text = "Find the Potion of Everlasting Life"
-
-[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI/QuestPanel"]
-stream = ExtResource("12_jkdf5")
-
-[node name="TimeBar" type="ProgressBar" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 20.0
-offset_right = 150.0
-offset_bottom = 47.0
-grow_horizontal = 2
-max_value = 900.0
-step = 1.0
-show_percentage = false
-script = ExtResource("13_wsu2k")
-
-[node name="TimeLabel" type="Label" parent="UI/TimeBar"]
-layout_mode = 0
-offset_right = 293.0
-offset_bottom = 23.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuestFinished" type="AudioStreamPlayer3D" parent="UI"]
-stream = ExtResource("12_jkdf5")
 
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -71.993, 7.21525, 50.6826)
@@ -460,8 +389,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.2248, 4.53741, 63.7382)
 [node name="SpawnPoint_Default" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8023, 5.43249, 22.9672)
 
+[node name="PopUps" parent="." instance=ExtResource("34_neg2b")]
+
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
 [connection signal="body_entered" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_entered"]
 [connection signal="body_exited" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_exited"]
-[connection signal="time_out" from="UI/TimeBar" to="." method="_on_time_bar_time_out"]

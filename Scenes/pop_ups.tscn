@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://uawou5qy8m1"]
+
+[ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="1_4ch3u"]
+[ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="1_akwnc"]
+[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scripts/time_bar.gd" id="2_4ch3u"]
+[ext_resource type="Script" uid="uid://b2melw2vy08ef" path="res://Scripts/quest.gd" id="2_vw0g2"]
+
+[node name="PopUps" type="CanvasLayer"]
+script = ExtResource("1_4ch3u")
+
+[node name="QuestPanel" type="Panel" parent="."]
+visible = false
+offset_right = 314.0
+offset_bottom = 118.0
+script = ExtResource("2_vw0g2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 295.0
+offset_bottom = 109.0
+
+[node name="Stone" type="CheckBox" parent="QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Create the Philosopher Stone"
+
+[node name="Potion" type="CheckBox" parent="QuestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Create the Potion of Everlasting Life"
+
+[node name="QuestFinished" type="AudioStreamPlayer3D" parent="QuestPanel"]
+stream = ExtResource("1_akwnc")
+
+[node name="TimeBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 47.0
+grow_horizontal = 2
+max_value = 900.0
+step = 1.0
+show_percentage = false
+script = ExtResource("2_4ch3u")
+
+[node name="TimeLabel" type="Label" parent="TimeBar"]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialPanel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.0868056
+offset_right = 282.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 373.0
+offset_bottom = 44.0
+bbcode_enabled = true
+scroll_active = false
+
+[node name="TutorialFinished" type="AudioStreamPlayer3D" parent="TutorialPanel"]
+stream = ExtResource("1_akwnc")

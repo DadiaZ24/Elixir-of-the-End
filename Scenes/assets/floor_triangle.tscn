@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dmyteboqny4yb" path="res://Scripts/floor_triangle.gd" id="1_4b555"]
 [ext_resource type="Material" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
 [ext_resource type="ArrayMesh" uid="uid://b54n6g0moexcf" path="res://assets/trianglefloor.obj" id="2_aficd"]
-[ext_resource type="PackedScene" path="res://Scenes/assets/red_rock.tscn" id="4_1qepf"]
-[ext_resource type="PackedScene" path="res://Scenes/assets/elixir.tscn" id="5_573ic"]
+[ext_resource type="PackedScene" uid="uid://bsqpgbfau8wfc" path="res://Scenes/assets/red_rock.tscn" id="4_1qepf"]
+[ext_resource type="PackedScene" uid="uid://fbeiva7jinnd" path="res://Scenes/assets/elixir.tscn" id="5_573ic"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lso6x"]
 size = Vector3(3.22516, 1.70123, 3.33887)
