@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://sa26wr444tqh"]
+
+[ext_resource type="Texture2D" uid="uid://6jkwitcvf564" path="res://assets/texturas/craft table_0_BaseColor.1001.png" id="1_ik26o"]
+[ext_resource type="Texture2D" uid="uid://drr0dpjdgj8ug" path="res://assets/texturas/craft table_0_Metallic.1001.png" id="2_0j7bg"]
+[ext_resource type="Texture2D" uid="uid://bcky7gdyb0i81" path="res://assets/texturas/craft table_0_Normal.1001.png" id="3_87tui"]
+[ext_resource type="Texture2D" uid="uid://cr0noahuhkcra" path="res://assets/texturas/craft table_0_Roughness.1001.png" id="4_neh0k"]
+
+[resource]
+albedo_texture = ExtResource("1_ik26o")
+metallic = 1.0
+metallic_texture = ExtResource("2_0j7bg")
+roughness_texture = ExtResource("4_neh0k")
+normal_enabled = true
+normal_texture = ExtResource("3_87tui")
