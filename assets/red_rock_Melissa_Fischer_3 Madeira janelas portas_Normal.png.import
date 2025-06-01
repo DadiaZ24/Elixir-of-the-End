@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cdxax1qrtd54h"
+path.s3tc="res://.godot/imported/red_rock_Melissa_Fischer_3 Madeira janelas portas_Normal.png-1bd3bff5c3bff1c29082cbd4bd982da9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e9b26a9cc7218b6d907bb3a5bd38825a"
+}
+
+[deps]
+
+source_file="res://assets/red_rock_Melissa_Fischer_3 Madeira janelas portas_Normal.png"
+dest_files=["res://.godot/imported/red_rock_Melissa_Fischer_3 Madeira janelas portas_Normal.png-1bd3bff5c3bff1c29082cbd4bd982da9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/red_rock_Melissa_Fischer_3 Madeira janelas portas_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
