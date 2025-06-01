@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1pjnomy0xhml"]
+[gd_scene load_steps=19 format=3 uid="uid://c1pjnomy0xhml"]
 
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="1_5xvxh"]
 [ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_300no"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="10_chmtw"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="12_v18ds"]
 [ext_resource type="PackedScene" uid="uid://u55rkbqaekvv" path="res://Scenes/teste_box_craft.tscn" id="13_32lrn"]
+[ext_resource type="PackedScene" uid="uid://daxew7jw5l00b" path="res://Scenes/book_collision.tscn" id="14_wkujd"]
+[ext_resource type="PackedScene" uid="uid://bm42nup8imjqp" path="res://Scenes/Inventory/book.tscn" id="15_rgpjc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siduo"]
 albedo_texture = ExtResource("1_300no")
@@ -98,3 +100,8 @@ transform = Transform3D(0.915368, 0, -0.402619, 0, 1, 0, 0.402619, 0, 0.915368, 
 
 [node name="Craft" parent="." instance=ExtResource("13_32lrn")]
 transform = Transform3D(1.34, 0, 0, 0, 1.34, 0, 0, 0, 1.34, -0.584772, 0.933617, 3.48427)
+
+[node name="Book" parent="." instance=ExtResource("14_wkujd")]
+transform = Transform3D(1.165, 0, 0, 0, 1.165, 0, 0, 0, 1.165, 0.684149, 0.965954, 3.28252)
+
+[node name="Book2" parent="." instance=ExtResource("15_rgpjc")]

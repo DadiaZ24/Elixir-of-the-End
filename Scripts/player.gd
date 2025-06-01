@@ -7,6 +7,7 @@ signal toggle_alchemy()
 @onready var tutorial: CanvasLayer = $"../UI"
 @onready var interact_ray: RayCast3D = $Neck/Camera3D/InteractRay
 
+@onready var book_2: Control = $"../Book2/Control"
 
 const SPEED = 10
 const SPRINT_MULTIPLIER:= 5
@@ -57,6 +58,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	
 	if Input.is_action_just_pressed("ui_interact"):
+		if interact_ray.is_colliding():
+			var collider = interact_ray.get_collider()
+			if collider.is_in_group("book"):
+				book_2.toogle()
 		if interact_ray.is_colliding():
 			var collider = interact_ray.get_collider()
 			# Check if collider is in the right group
