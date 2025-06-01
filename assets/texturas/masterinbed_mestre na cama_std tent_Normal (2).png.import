@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brdc0plr7to8b"
-path.s3tc="res://.godot/imported/low_poly_crystal_game_ready_asset_3.png-a9766e29389094a21e502cd0221f07ef.s3tc.ctex"
+uid="uid://b3awibe2ixtje"
+path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_Normal (2).png-c555cd6f0ecfa43caf62cf01ee8bc865.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1d0329dc14f4c041f6b66d86f716e54c"
+"md5": "e7fc3d0c59dd8554d5f6ad5b8736fd24"
 }
 
 [deps]
 
-source_file="res://assets/low_poly_crystal_game_ready_asset_3.png"
-dest_files=["res://.godot/imported/low_poly_crystal_game_ready_asset_3.png-a9766e29389094a21e502cd0221f07ef.s3tc.ctex"]
+source_file="res://assets/texturas/masterinbed_mestre na cama_std tent_Normal (2).png"
+dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_Normal (2).png-c555cd6f0ecfa43caf62cf01ee8bc865.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/low_poly_crystal_game_ready_asset_3.png"
+roughness/src_normal="res://assets/masterinbed_mestre na cama_std tent_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

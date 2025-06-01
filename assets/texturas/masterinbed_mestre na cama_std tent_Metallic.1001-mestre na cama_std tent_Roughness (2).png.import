@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50ixmhroklik"
-path.s3tc="res://.godot/imported/low_poly_crystal_game_ready_asset_0.jpg-73d0143b7669560a5d7a746e011d140b.s3tc.ctex"
+uid="uid://s05lcbqwtst1"
+path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_Metallic.1001-mestre na cama_std tent_Roughness (2).png-2ad3893da2ef1e601c934974ee3abc0e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "64c552703a90308b1843b519f80b87e9"
+"md5": "6e1e5be5041175f3df099027ed83edc9"
 }
 
 [deps]
 
-source_file="res://assets/low_poly_crystal_game_ready_asset_0.jpg"
-dest_files=["res://.godot/imported/low_poly_crystal_game_ready_asset_0.jpg-73d0143b7669560a5d7a746e011d140b.s3tc.ctex"]
+source_file="res://assets/texturas/masterinbed_mestre na cama_std tent_Metallic.1001-mestre na cama_std tent_Roughness (2).png"
+dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_Metallic.1001-mestre na cama_std tent_Roughness (2).png-2ad3893da2ef1e601c934974ee3abc0e.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3awibe2ixtje"
-path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_Normal.png-676aa8061d78d7c21ea0a0498ad900f9.s3tc.ctex"
+uid="uid://c4ji3ef57xi2s"
+path.s3tc="res://.godot/imported/low_poly_crystal_game_ready_asset_2.jpg-bf89d18e03adf1261e37d4cc4ec451bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e7fc3d0c59dd8554d5f6ad5b8736fd24"
+"md5": "8dae2c4511839f0133e2c5f63edfbb9f"
 }
 
 [deps]
 
-source_file="res://assets/masterinbed_mestre na cama_std tent_Normal.png"
-dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_Normal.png-676aa8061d78d7c21ea0a0498ad900f9.s3tc.ctex"]
+source_file="res://assets/texturas/low_poly_crystal_game_ready_asset_2.jpg"
+dest_files=["res://.godot/imported/low_poly_crystal_game_ready_asset_2.jpg-bf89d18e03adf1261e37d4cc4ec451bd.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/masterinbed_mestre na cama_std tent_Normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ji3ef57xi2s"
-path.s3tc="res://.godot/imported/low_poly_crystal_game_ready_asset_2.jpg-4d6921f2b1ef82ca51672afd91031a0a.s3tc.ctex"
+uid="uid://br6yrmvqsm6kc"
+path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_BaseColor (2).png-2cacc723e036cc2427da9bd4459d0505.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8dae2c4511839f0133e2c5f63edfbb9f"
+"md5": "7471c5cf475dcacf13244a83a66c97a2"
 }
 
 [deps]
 
-source_file="res://assets/low_poly_crystal_game_ready_asset_2.jpg"
-dest_files=["res://.godot/imported/low_poly_crystal_game_ready_asset_2.jpg-4d6921f2b1ef82ca51672afd91031a0a.s3tc.ctex"]
+source_file="res://assets/texturas/masterinbed_mestre na cama_std tent_BaseColor (2).png"
+dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_BaseColor (2).png-2cacc723e036cc2427da9bd4459d0505.s3tc.ctex"]
 
 [params]
 
