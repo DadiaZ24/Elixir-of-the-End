@@ -1,65 +1,30 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=16 format=3 uid="uid://d3c482eywnig2"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://d3c482eywnig2"]
 
-[ext_resource type="Script" uid="uid://ei0g0jwhb6kw" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
+[ext_resource type="Script" uid="uid://ds6sswd7ep4id" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
 [ext_resource type="Script" uid="uid://dl0rhiqv2p08k" path="res://Scripts/inventory/SlotData.gd" id="2_fwj02"]
-[ext_resource type="Resource" uid="uid://di58ndmw80p32" path="res://Scripts/inventory/resources/teste1.tres" id="3_fwj02"]
-[ext_resource type="Resource" uid="uid://0u4o6i7ynsws" path="res://Scripts/inventory/resources/teste2.tres" id="4_hn8er"]
-[ext_resource type="Resource" uid="uid://cmreuny1l1oql" path="res://Scripts/inventory/resources/teste3.tres" id="5_axrq0"]
-
-[sub_resource type="Resource" id="Resource_w86u1"]
-script = ExtResource("2_fwj02")
-item_data = ExtResource("3_fwj02")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_fwj02"]
-script = ExtResource("2_fwj02")
-item_data = ExtResource("4_hn8er")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_hn8er"]
-script = ExtResource("2_fwj02")
-item_data = ExtResource("5_axrq0")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_axrq0"]
-script = ExtResource("2_fwj02")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
+[ext_resource type="Resource" uid="uid://dgdar46wbhqn3" path="res://Scripts/inventory/resources/Ingredients/gem.tres" id="3_hn8er"]
+[ext_resource type="Resource" uid="uid://dm7633cc8upeb" path="res://Scripts/inventory/resources/Ingredients/human_blood.tres" id="4_axrq0"]
+[ext_resource type="Resource" uid="uid://c7mf1vasqu181" path="res://Scripts/inventory/resources/Ingredients/something_water.tres" id="5_axrq0"]
 
 [sub_resource type="Resource" id="Resource_w06uq"]
 script = ExtResource("2_fwj02")
+item_data = ExtResource("3_hn8er")
 quantity = 1
 metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
 
 [sub_resource type="Resource" id="Resource_wg4jl"]
 script = ExtResource("2_fwj02")
+item_data = ExtResource("4_axrq0")
 quantity = 1
 metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
 
 [sub_resource type="Resource" id="Resource_jk440"]
 script = ExtResource("2_fwj02")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_ohlll"]
-script = ExtResource("2_fwj02")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_eakqa"]
-script = ExtResource("2_fwj02")
-quantity = 1
-metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
-
-[sub_resource type="Resource" id="Resource_v5fis"]
-script = ExtResource("2_fwj02")
+item_data = ExtResource("5_axrq0")
 quantity = 1
 metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
 
 [resource]
 script = ExtResource("1_w86u1")
-slot_datas = Array[ExtResource("2_fwj02")]([SubResource("Resource_w86u1"), SubResource("Resource_fwj02"), SubResource("Resource_hn8er"), SubResource("Resource_axrq0"), SubResource("Resource_w06uq"), SubResource("Resource_wg4jl"), SubResource("Resource_jk440"), SubResource("Resource_ohlll"), SubResource("Resource_eakqa"), SubResource("Resource_v5fis")])
+slot_datas = Array[ExtResource("2_fwj02")]([SubResource("Resource_w06uq"), SubResource("Resource_wg4jl"), SubResource("Resource_jk440"), null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://ds6sswd7ep4id"

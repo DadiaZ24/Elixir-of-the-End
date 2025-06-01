@@ -37,6 +37,12 @@ var quicksand_drag = 4.0
 var is_enabled := true
 
 
+func _ready() -> void:
+	var inventory_ui = $"../InventoryUI/InventoryInterface"
+
+	if inventory_ui.has_signal("crafting_completed"):
+		inventory_ui.crafting_completed.connect(_on_crafting_completed)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory_open"):
 		inventory_is_open = !inventory_is_open
@@ -45,7 +51,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		toggle_inventory.emit()
-		toggle_alchemy.emit()
 		return
 		
 	if inventory_is_open:
@@ -53,11 +58,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("ui_interact"):
 		if interact_ray.is_colliding():
+			inventory_is_open = !inventory_is_open
 			var collider = interact_ray.get_collider()
 			print("Collided with: ", collider.name)
 			# Check if collider is in the right group
 			if collider.is_in_group("crafting_inventory"):  # Change "interactable" to your group name
-				inventory_is_open = !inventory_is_open
 				if inventory_is_open:
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				else:
@@ -191,6 +196,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _on_crafting_completed(success: bool) -> void:
+	if success and inventory_is_open:
+		inventory_is_open = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		toggle_inventory.emit()
+		
 func _on_water_body_entered(body: Node3D) -> void:
 	if body == self:
 		is_inside_water = true

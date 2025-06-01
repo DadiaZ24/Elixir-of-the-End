@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dgdar46wbhqn3"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_hprl1"]
+[ext_resource type="Texture2D" uid="uid://cuunjxgpubvit" path="res://Texture/ingredients/Gem.png" id="2_bpu8i"]
+
+[resource]
+script = ExtResource("1_hprl1")
+name = "Gem"
+stackable = true
+texture = ExtResource("2_bpu8i")
+metadata/_custom_type_script = "uid://cgp68evkesany"

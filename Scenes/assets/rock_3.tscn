@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbjttm6bh4vhy"]
 
 [ext_resource type="Material" uid="uid://db1jrej7vnp5k" path="res://assets/material/rock_material.tres" id="1_c7k0e"]
-[ext_resource type="Script" uid="uid://qshaf5fqbby5" path="res://Scripts/rock_3.gd" id="1_hc0h2"]
+[ext_resource type="Script" uid="uid://qshaf5fqbby5" path="res://Scripts/items/rock_3.gd" id="1_hc0h2"]
 [ext_resource type="ArrayMesh" uid="uid://dnvb7sw4fyd0c" path="res://assets/rock3.obj" id="2_kcr0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hc0h2"]

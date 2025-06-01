@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bgiw24h2vmkat"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_rtmag"]
+[ext_resource type="Texture2D" uid="uid://bouufbk84ss6u" path="res://Texture/ingredients/LizardBlood.png" id="2_sklf1"]
+
+[resource]
+script = ExtResource("1_rtmag")
+name = "Lizzard Blood"
+stackable = true
+texture = ExtResource("2_sklf1")
+metadata/_custom_type_script = "uid://cgp68evkesany"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://o3rut5cc66uo"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_tpqsv"]
+[ext_resource type="Texture2D" uid="uid://u1gxywgp27gw" path="res://Texture/ingredients/Mineral.png" id="2_s7y4t"]
+
+[resource]
+script = ExtResource("1_tpqsv")
+name = "Mineral"
+stackable = true
+texture = ExtResource("2_s7y4t")
+metadata/_custom_type_script = "uid://cgp68evkesany"

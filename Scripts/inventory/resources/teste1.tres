@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3hlqq")
-name = "ING 1"
+name = ""
 stackable = true
 texture = ExtResource("2_j0le0")
 metadata/_custom_type_script = "uid://cgp68evkesany"
