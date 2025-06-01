@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3awibe2ixtje"
-path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_Normal.png-676aa8061d78d7c21ea0a0498ad900f9.s3tc.ctex"
+path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_Normal (2).png-c555cd6f0ecfa43caf62cf01ee8bc865.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/masterinbed_mestre na cama_std tent_Normal.png"
-dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_Normal.png-676aa8061d78d7c21ea0a0498ad900f9.s3tc.ctex"]
+source_file="res://assets/texturas/masterinbed_mestre na cama_std tent_Normal (2).png"
+dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_Normal (2).png-c555cd6f0ecfa43caf62cf01ee8bc865.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br6yrmvqsm6kc"
-path.s3tc="res://.godot/imported/masterinbed_mestre na cama_std tent_BaseColor.png-910290021acbddde8acff73d04b222f3.s3tc.ctex"
+uid="uid://bfqjuk14p3cvg"
+path.s3tc="res://.godot/imported/onthewater_DefaultMaterial_BaseColor.1001.png-1c6f066ccda0444ccb2bbb1a9d928937.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7471c5cf475dcacf13244a83a66c97a2"
-}
 
 [deps]
 
-source_file="res://assets/masterinbed_mestre na cama_std tent_BaseColor.png"
-dest_files=["res://.godot/imported/masterinbed_mestre na cama_std tent_BaseColor.png-910290021acbddde8acff73d04b222f3.s3tc.ctex"]
+source_file="res://assets/texturas/onthewater_DefaultMaterial_BaseColor.1001.png"
+dest_files=["res://.godot/imported/onthewater_DefaultMaterial_BaseColor.1001.png-1c6f066ccda0444ccb2bbb1a9d928937.s3tc.ctex"]
 
 [params]
 
