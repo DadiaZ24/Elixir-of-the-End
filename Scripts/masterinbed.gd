@@ -4,8 +4,9 @@ extends Node3D
 @onready var master_mesh = $cabeca
 @onready var master_scene = "res://Scenes/assets/masterinbed.tscn"
 @onready var human_air = preload("res://Scripts/inventory/resources/Ingredients/human_hair.tres")
+@onready var human_blood = preload("res://Scripts/inventory/resources/Ingredients/human_blood.tres")
 @onready var normal_material = master_mesh.get_surface_override_material(0)
-
+@export var knife: ItemData = preload("res://Scripts/inventory/resources/final_product/knife.tres")
 var player_near = false
 var player = null
 
@@ -31,11 +32,15 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_interact"):
 		#INVENTORY ADD LOGIC
 		var inventory_data = player.inventory_data
+		var new_slot_data := SlotData.new()
 		if inventory_data:
-			var new_slot_data := SlotData.new()
-			new_slot_data.item_data = human_air
-			new_slot_data.quantity = 1
-
+			if inventory_data.has_item(knife):
+				new_slot_data.item_data = human_blood
+				new_slot_data.quantity = 1
+				inventory_data.remove_item(knife)
+			else:
+				new_slot_data.item_data = human_air
+				new_slot_data.quantity = 1
 			var inserted := false
 			for i in range(inventory_data.slot_datas.size()):
 				var existing = inventory_data.slot_datas[i]
