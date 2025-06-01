@@ -4,8 +4,10 @@ extends Node3D
 @onready var trigger_area = $Ingredient1Area3
 @onready var red_rock = $Ingredient1Area/red_rock
 @onready var elixir = $Ingredient1Area2/elixir
+
 @onready var sound: AudioStreamPlayer3D = $Sound
 var cutscene = preload("res://Scenes/EndCutsceneWin.tscn").instantiate()
+
 @onready var player: Node
 var player_near_1 = false
 var player_near_2 = false
