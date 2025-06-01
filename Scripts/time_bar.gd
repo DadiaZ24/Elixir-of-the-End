@@ -10,7 +10,8 @@ signal time_out
 
 func _ready():
 	# Initialize label
-	time_label.text = format_time(current_time)
+	if time_label:
+		time_label.text = format_time(current_time)
 	visible = false  # Hide until tutorial ends
 
 func _process(delta):

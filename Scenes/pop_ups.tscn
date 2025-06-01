@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="1_4ch3u"]
 [ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="1_akwnc"]
 [ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scripts/time_bar.gd" id="2_4ch3u"]
-[ext_resource type="Script" uid="uid://b2melw2vy08ef" path="res://Scripts/quest.gd" id="2_vw0g2"]
+[ext_resource type="Script" path="res://Scripts/quest.gd" id="2_vw0g2"]
 
 [node name="PopUps" type="CanvasLayer"]
 script = ExtResource("1_4ch3u")
