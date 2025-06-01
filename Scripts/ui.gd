@@ -31,7 +31,8 @@ func _ready():
 
 func _process(_delta):
 	if GameState.tutorial_completed:
-		queue_free()
+		tutorial_panel.visible = false
+		set_process(false)
 		return
 	show_current_tutorial_step()
 
@@ -58,13 +59,13 @@ func show_current_tutorial_step():
 
 	if tutorial_steps[current_step]["action"] == "":
 		tutorial_active = false
-		GameState.tutorial_completed = true
 		await get_tree().create_timer(3.0).timeout
 		tutorial_finished.play()
 		tutorial_panel.visible = false
 		var time_bar = get_node("/root/Main/UI/TimeBar")
 		time_bar.visible = true
 		time_bar.timer_active = true
+		GameState.tutorial_completed = true
 	
 func _unhandled_input(event):
 	if not tutorial_active:
