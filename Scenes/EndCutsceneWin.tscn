@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr2a427k1byd5"]
+
+[ext_resource type="Script" uid="uid://c5avxi7tlcwrn" path="res://Scripts/end_cutscene_1.gd" id="1_58evr"]
+[ext_resource type="Texture2D" uid="uid://d3tyfrd2obx83" path="res://Texture/win.png" id="2_58evr"]
+
+[node name="EndCutscene1" type="Node"]
+script = ExtResource("1_58evr")
+
+[node name="ZoomCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.992958, 0.0196559, -0.116824, -0.0188592, 0.999791, 0.00792188, 0.116955, -0.00566289, 0.993121, 0.21832, 1.32945, -1.62402)
+visible = false
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+offset_right = 1151.0
+offset_bottom = 654.0
+color = Color(0, 0, 0, 1)
+
+[node name="WinImage" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 653.0
+texture = ExtResource("2_58evr")
+expand_mode = 1

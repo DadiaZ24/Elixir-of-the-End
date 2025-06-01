@@ -3,9 +3,9 @@ extends Node3D
 @onready var ingredient1 = $Ingredient1Area
 @onready var ingredient2 = $Ingredient1Area2
 @onready var trigger_area = $Ingredient1Area3
-@onready var red_rock = $Ingredient1Area/red_rock
-@onready var elixir = $Ingredient1Area2/elixir
-@onready var player: Node
+@onready var player: CharacterBody3D = $Player
+@onready var sound: AudioStreamPlayer3D = $Sound
+var cutscene = preload("res://Scenes/EndCutsceneWin.tscn").instantiate()
 
 var player_near_1 = false
 var player_near_2 = false
@@ -13,6 +13,7 @@ var player_in_trigger = false
 
 var has_delivered_1 = false
 var has_delivered_2 = false
+var flag = false
 
 @export var ingredient_1_data: ItemData = preload("res://Scripts/inventory/resources/final_product/philosophers_stone.tres")
 @export var ingredient_2_data: ItemData = preload("res://Scripts/inventory/resources/final_product/elixir_of_immortality.tres")
@@ -81,6 +82,11 @@ func _process(delta):
 		check_activation()
 
 func check_activation():
-	if has_delivered_1 and has_delivered_2 and player_in_trigger:
-		print("Todos ingredientes entregues! Ativação completa!")
-		# Aqui podes ativar algo: animar, mudar cena, etc
+	if has_delivered_1 and has_delivered_2:
+		GameState.ending = true
+	if has_delivered_1 and has_delivered_2 and player_in_trigger and flag == false:
+		sound.play()
+		flag = true
+		get_tree().get_root().add_child(cutscene)
+		await get_tree().create_timer(2).timeout  # Wait for node to enter tree
+		cutscene.start_cutscene()

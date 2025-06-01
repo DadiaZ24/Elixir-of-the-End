@@ -15,12 +15,18 @@ func _on_body_entered(body):
 	if has_triggered:
 		return
 	if body.name == "Player":
+		if GameState.ending == true:
+			var cutscene = preload("res://Scenes/EndCutscene1.tscn").instantiate()
+			get_tree().get_root().add_child(cutscene)
+			await get_tree().create_timer(0.1).timeout  # Wait for node to enter tree
+			cutscene.start_cutscene()
 		body.set_enabled(false)
 		colorRect.visible = true;
 		has_triggered = true
 		transition.play("fade_out")
 
 func _on_animation_finished(anim_name):
+
 	if anim_name == "fade_out":
 		colorRect.visible = false;
 		if GameState.next_spawn_point_name == "master":
