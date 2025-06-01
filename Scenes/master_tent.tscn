@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://Scenes/assets/door.tscn" id="1_628xc"]
 [ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_fpsl4"]
-[ext_resource type="Script" path="res://Scripts/master_tent.gd" id="1_ldusd"]
+[ext_resource type="Script" uid="uid://dglr57ygu5d1l" path="res://Scripts/master_tent.gd" id="1_ldusd"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_gv6tn"]
 [ext_resource type="Texture2D" uid="uid://cp64a735vpwml" path="res://assets/texturas/tentwall.png" id="2_ldusd"]
 [ext_resource type="PackedScene" uid="uid://s1deu52hbnkc" path="res://Scenes/assets/masterinbed.tscn" id="3_nsnw3"]
