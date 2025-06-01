@@ -11,7 +11,6 @@ script = ExtResource("1_ddpj5")
 
 [node name="ZoomCamera" type="Camera3D" parent="."]
 transform = Transform3D(-0.780147, -0.312618, 0.541886, 0.0110384, 0.859178, 0.511558, -0.625499, 0.405072, -0.666834, 0.21832, 45.3041, -1.97804)
-current = true
 
 [node name="Fade" type="ColorRect" parent="."]
 visible = false
@@ -30,6 +29,7 @@ text = "You saved the village and your master.
 label_settings = SubResource("LabelSettings_ddpj5")
 
 [node name="WinImage" type="TextureRect" parent="."]
+visible = false
 offset_right = 1152.0
 offset_bottom = 653.0
 texture = ExtResource("2_0kvdh")
