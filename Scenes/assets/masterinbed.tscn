@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://s1deu52hbnkc"]
+[gd_scene load_steps=5 format=3 uid="uid://s1deu52hbnkc"]
 
 [ext_resource type="PackedScene" uid="uid://mbreyru6hbna" path="res://assets/masterinbed.glb" id="1_n42ic"]
+[ext_resource type="Script" uid="uid://b8x85k1dceixq" path="res://Scripts/masterinbed.gd" id="2_fd80o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4bel6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fd80o"]
+size = Vector3(3.55078, 2.0752, 3.47314)
+
 [node name="masterinbed" instance=ExtResource("1_n42ic")]
+script = ExtResource("2_fd80o")
 
 [node name="bigode" parent="." index="5"]
 transform = Transform3D(0, 0.963547, 0.267541, -0.205435, 0.261835, -0.942995, -0.978671, -0.0549622, 0.197946, 0.751685, 0.995116, 0.44338)
@@ -15,3 +20,9 @@ transform = Transform3D(2.62023, 0, 0, 0, 1.53316, 0, 0, 0, 1.56663, 0.138093, 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170992, -5.96046e-08, -0.000124944)
 shape = SubResource("BoxShape3D_4bel6")
+
+[node name="Area3D" type="Area3D" parent="." index="12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460938, 0.537598, -0.271484)
+shape = SubResource("BoxShape3D_fd80o")
