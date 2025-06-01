@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ds6sswd7ep4id" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
 [ext_resource type="Script" uid="uid://dl0rhiqv2p08k" path="res://Scripts/inventory/SlotData.gd" id="2_fwj02"]
+[ext_resource type="Resource" uid="uid://di58ndmw80p32" path="res://Scripts/inventory/resources/teste1.tres" id="3_fwj02"]
+[ext_resource type="Resource" uid="uid://0u4o6i7ynsws" path="res://Scripts/inventory/resources/teste2.tres" id="4_hn8er"]
+[ext_resource type="Resource" uid="uid://cmreuny1l1oql" path="res://Scripts/inventory/resources/teste3.tres" id="5_axrq0"]
 [ext_resource type="Resource" uid="uid://dgdar46wbhqn3" path="res://Scripts/inventory/resources/Ingredients/gem.tres" id="3_hn8er"]
 [ext_resource type="Resource" uid="uid://dm7633cc8upeb" path="res://Scripts/inventory/resources/Ingredients/human_blood.tres" id="4_axrq0"]
 [ext_resource type="Resource" uid="uid://c7mf1vasqu181" path="res://Scripts/inventory/resources/Ingredients/something_water.tres" id="5_axrq0"]
