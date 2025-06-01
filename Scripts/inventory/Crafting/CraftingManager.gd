@@ -14,8 +14,10 @@ var _input_inventory: InventoryData
 
 
 func _ready() -> void:
-	var teste = preload("res://Scripts/inventory/resources/TESTE.tres")
-	recipes.append(teste)
+	var philosophers_stone = preload("res://Scripts/inventory/resources/recipes/philosophers_stone.tres")
+	var elixir_imortality = preload("res://Scripts/inventory/resources/recipes/elixir_of_immortality.tres")
+	recipes.append(philosophers_stone)
+	recipes.append(elixir_imortality)
 	crafting_timer = Timer.new()
 	crafting_timer.wait_time = cooldown
 	crafting_timer.one_shot = true

@@ -1,13 +1,13 @@
 extends StaticBody3D
 
 @onready var area = $Area3D
-@onready var rock_mesh = $Rock3
-@onready var rock_scene = preload("res://Scenes/assets/rock_3.tscn")
-@onready var rock_tres = preload("res://Scripts/inventory/resources/final_product/rock.tres")
-@onready var normal_material = rock_mesh.get_surface_override_material(0)
+@onready var crystal_mesh = $Crystal2
+@onready var crystal_scene = "res://Scenes/assets/crystal.tscn"
+@onready var crystal_tres = preload("res://Scripts/inventory/resources/Ingredients/mineral.tres")
+@onready var normal_material = crystal_mesh.get_surface_override_material(0)
 
 var player_near = false
-var player = null
+var player = false
 
 func _ready():
 	area.body_entered.connect(_on_body_entered)
@@ -16,13 +16,13 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player":
 		player_near = true
-		player = body
+		player = body;
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_near = false
 		player = null
-		rock_mesh.set_surface_override_material(0, normal_material)
+		crystal_mesh.set_surface_override_material(0, normal_material)
 
 func _process(delta):
 	if not player_near:
@@ -33,7 +33,7 @@ func _process(delta):
 		var inventory_data = player.inventory_data
 		if inventory_data:
 			var new_slot_data := SlotData.new()
-			new_slot_data.item_data = rock_tres
+			new_slot_data.item_data = crystal_tres
 			new_slot_data.quantity = 1
 
 			var inserted := false
@@ -53,7 +53,7 @@ func _process(delta):
 				queue_free()
 			else:
 				print("No room in inventory!")
-				
+		
 		var camera = get_node("/root/Main/Player/Neck/Camera3D")
 		var ray = camera.get_node("InteractRay")
 		queue_free()
