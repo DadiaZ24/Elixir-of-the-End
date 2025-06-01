@@ -3,7 +3,7 @@ extends StaticBody3D
 @onready var area = $Area3D
 @onready var rock_mesh = $Rock3
 @onready var rock_scene = preload("res://Scenes/assets/rock_3.tscn")
-@onready var rock_tres = preload("res://Scripts/inventory/resources/final_product/rock.tres")
+@onready var rock_tres = preload("res://Scripts/inventory/resources/Ingredients/gem.tres")
 @onready var normal_material = rock_mesh.get_surface_override_material(0)
 
 var player_near = false

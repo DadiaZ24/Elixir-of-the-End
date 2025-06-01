@@ -8,13 +8,13 @@ signal toggle_alchemy()
 var book_ui: Control = null
 
 const SPEED = 10
-const SPRINT_MULTIPLIER:= 5
+const SPRINT_MULTIPLIER:= 1.5
 const JUMP_VELOCITY = 3
 @onready var world_env = get_node_or_null("../WorldEnvironment")
 var default_env = preload("res://Resources/DefaultEnv.tres")
 var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 @onready var neck: Node3D = $Neck
-@onready var camera: Camera3D = $Neck/Camera3D
+@onready var camera: Camera3D = $Neck/Camera3D	
 @onready var footsteps = $Footsteps
 @onready var swim = $Swim
 @onready var mud = $Mud
