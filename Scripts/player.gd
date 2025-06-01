@@ -33,6 +33,8 @@ var water_drag = 4.0
 var swim_up_speed = 2.0
 var inventory_is_open := false
 var quicksand_drag = 4.0
+var is_enabled := true
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory_open") and tutorial.is_action_allowed("inventory_open"):
@@ -60,7 +62,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 
+func set_enabled(enable: bool) -> void:
+	is_enabled = enable
+
 func _physics_process(delta: float) -> void:
+	if not is_enabled:
+		return 
 	var direction = Vector3.ZERO
 	var input_vector = Vector2.ZERO
 	var camera_y = camera.global_transform.origin.y

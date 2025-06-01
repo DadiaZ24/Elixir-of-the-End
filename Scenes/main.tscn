@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=33 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
 [ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
 [ext_resource type="AudioStream" uid="uid://xkbv5yotgou" path="res://Sounds/tutorial_complete.wav" id="12_jkdf5"]
-[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scenes/time_bar.gd" id="13_wsu2k"]
+[ext_resource type="Script" uid="uid://8w3ps1e6u2ty" path="res://Scripts/time_bar.gd" id="13_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://p8gotahwy1ky" path="res://Scenes/assets/box.tscn" id="14_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://dclfvtqeleick" path="res://Scenes/assets/rock_2.tscn" id="15_b3802"]
 [ext_resource type="PackedScene" uid="uid://bw7v4vifj4jts" path="res://Scenes/assets/fireplace.tscn" id="15_wsu2k"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dbhdguuysiy1v" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
 [ext_resource type="PackedScene" uid="uid://c7in0x30rah6w" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://bs3a8ncy0c5u4" path="res://Scenes/grass.tscn" id="31_hpc6h"]
+[ext_resource type="PackedScene" uid="uid://d3ehkfxm6b57s" path="res://Scenes/EntranceMaster.tscn" id="32_kltya"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -64,6 +65,8 @@ autoplay = true
 script = ExtResource("11_fdnlq")
 
 [node name="TutorialPanel" type="Panel" parent="UI"]
+anchors_preset = -1
+anchor_right = 0.0607639
 offset_right = 282.0
 offset_bottom = 51.0
 metadata/_edit_use_anchors_ = true
@@ -72,7 +75,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 8.0
 offset_top = 6.0
-offset_right = 283.0
+offset_right = 345.0
 offset_bottom = 44.0
 bbcode_enabled = true
 scroll_active = false
@@ -130,7 +133,7 @@ stream = ExtResource("12_jkdf5")
 [node name="AlchemyUI" parent="." instance=ExtResource("25_u50mg")]
 
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.8206, 7.21525, -45.2964)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -71.993, 7.21525, 50.6826)
 
 [node name="Assets" type="Node" parent="."]
 
@@ -393,6 +396,9 @@ transform = Transform3D(0.912199, 0, 0.409748, 0, 1, 0, -0.409748, 0, 0.912199, 
 
 [node name="Grass12" parent="Assets/Grass" instance=ExtResource("31_hpc6h")]
 transform = Transform3D(0.912199, 0, 0.409748, 0, 1, 0, -0.409748, 0, 0.912199, 70.8449, 3.24998, -9.98778)
+
+[node name="EntranceMaster" parent="." instance=ExtResource("32_kltya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.636, 3.89917, 51.8979)
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
