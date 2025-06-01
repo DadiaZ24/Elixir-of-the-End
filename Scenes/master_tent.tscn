@@ -1,16 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsawrovf7bf66"]
+[gd_scene load_steps=22 format=3 uid="uid://dsawrovf7bf66"]
 
-[ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="1_628xc"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/door.tscn" id="1_628xc"]
 [ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_fpsl4"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_gv6tn"]
 [ext_resource type="Texture2D" uid="uid://cp64a735vpwml" path="res://assets/texturas/tentwall.png" id="2_ldusd"]
 [ext_resource type="PackedScene" uid="uid://s1deu52hbnkc" path="res://Scenes/assets/masterinbed.tscn" id="3_nsnw3"]
 [ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="4_i286q"]
 [ext_resource type="PackedScene" uid="uid://6k7eot8bg7y7" path="res://Scenes/TalkMaster.tscn" id="5_0ucam"]
-[ext_resource type="PackedScene" uid="uid://o3ki1l4sxilj" path="res://Scenes/assets/floor_triangle.tscn" id="8_ks51a"]
-[ext_resource type="PackedScene" uid="uid://c1pdep0g8ndnn" path="res://Scenes/assets/vaso_3.tscn" id="9_xr1dy"]
+[ext_resource type="PackedScene" uid="uid://dmpr3ii6fcnw2" path="res://Scenes/assets/floor_triangle.tscn" id="8_ks51a"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="9_xr1dy"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="10_a8npd"]
-[ext_resource type="PackedScene" uid="uid://x6la88yaxhhu" path="res://Scenes/assets/potions_table.tscn" id="11_fu6rl"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/potions_table.tscn" id="11_fu6rl"]
+[ext_resource type="Script" uid="uid://d1emsyijc83gn" path="res://Scripts/inventory/InventoryInterface.gd" id="12_a8npd"]
+[ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="12_fu6rl"]
+[ext_resource type="PackedScene" uid="uid://bpk7l30y3ug2c" path="res://Scenes/Inventory/Inventory.tscn" id="13_fu6rl"]
+[ext_resource type="PackedScene" path="res://Scenes/Crafting.tscn" id="14_8sutf"]
+[ext_resource type="PackedScene" uid="uid://erf743ynmnls" path="res://Scenes/Inventory/Slot.tscn" id="15_xc34p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sutf"]
 albedo_texture = ExtResource("1_fpsl4")
@@ -28,6 +33,7 @@ albedo_texture = ExtResource("2_ldusd")
 albedo_texture = ExtResource("2_ldusd")
 
 [node name="MasterTent" type="Node3D"]
+script = ExtResource("12_fu6rl")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0967947, 0)
@@ -93,3 +99,36 @@ transform = Transform3D(0.00682415, 0, -0.999977, 0, 1, 0, 0.999977, 0, 0.006824
 
 [node name="potions_table" parent="." instance=ExtResource("11_fu6rl")]
 transform = Transform3D(0.00481704, 0, 0.799986, 0, 0.8, 0, -0.799986, 0, 0.00481704, 1.43123, -2.18187, -6.58714)
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="InventoryUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_a8npd")
+
+[node name="PlayerInventory" parent="InventoryUI/InventoryInterface" instance=ExtResource("13_fu6rl")]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 146.0
+offset_right = 167.0
+offset_bottom = 186.0
+
+[node name="Crafting" parent="InventoryUI/InventoryInterface" instance=ExtResource("14_8sutf")]
+visible = false
+layout_mode = 0
+offset_left = 622.0
+offset_top = 146.0
+offset_right = 685.0
+offset_bottom = 197.0
+
+[node name="GrabbedSlot" parent="InventoryUI/InventoryInterface" instance=ExtResource("15_xc34p")]
+visible = false
+layout_mode = 0
+offset_left = 72.0
+offset_top = 36.0
+offset_right = 136.0
+offset_bottom = 100.0

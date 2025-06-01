@@ -49,11 +49,13 @@ func _on_trigger_area_exited(body):
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("ui_interact"):
 		if player_near_1 and not has_delivered_1:
+			#colocar a verificacao dos itme sno inventario
 			has_delivered_1 = true
 
 		if player_near_2 and not has_delivered_2:
+			#colocar a verificacao dos itme sno inventario
 			has_delivered_2 = true
 
 		check_activation()
