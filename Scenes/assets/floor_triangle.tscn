@@ -27,21 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50036, 0, -2.2261)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186417, 0.350616, -0.0405226)
 shape = SubResource("BoxShape3D_lso6x")
 
-[node name="red_rock" parent="Ingredient1Area"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0621219, 0, 0.0142713)
-visible = false
-collision_layer = 0
-script = null
-
 [node name="Ingredient1Area2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46004, 0, 1.89782)
 

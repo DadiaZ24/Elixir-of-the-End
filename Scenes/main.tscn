@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="31_kltya"]
 [ext_resource type="PackedScene" uid="uid://drgxa34ynyj2e" path="res://Scenes/assets/crystal.tscn" id="31_neg2b"]
 [ext_resource type="PackedScene" uid="uid://d3ehkfxm6b57s" path="res://Scenes/EntranceMaster.tscn" id="32"]
-[ext_resource type="PackedScene" uid="uid://ds6hj38jkwri0" path="res://Scenes/assets/nenufar.tscn" id="33_r33sp"]
+[ext_resource type="PackedScene" uid="uid://dybxval7ls1f2" path="res://Scenes/assets/nenufar.tscn" id="33_r33sp"]
 [ext_resource type="PackedScene" uid="uid://ddspb76psibgu" path="res://Scenes/assets/lizzard.tscn" id="34_hdf80"]
 [ext_resource type="PackedScene" path="res://Scenes/pop_ups.tscn" id="34_neg2b"]
 
