@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=33 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://bs3a8ncy0c5u4" path="res://Scenes/grass.tscn" id="31_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="31_kltya"]
+[ext_resource type="PackedScene" uid="uid://u55rkbqaekvv" path="res://Scenes/teste_box_craft.tscn" id="32_e08e2"]
 [ext_resource type="PackedScene" uid="uid://d3ehkfxm6b57s" path="res://Scenes/EntranceMaster.tscn" id="32_kltya"]
 
 [node name="Main" type="Node3D"]
@@ -396,6 +397,9 @@ transform = Transform3D(0.912199, 0, 0.409748, 0, 1, 0, -0.409748, 0, 0.912199, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.636, 3.89917, 51.8979)
 
 [node name="InventoryUI" parent="." instance=ExtResource("31_kltya")]
+
+[node name="StaticBody3D" parent="." instance=ExtResource("32_e08e2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -74.0626, 5.25728, -10.1499)
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]

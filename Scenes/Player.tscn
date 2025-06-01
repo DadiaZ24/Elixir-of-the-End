@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00597286, 0.741281, -0.014
 
 [node name="InteractRay" type="RayCast3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1.48221, 0, 0, 0, 1, -0.177482, -1.15015, 0)
-target_position = Vector3(0, 0, -1)
+target_position = Vector3(0, 0, -3)
 collision_mask = 9
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Neck/Camera3D"]

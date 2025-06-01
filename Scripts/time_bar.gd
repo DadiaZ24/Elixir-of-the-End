@@ -2,7 +2,7 @@ extends ProgressBar
 
 @onready var time_label = $TimeLabel  # Reference to the child Label
 
-var total_time := 900.0  # 15 minutes
+var total_time := 100 #900.0  # 15 minutes
 var current_time := total_time
 var timer_active := false
 
