@@ -8,7 +8,7 @@ signal toggle_alchemy()
 
 
 const SPEED = 10
-const SPRINT_MULTIPLIER:= 1.5
+const SPRINT_MULTIPLIER:= 5
 const JUMP_VELOCITY = 3
 @onready var world_env: WorldEnvironment = $"../WorldEnvironment"
 var default_env = preload("res://Resources/DefaultEnv.tres")
