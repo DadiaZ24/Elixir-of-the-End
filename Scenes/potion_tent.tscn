@@ -1,45 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3kye0lbwqsfn"]
+[gd_scene load_steps=11 format=3 uid="uid://c3kye0lbwqsfn"]
 
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="1_5xvxh"]
+[ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_300no"]
+[ext_resource type="Texture2D" uid="uid://cp64a735vpwml" path="res://assets/texturas/tentwall.png" id="2_53nf5"]
 [ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="2_qnixp"]
+[ext_resource type="PackedScene" uid="uid://u11lhke67aas" path="res://Scenes/assets/book_table.tscn" id="3_l3da3"]
+[ext_resource type="PackedScene" uid="uid://x6la88yaxhhu" path="res://Scenes/assets/potions_table.tscn" id="4_7ovfn"]
+[ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="5_7ovfn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siduo"]
+albedo_texture = ExtResource("1_300no")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chmtw"]
+albedo_texture = ExtResource("1_300no")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrnhq"]
+albedo_texture = ExtResource("2_53nf5")
 
 [node name="PotionTent" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0335979, -0.0271306, 0.00384712)
+material_override = SubResource("StandardMaterial3D_siduo")
 use_collision = true
-size = Vector3(10, 0.5, 10)
+size = Vector3(8, 0.5, 8)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0335979, 5.09325, 0.00384712)
 visible = false
+material_override = SubResource("StandardMaterial3D_chmtw")
 use_collision = true
-size = Vector3(10, 0.5, 10)
+size = Vector3(8, 0.5, 8)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.39239, 4.73596)
+transform = Transform3D(-4.51456e-08, 2.89807e-08, -1.57688, -0.516405, 2.89806e-08, 1.37855e-07, 2.25728e-08, 0.663, 6.89277e-08, -0.000164755, 2.44841, 3.97702)
+material_override = SubResource("StandardMaterial3D_hrnhq")
 use_collision = true
-size = Vector3(10, 0.5, 5)
+size = Vector3(10, 0.705, 5)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.38067, -4.73935)
+transform = Transform3D(-4.51456e-08, 2.89807e-08, -1.57688, -0.516405, 2.89806e-08, 1.37855e-07, 2.25728e-08, 0.663, 6.89277e-08, -0.000164755, 2.44841, -4.02408)
 visible = false
+material_override = SubResource("StandardMaterial3D_hrnhq")
 use_collision = true
-size = Vector3(10, 0.5, 5)
+size = Vector3(10, 0.705, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -4.74513, 2.39927, -0.0376887)
+transform = Transform3D(3.89875e-08, 0.663, 0, -0.516405, 5.00551e-08, 1.42222e-07, 4.51456e-08, -4.37595e-15, 1.62683, 3.99495, 2.44841, -0.00602674)
+visible = false
+material_override = SubResource("StandardMaterial3D_hrnhq")
 use_collision = true
-size = Vector3(10, 0.5, 5)
+size = Vector3(10, 0.705, 5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 4.74151, 2.39927, -0.0376887)
-visible = false
+transform = Transform3D(3.89875e-08, 0.663, 0, -0.516405, 5.00551e-08, 1.42222e-07, 4.51456e-08, -4.37595e-15, 1.62683, -3.99528, 2.44841, -0.0425225)
+material_override = SubResource("StandardMaterial3D_hrnhq")
 use_collision = true
-size = Vector3(10, 0.5, 5)
+size = Vector3(10, 0.705, 5)
 
 [node name="Player" parent="." instance=ExtResource("1_5xvxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906777, 1.78677, 1.5216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18473, 1.78677, -0.540298)
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -47,4 +67,13 @@ transform = Transform3D(1, 0, 0, 0, 0.202856, 0.979209, 0, -0.979209, 0.202856, 
 light_energy = 0.5
 
 [node name="door" parent="." instance=ExtResource("2_qnixp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56594, 0.258198, -0.0941725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86191, 0.207273, -0.233941)
+
+[node name="book_table2" parent="." instance=ExtResource("3_l3da3")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.304965, 0.222869, 3.22978)
+
+[node name="potions_table" parent="." instance=ExtResource("4_7ovfn")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.92293, 0.222869, -0.0560429)
+
+[node name="rug1" parent="." instance=ExtResource("5_7ovfn")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.213498, 0.222869, 1.2377)
