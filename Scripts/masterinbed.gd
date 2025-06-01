@@ -1,10 +1,10 @@
-extends StaticBody3D
+extends Node3D
 
 @onready var area = $Area3D
-@onready var lizzard_mesh = $Lizzard
-@onready var lizzard_scene = preload("res://Scenes/assets/lizzard.tscn")
-@onready var lizzard_tres = preload("res://Scripts/inventory/resources/Ingredients/lizzard_blood.tres")
-@onready var normal_material = lizzard_mesh.get_surface_override_material(0)
+@onready var master_mesh = $cabeca
+@onready var master_scene = "res://Scenes/assets/masterinbed.tscn"
+@onready var human_air = preload("res://Scripts/inventory/resources/Ingredients/human_hair.tres")
+@onready var normal_material = master_mesh.get_surface_override_material(0)
 
 var player_near = false
 var player = null
@@ -22,7 +22,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		player_near = false
 		player = null
-		lizzard_mesh.set_surface_override_material(0, normal_material)
+		master_mesh.set_surface_override_material(0, normal_material)
 
 func _process(delta):
 	if not player_near:
@@ -33,7 +33,7 @@ func _process(delta):
 		var inventory_data = player.inventory_data
 		if inventory_data:
 			var new_slot_data := SlotData.new()
-			new_slot_data.item_data = lizzard_tres
+			new_slot_data.item_data = human_air
 			new_slot_data.quantity = 1
 
 			var inserted := false
@@ -50,11 +50,12 @@ func _process(delta):
 
 			if inserted:
 				inventory_data.inventory_updated.emit(inventory_data)
-				queue_free()
+				#queue_free()
 			else:
 				print("No room in inventory!")
 		#OTHER LOGIC
-		var camera = get_node("/root/Main/Player/Neck/Camera3D")
-		var ray = camera.get_node("InteractRay")
-		queue_free()
+		#var player = get_node("/root/Main/Player")  # ou passa o nó como argumento
+		#var camera = player.get_node("Neck/Camera3D")
+		#var ray = camera.get_node("InteractRay")
+		#queue_free()
 		

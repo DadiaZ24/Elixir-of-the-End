@@ -11,7 +11,8 @@ signal time_out
 func _ready():
 	# Initialize label
 	time_label.text = format_time(current_time)
-	visible = false  # Hide until tutorial ends
+	if GameState.tutorial_completed:
+		visible = true
 
 func _process(delta):
 	if timer_active:
