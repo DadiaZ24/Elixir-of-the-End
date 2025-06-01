@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqobyow56dehj"]
+[gd_scene load_steps=8 format=3 uid="uid://buxhnvoqqd2k4"]
 
 [ext_resource type="Script" uid="uid://crelm1u00jujm" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://dk8jesjly3idg" path="res://Texture/backgroundMenu.png" id="2_48xlc"]
-[ext_resource type="Theme" uid="uid://bk7xxap7uqrmv" path="res://button.tres" id="3_1ehe0"]
+[ext_resource type="Theme" uid="uid://c5p3hkl2f7hau" path="res://button.tres" id="3_1ehe0"]
 
 [sub_resource type="Animation" id="Animation_ce3w2"]
 length = 0.001

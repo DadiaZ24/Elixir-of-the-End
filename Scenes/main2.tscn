@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2gqc1xh0mcwc"]
+[gd_scene load_steps=13 format=3 uid="uid://b6fc4i8dksgyt"]
 
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_n7nx0"]
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="2_knmv6"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_od2jo"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_o0pxn"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="9_od2jo"]
-[ext_resource type="PackedScene" uid="uid://do1nyiha7ho7b" path="res://Scenes/alchemy/alchemy_ui.tscn" id="10_o0pxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 
@@ -56,8 +55,6 @@ transform = Transform3D(0.815219, 0, -0.579153, 0, 1, 0, 0.579153, 0, 0.815219, 
 transform = Transform3D(0.347885, 0, 0.937537, 0, 1, 0, -0.937537, 0, 0.347885, -75.5449, 3.41563, 84.508)
 
 [node name="InventoryUI" parent="." instance=ExtResource("9_od2jo")]
-
-[node name="AlchemyUI" parent="." instance=ExtResource("10_o0pxn")]
 
 [connection signal="body_entered" from="Terrain/water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/water" to="Player" method="_on_water_body_exited"]
