@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=16 format=3 uid="uid://d3c482eywnig2"]
 
-[ext_resource type="Script" uid="uid://ds6sswd7ep4id" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
+[ext_resource type="Script" uid="uid://ei0g0jwhb6kw" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
 [ext_resource type="Script" uid="uid://dl0rhiqv2p08k" path="res://Scripts/inventory/SlotData.gd" id="2_fwj02"]
-[ext_resource type="Resource" uid="uid://di58ndmw80p32" path="res://Scripts/inventory/resources/teste1.tres" id="3_fwj02"]
-[ext_resource type="Resource" uid="uid://0u4o6i7ynsws" path="res://Scripts/inventory/resources/teste2.tres" id="4_hn8er"]
-[ext_resource type="Resource" uid="uid://cmreuny1l1oql" path="res://Scripts/inventory/resources/teste3.tres" id="5_axrq0"]
+[ext_resource type="Resource" path="res://Scripts/inventory/resources/teste1.tres" id="3_fwj02"]
+[ext_resource type="Resource" path="res://Scripts/inventory/resources/teste2.tres" id="4_hn8er"]
+[ext_resource type="Resource" path="res://Scripts/inventory/resources/teste3.tres" id="5_axrq0"]
 
 [sub_resource type="Resource" id="Resource_w86u1"]
 script = ExtResource("2_fwj02")
