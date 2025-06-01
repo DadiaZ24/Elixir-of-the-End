@@ -30,8 +30,10 @@ func _ready():
 	show_current_tutorial_step()
 
 func _process(_delta):
-	if not tutorial_active:
+	if GameState.tutorial_completed:
+		queue_free()
 		return
+	show_current_tutorial_step()
 
 	var current_action = tutorial_steps[current_step]["action"]
 
@@ -56,6 +58,7 @@ func show_current_tutorial_step():
 
 	if tutorial_steps[current_step]["action"] == "":
 		tutorial_active = false
+		GameState.tutorial_completed = true
 		await get_tree().create_timer(3.0).timeout
 		tutorial_finished.play()
 		tutorial_panel.visible = false

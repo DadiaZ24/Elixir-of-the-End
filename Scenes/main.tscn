@@ -66,7 +66,7 @@ script = ExtResource("11_fdnlq")
 
 [node name="TutorialPanel" type="Panel" parent="UI"]
 anchors_preset = -1
-anchor_right = 0.0607639
+anchor_right = 0.0868056
 offset_right = 282.0
 offset_bottom = 51.0
 metadata/_edit_use_anchors_ = true
@@ -75,7 +75,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 8.0
 offset_top = 6.0
-offset_right = 345.0
+offset_right = 373.0
 offset_bottom = 44.0
 bbcode_enabled = true
 scroll_active = false

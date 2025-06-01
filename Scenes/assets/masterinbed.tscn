@@ -7,7 +7,7 @@
 [node name="masterinbed" instance=ExtResource("1_n42ic")]
 
 [node name="bigode" parent="." index="5"]
-transform = Transform3D(0, 0.963547, 0.267541, -0.205435, 0.261835, -0.942995, -0.978671, -0.0549622, 0.197946, 0.759128, 0.996428, 0.44338)
+transform = Transform3D(0, 0.963547, 0.267541, -0.205435, 0.261835, -0.942995, -0.978671, -0.0549622, 0.197946, 0.751685, 0.995116, 0.44338)
 
 [node name="MeshInstance3D" type="RigidBody3D" parent="." index="11"]
 transform = Transform3D(2.62023, 0, 0, 0, 1.53316, 0, 0, 0, 1.56663, 0.138093, 0.777642, -0.0371681)

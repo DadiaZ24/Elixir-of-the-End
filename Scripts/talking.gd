@@ -1,6 +1,7 @@
 extends Panel
 
 @onready var label = $DialogueLabel
+@onready var master_anim = $"../../masterinbed/AnimationPlayer"
 
 var dialogue_lines = [
 	"Master: You came... Good. I feared I would not see your face again before the end.",
@@ -52,6 +53,7 @@ func _start_typing_next_line():
 
 func _type_text() -> void:
 	label.text = ""
+	master_anim.play("bigodeAction")
 	while typed_chars < full_line.length():
 		if not is_typing:
 			break
@@ -59,3 +61,4 @@ func _type_text() -> void:
 		typed_chars += 1
 		await get_tree().create_timer(typing_speed).timeout
 	is_typing = false
+	master_anim.stop()
