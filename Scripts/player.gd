@@ -5,6 +5,7 @@ signal toggle_alchemy()
 
 @export var inventory_data: InventoryData
 @onready var tutorial: CanvasLayer = $"../UI"
+@onready var interact_ray: RayCast3D = $Neck/Camera3D/InteractRay
 
 
 const SPEED = 10
@@ -37,7 +38,7 @@ var is_enabled := true
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("inventory_open") and tutorial.is_action_allowed("inventory_open"):
+	if Input.is_action_just_pressed("inventory_open"):
 		inventory_is_open = !inventory_is_open
 		if inventory_is_open:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -49,6 +50,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if inventory_is_open:
 		return
+	
+	if Input.is_action_just_pressed("ui_interact"):
+		inventory_is_open = !inventory_is_open
+		if inventory_is_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		interact()
+		return
 		
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -59,7 +69,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.004)
 			camera.rotate_x(-event.relative.y * 0.004)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 
 
 func set_enabled(enable: bool) -> void:
@@ -196,3 +206,7 @@ func _on_quick_sand_body_entered(body: Node3D) -> void:
 func _on_quick_sand_body_exited(body: Node3D) -> void:
 	if body == self:
 		is_inside_quicksand = false
+
+func interact():
+	if interact_ray.is_colliding():
+		interact_ray.get_collider().player_interact()

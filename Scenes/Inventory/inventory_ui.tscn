@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdfy2bykqjbnr"]
+[gd_scene load_steps=5 format=3 uid="uid://cdfy2bykqjbnr"]
 
-[ext_resource type="Script" uid="uid://c3ioi0cvepmua" path="res://Scripts/inventory/InventoryInterface.gd" id="1_s1kqi"]
+[ext_resource type="Script" uid="uid://d1emsyijc83gn" path="res://Scripts/inventory/InventoryInterface.gd" id="1_s1kqi"]
 [ext_resource type="PackedScene" uid="uid://bpk7l30y3ug2c" path="res://Scenes/Inventory/Inventory.tscn" id="2_jrgvc"]
 [ext_resource type="PackedScene" uid="uid://erf743ynmnls" path="res://Scenes/Inventory/Slot.tscn" id="3_0cyxv"]
+[ext_resource type="PackedScene" uid="uid://ciy6d6338gnn7" path="res://Scenes/Inventory/Crafting.tscn" id="3_s1kqi"]
 
 [node name="InventoryUI" type="CanvasLayer"]
 
@@ -16,11 +17,23 @@ script = ExtResource("1_s1kqi")
 
 [node name="PlayerInventory" parent="InventoryInterface" instance=ExtResource("2_jrgvc")]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 145.0
-offset_right = 59.0
-offset_bottom = 185.0
+offset_left = 127.0
+offset_top = 146.0
+offset_right = 167.0
+offset_bottom = 186.0
+
+[node name="Crafting" parent="InventoryInterface" instance=ExtResource("3_s1kqi")]
+visible = false
+layout_mode = 0
+offset_left = 622.0
+offset_top = 146.0
+offset_right = 685.0
+offset_bottom = 197.0
 
 [node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("3_0cyxv")]
 visible = false
 layout_mode = 0
+offset_left = 72.0
+offset_top = 36.0
+offset_right = 136.0
+offset_bottom = 100.0

@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0wcekuc4x7k8"]
+
+[ext_resource type="PackedScene" uid="uid://erf743ynmnls" path="res://Scenes/Inventory/Slot.tscn" id="1_ccim0"]
+
+[sub_resource type="GDScript" id="GDScript_ccim0"]
+script/source = "extends Control
+
+@onready var input_slots: Array = [$InputSlot1, $InputSlot2]
+@onready var output_slot = $OutputSlot
+@onready var craft_button = $CraftButton
+@onready var popup_error = $ErrorPopup
+@onready var timer = $CraftTimer
+
+@export var crafting_manager: CraftingManager
+var current_recipe: CraftingRecipe
+
+func _ready():
+	craft_button.pressed.connect(_on_craft_pressed)
+	timer.timeout.connect(_on_crafting_finished)
+
+func _on_craft_pressed():
+	var input_data := []
+	for slot in input_slots:
+		input_data.append(slot.get_slot_data())
+	
+	current_recipe = crafting_manager.find_recipe(input_data)
+	
+	if current_recipe:
+		timer.start(10.0)
+	else:
+		popup_error.popup_centered()
+
+func _on_crafting_finished():
+	if current_recipe:
+		# Crafting logic modifies inventory
+		var success = crafting_manager.craft(current_recipe)
+		if success:
+			var new_data = SlotData.new()
+			new_data.item_data = current_recipe.output
+			new_data.quantity = current_recipe.output_amount
+			output_slot.set_slot_data(new_data)
+			# Clear input slots
+			for slot in input_slots:
+				slot.clear()
+		else:
+			popup_error.popup_centered()
+"
+
+[node name="CraftingUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_ccim0")
+
+[node name="CraftItem1" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 346.0
+offset_right = 1066.0
+offset_bottom = 410.0
+
+[node name="CraftItem2" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 343.0
+offset_right = 740.0
+offset_bottom = 407.0
+
+[node name="CraftItem3" parent="." instance=ExtResource("1_ccim0")]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 91.0
+offset_right = 871.0
+offset_bottom = 155.0
+
+[node name="CraftButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 377.0
+offset_right = 916.0
+offset_bottom = 411.0
+text = "JOIN"
+
+[node name="ErrorPopup" type="PopupPanel" parent="."]
+
+[node name="Label" type="Label" parent="ErrorPopup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 284.0
+offset_bottom = 96.0
+text = "Nothing has been crafted! Try again!"
+
+[node name="CraftTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
