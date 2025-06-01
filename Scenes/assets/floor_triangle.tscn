@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmpr3ii6fcnw2"]
+[gd_scene load_steps=7 format=3 uid="uid://dmpr3ii6fcnw2"]
 
 [ext_resource type="Script" uid="uid://dmyteboqny4yb" path="res://Scripts/floor_triangle.gd" id="1_4b555"]
-[ext_resource type="Material" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
+[ext_resource type="Material" uid="uid://cbhax34qapx6o" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
 [ext_resource type="ArrayMesh" uid="uid://b54n6g0moexcf" path="res://assets/trianglefloor.obj" id="2_aficd"]
+[ext_resource type="AudioStream" uid="uid://ck4d2xef80nb3" path="res://Sounds/earthquake.wav" id="4_lso6x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lso6x"]
 size = Vector3(3.22516, 1.70123, 3.33887)
@@ -40,3 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89862, 0, -0.257159)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469558, 1.47915, 0)
 shape = SubResource("BoxShape3D_1qepf")
 debug_fill = false
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_lso6x")
+volume_db = 50.0

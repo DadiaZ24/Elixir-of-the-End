@@ -225,3 +225,16 @@ func _on_quick_sand_body_exited(body: Node3D) -> void:
 func interact():
 	if interact_ray.is_colliding():
 		interact_ray.get_collider().player_interact()
+
+func shake_camera(duration := 0.3, strength := 0.1):
+	var elapsed = 0.0
+	while elapsed < duration:
+		var offset = Vector3(
+			randf_range(-strength, strength),
+			randf_range(-strength, strength),
+			randf_range(-strength, strength)
+		)
+		camera.translation += offset
+		await get_tree().process_frame
+		camera.translation -= offset
+		elapsed += get_process_delta_time()
