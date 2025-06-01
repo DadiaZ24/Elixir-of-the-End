@@ -6,6 +6,31 @@ signal inventory_updated(inventory_data: InventoryData)
 signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
 @export var slot_datas: Array[SlotData]
 
+func has_item(item_data: ItemData, quantity: int = 1) -> bool:
+	var total := 0
+	for slot in slot_datas:
+		if slot and slot.item_data == item_data:
+			total += slot.quantity
+			if total >= quantity:
+				return true
+	return false
+
+func remove_item(item_data: ItemData, quantity: int = 1) -> bool:
+	var remaining := quantity
+	for slot in slot_datas:
+		if slot and slot.item_data == item_data:
+			if slot.quantity > remaining:
+				slot.quantity -= remaining
+				inventory_updated.emit(self)
+				return true
+			else:
+				remaining -= slot.quantity
+				slot.quantity = 0
+				slot.item_data = null
+	if remaining <= 0:
+		inventory_updated.emit(self)
+		return true
+	return false
 
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]

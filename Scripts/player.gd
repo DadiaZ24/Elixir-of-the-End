@@ -38,6 +38,7 @@ var is_enabled := true
 
 
 func _ready() -> void:
+	add_to_group("player")
 	var inventory_ui = $"../InventoryUI/InventoryInterface"
 
 	if inventory_ui.has_signal("crafting_completed"):

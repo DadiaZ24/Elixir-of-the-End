@@ -1,9 +1,23 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://d3c482eywnig2"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://d3c482eywnig2"]
 
 [ext_resource type="Script" uid="uid://ds6sswd7ep4id" path="res://Scripts/inventory/InventoryData.gd" id="1_w86u1"]
 [ext_resource type="Script" uid="uid://dl0rhiqv2p08k" path="res://Scripts/inventory/SlotData.gd" id="2_fwj02"]
+[ext_resource type="Resource" uid="uid://b0kxmjbbe7kap" path="res://Scripts/inventory/resources/final_product/elixir_of_immortality.tres" id="3_hn8er"]
+[ext_resource type="Resource" uid="uid://5a4q7t2m66o1" path="res://Scripts/inventory/resources/final_product/philosophers_stone.tres" id="4_axrq0"]
+
+[sub_resource type="Resource" id="Resource_hn8er"]
+script = ExtResource("2_fwj02")
+item_data = ExtResource("3_hn8er")
+quantity = 1
+metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
+
+[sub_resource type="Resource" id="Resource_axrq0"]
+script = ExtResource("2_fwj02")
+item_data = ExtResource("4_axrq0")
+quantity = 1
+metadata/_custom_type_script = "uid://dl0rhiqv2p08k"
 
 [resource]
 script = ExtResource("1_w86u1")
-slot_datas = Array[ExtResource("2_fwj02")]([null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_fwj02")]([SubResource("Resource_hn8er"), SubResource("Resource_axrq0"), null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://ds6sswd7ep4id"
