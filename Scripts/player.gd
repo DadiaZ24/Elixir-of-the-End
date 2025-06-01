@@ -60,7 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if interact_ray.is_colliding():
 			var collider = interact_ray.get_collider()
 			# Check if collider is in the right group
-			if collider.is_in_group("crafting_inventory"):  # Change "interactable" to your group name
+			if collider.is_in_group("crafting_inventory"): 
+				print("ENTREIII!!")
 				inventory_is_open = !inventory_is_open
 				if inventory_is_open:
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
