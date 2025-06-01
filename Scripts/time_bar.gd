@@ -1,6 +1,7 @@
 extends ProgressBar
 
-@onready var time_label = $TimeLabel  # Reference to the child Label
+
+@onready var time_label: Label = $TimeLabel if has_node("TimeLabel") else null
 
 var total_time := 900.0  # 15 minutes
 var current_time := total_time
@@ -10,9 +11,10 @@ signal time_out
 
 func _ready():
 	# Initialize label
-	time_label.text = format_time(current_time)
-	if GameState.tutorial_completed:
-		visible = true
+	if time_label:
+		time_label.text = format_time(current_time)
+		if GameState.tutorial_completed:
+			visible = true
 
 func _process(delta):
 	if timer_active:
@@ -21,7 +23,8 @@ func _process(delta):
 		value = current_time
 
 		# Update label text
-		time_label.text = "Time Left: %s" % format_time(current_time)
+		if time_label:
+			time_label.text = "Time Left: %s" % format_time(current_time)
 
 		if current_time <= 0.0:
 			timer_active = false

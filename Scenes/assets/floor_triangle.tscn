@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmpr3ii6fcnw2"]
+[gd_scene load_steps=9 format=3 uid="uid://dmpr3ii6fcnw2"]
 
 [ext_resource type="Script" uid="uid://dmyteboqny4yb" path="res://Scripts/floor_triangle.gd" id="1_4b555"]
 [ext_resource type="Material" uid="uid://cbhax34qapx6o" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
 [ext_resource type="ArrayMesh" uid="uid://b54n6g0moexcf" path="res://assets/trianglefloor.obj" id="2_aficd"]
 [ext_resource type="AudioStream" uid="uid://ck4d2xef80nb3" path="res://Sounds/earthquake.wav" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/red_rock.tscn" id="4_1qepf"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/elixir.tscn" id="5_573ic"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lso6x"]
 size = Vector3(3.22516, 1.70123, 3.33887)
@@ -27,20 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50036, 0, -2.2261)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186417, 0.350616, -0.0405226)
 shape = SubResource("BoxShape3D_lso6x")
 
-[node name="red_rock" parent="Ingredient1Area"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0621219, 0, 0.0142713)
+[node name="red_rock" parent="Ingredient1Area" instance=ExtResource("4_1qepf")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 visible = false
 collision_layer = 0
-script = null
 
 [node name="Ingredient1Area2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46004, 0, 1.89782)
@@ -48,6 +40,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46004, 0, 1.89782)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ingredient1Area2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186417, 0.350616, -0.0405226)
 shape = SubResource("BoxShape3D_lso6x")
+
+[node name="elixir" parent="Ingredient1Area2" instance=ExtResource("5_573ic")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -0.105963)
+visible = false
+collision_layer = 0
 
 [node name="Ingredient1Area3" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89862, 0, -0.257159)
