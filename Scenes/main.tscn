@@ -24,16 +24,16 @@
 [ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
-[ext_resource type="PackedScene" uid="uid://dbhdguuysiy1v" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
-[ext_resource type="PackedScene" uid="uid://c7in0x30rah6w" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://ictjpnriaqmr" path="res://Scenes/assets/crystal_2.tscn" id="30_e08e2"]
 [ext_resource type="PackedScene" uid="uid://bs3a8ncy0c5u4" path="res://Scenes/grass.tscn" id="31_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="31_kltya"]
 [ext_resource type="PackedScene" uid="uid://drgxa34ynyj2e" path="res://Scenes/assets/crystal.tscn" id="31_neg2b"]
 [ext_resource type="PackedScene" uid="uid://d3ehkfxm6b57s" path="res://Scenes/EntranceMaster.tscn" id="32"]
-[ext_resource type="PackedScene" uid="uid://ds6hj38jkwri0" path="res://Scenes/assets/nenufar.tscn" id="33_r33sp"]
-[ext_resource type="PackedScene" uid="uid://ddspb76psibgu" path="res://Scenes/assets/lizzard.tscn" id="34_hdf80"]
-[ext_resource type="PackedScene" path="res://Scenes/pop_ups.tscn" id="34_neg2b"]
+[ext_resource type="PackedScene" uid="uid://dybxval7ls1f2" path="res://Scenes/assets/nenufar.tscn" id="33_r33sp"]
+[ext_resource type="PackedScene" uid="uid://cym3ydyxheqmp" path="res://Scenes/assets/lizzard.tscn" id="34_hdf80"]
+[ext_resource type="PackedScene" uid="uid://uawou5qy8m1" path="res://Scenes/pop_ups.tscn" id="34_neg2b"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -346,13 +346,11 @@ transform = Transform3D(0.912199, 0, 0.409748, 0, 1, 0, -0.409748, 0, 0.912199, 
 
 [node name="crystal" type="Node" parent="Assets"]
 
-[node name="crystal2" parent="Assets/crystal" instance=ExtResource("30_e08e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.1929, 2.89184, -76.3605)
-script = null
-
 [node name="crystal" parent="Assets/crystal" instance=ExtResource("31_neg2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.503, 2.82091, -71.3742)
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6965, 3.12257, -75.3724)
+
+[node name="crystal2" parent="Assets/crystal" instance=ExtResource("30_e08e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.0928, 3.29186, -69.0069)
 
 [node name="nenufar" type="Node" parent="Assets"]
 

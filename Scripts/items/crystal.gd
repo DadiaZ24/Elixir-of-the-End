@@ -2,12 +2,12 @@ extends StaticBody3D
 
 @onready var area = $Area3D
 @onready var crystal_mesh = $Crystal2
-@onready var crystal_scene = "res://Scenes/assets/crystal.tscn"
+@onready var crystal_scene = preload("res://Scenes/assets/crystal.tscn")
 @onready var crystal_tres = preload("res://Scripts/inventory/resources/Ingredients/mineral.tres")
 @onready var normal_material = crystal_mesh.get_surface_override_material(0)
 
 var player_near = false
-var player = false
+var player = null
 
 func _ready():
 	area.body_entered.connect(_on_body_entered)
@@ -16,7 +16,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player":
 		player_near = true
-		player = body;
+		player = body
 
 func _on_body_exited(body):
 	if body.name == "Player":
@@ -53,7 +53,7 @@ func _process(delta):
 				queue_free()
 			else:
 				print("No room in inventory!")
-		
+		#OTHER LOGIC
 		var camera = get_node("/root/Main/Player/Neck/Camera3D")
 		var ray = camera.get_node("InteractRay")
 		queue_free()
