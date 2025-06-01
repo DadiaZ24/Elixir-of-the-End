@@ -8,7 +8,6 @@ script = ExtResource("1_58evr")
 
 [node name="ZoomCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.992958, 0.0196559, -0.116824, -0.0188592, 0.999791, 0.00792188, 0.116955, -0.00566289, 0.993121, 0.21832, 1.32945, -1.62402)
-visible = false
 
 [node name="Fade" type="ColorRect" parent="."]
 visible = false
