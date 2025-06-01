@@ -24,6 +24,10 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		inventory_interface.clear_external_inventory()
 
 
-func _on_time_bar_time_out():
-	print("Time is up! You lose!")
+#func _on_time_bar_time_out():
+		#var cutscene = preload("res://Scenes/EndCutscene1.tscn").instantiate()
+		#get_tree().get_root().add_child(cutscene)
+		#player.set_enabled(false)  # Optional: freeze player
+		#await get_tree().create_timer(0.1).timeout  # Wait for node to enter tree
+		#cutscene.start_cutscene()
 	#get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
