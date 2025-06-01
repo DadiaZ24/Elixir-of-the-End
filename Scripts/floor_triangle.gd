@@ -64,6 +64,8 @@ func _process(delta):
 		check_activation()
 
 func check_activation():
+	if has_delivered_1 and has_delivered_2:
+		GameState.ending = true
 	if has_delivered_1 and has_delivered_2 and player_in_trigger and flag == false:
 		sound.play()
 		flag = true
