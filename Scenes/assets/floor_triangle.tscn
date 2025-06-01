@@ -1,12 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://o3ki1l4sxilj"]
+[gd_scene load_steps=6 format=3 uid="uid://dmpr3ii6fcnw2"]
 
-[ext_resource type="Material" uid="uid://cbhax34qapx6o" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
+[ext_resource type="Script" uid="uid://dmyteboqny4yb" path="res://Scripts/floor_triangle.gd" id="1_4b555"]
+[ext_resource type="Material" path="res://assets/material/transparent_triangle.tres" id="1_a4wyh"]
 [ext_resource type="ArrayMesh" uid="uid://b54n6g0moexcf" path="res://assets/trianglefloor.obj" id="2_aficd"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lso6x"]
+size = Vector3(3.22516, 1.70123, 3.33887)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qepf"]
+size = Vector3(1, 2.33203, 1)
+
 [node name="floor_triangle" type="Node3D"]
+script = ExtResource("1_4b555")
 
 [node name="Trianglefloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35848, 0, -1.87436)
 material_override = ExtResource("1_a4wyh")
 mesh = ExtResource("2_aficd")
 surface_material_override/0 = ExtResource("1_a4wyh")
+
+[node name="Ingredient1Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50036, 0, -2.2261)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ingredient1Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186417, 0.350616, -0.0405226)
+shape = SubResource("BoxShape3D_lso6x")
+
+[node name="Ingredient1Area2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46004, 0, 1.89782)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ingredient1Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186417, 0.350616, -0.0405226)
+shape = SubResource("BoxShape3D_lso6x")
+
+[node name="Ingredient1Area3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89862, 0, -0.257159)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ingredient1Area3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469558, 1.47915, 0)
+shape = SubResource("BoxShape3D_1qepf")
+debug_fill = false

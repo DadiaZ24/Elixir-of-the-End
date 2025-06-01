@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpnt6wx4xrtx5"]
+[gd_scene load_steps=36 format=3 uid="uid://cpnt6wx4xrtx5"]
 
 [ext_resource type="PackedScene" uid="uid://ch2hcei3n4etc" path="res://Scenes/terrain.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byt6lqdnk57ih" path="res://Scripts/main.gd" id="1_jjvhh"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5f0s10nfu5er" path="res://Scenes/water_flipped.tscn" id="5_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://cp1vhpbfacj5y" path="res://Scenes/assets/potiontent.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://hskqmymgkbfg" path="res://Scenes/assets/normal_tent.tscn" id="7_344ge"]
-[ext_resource type="PackedScene" uid="uid://cf2n8c0exbu38" path="res://Scenes/EntrancePotion.tscn" id="7_kltya"]
+[ext_resource type="PackedScene" path="res://Scenes/EntrancePotion.tscn" id="7_kltya"]
 [ext_resource type="PackedScene" uid="uid://cvkb3tfwpno0i" path="res://Scenes/assets/master_tent.tscn" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dk2k60h75kixb" path="res://Scenes/quick_sand.tscn" id="10_hptm8"]
 [ext_resource type="Script" uid="uid://ct7s46ryfveag" path="res://Scripts/ui.gd" id="11_fdnlq"]
@@ -27,8 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://bg5d3vq3f1e2q" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
-[ext_resource type="PackedScene" uid="uid://dbhdguuysiy1v" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
-[ext_resource type="PackedScene" uid="uid://c7in0x30rah6w" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
 [ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_1.tscn" id="26_7k868"]
 [ext_resource type="PackedScene" path="res://Scenes/assets/palmeira_2.tscn" id="27_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://ictjpnriaqmr" path="res://Scenes/assets/crystal_2.tscn" id="30_e08e2"]
