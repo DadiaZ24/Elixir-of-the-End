@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba5y1ka8i7hxw"]
+[gd_scene load_steps=2 format=3 uid="uid://ciy6d6338gnn7"]
 
-[ext_resource type="Script" uid="uid://bnvhkyjmrgru" path="res://Scripts/inventory/Inventory.gd" id="1_fyfx4"]
+[ext_resource type="Script" uid="uid://bnvhkyjmrgru" path="res://Scripts/inventory/Inventory.gd" id="1_14og4"]
 
 [node name="Inventory" type="PanelContainer"]
 offset_right = 63.0
 offset_bottom = 51.0
-script = ExtResource("1_fyfx4")
+script = ExtResource("1_14og4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

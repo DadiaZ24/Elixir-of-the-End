@@ -52,12 +52,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	
 	if Input.is_action_just_pressed("ui_interact"):
-		inventory_is_open = !inventory_is_open
-		if inventory_is_open:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		interact()
+		if interact_ray.is_colliding():
+			var collider = interact_ray.get_collider()
+			print("Collided with: ", collider.name)
+			# Check if collider is in the right group
+			if collider.is_in_group("crafting_inventory"):  # Change "interactable" to your group name
+				inventory_is_open = !inventory_is_open
+				if inventory_is_open:
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				else:
+					Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+				interact()
 		return
 		
 	if event is InputEventMouseButton:
