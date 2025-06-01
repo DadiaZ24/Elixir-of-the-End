@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuunjxgpubvit"
-path="res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"
+uid="uid://bouufbk84ss6u"
+path="res://.godot/imported/LizardBlood.png-9eeb6a7ea894f719676ad89798314e9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/ingredients/Gem.png"
-dest_files=["res://.godot/imported/Gem.png-d919c3f1d4de6b9e0408ade20568f20d.ctex"]
+source_file="res://Texture/ingredients/LizardBlood.png"
+dest_files=["res://.godot/imported/LizardBlood.png-9eeb6a7ea894f719676ad89798314e9c.ctex"]
 
 [params]
 

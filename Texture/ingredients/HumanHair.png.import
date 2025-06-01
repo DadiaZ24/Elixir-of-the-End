@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci8k4ffuycqfl"
-path="res://.godot/imported/stone-nature-2d-color-illustrations-png.webp-e0e45e6c464b33fd57beeb71507bc76a.ctex"
+uid="uid://f0x2aayf6q8k"
+path="res://.godot/imported/HumanHair.png-322378ce7c615b2c5b57c0d8ff5f8cdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Items/stone-nature-2d-color-illustrations-png.webp"
-dest_files=["res://.godot/imported/stone-nature-2d-color-illustrations-png.webp-e0e45e6c464b33fd57beeb71507bc76a.ctex"]
+source_file="res://Texture/ingredients/HumanHair.png"
+dest_files=["res://.godot/imported/HumanHair.png-322378ce7c615b2c5b57c0d8ff5f8cdc.ctex"]
 
 [params]
 

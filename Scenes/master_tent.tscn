@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsawrovf7bf66"]
+[gd_scene load_steps=6 format=3 uid="uid://dsawrovf7bf66"]
 
 [ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="1_628xc"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_gv6tn"]
 [ext_resource type="PackedScene" uid="uid://s1deu52hbnkc" path="res://Scenes/assets/masterinbed.tscn" id="3_nsnw3"]
+[ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="4_i286q"]
+[ext_resource type="PackedScene" uid="uid://6k7eot8bg7y7" path="res://Scenes/TalkMaster.tscn" id="5_0ucam"]
 
 [node name="MasterTent" type="Node3D"]
 
@@ -39,8 +41,14 @@ transform = Transform3D(1, 0, 0, 0, 0.372243, 0.928135, 0, -0.928135, 0.372243, 
 light_energy = 0.18
 
 [node name="Player" parent="." instance=ExtResource("2_gv6tn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644122, 1.44029, -1.31149)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477306, 1.44029, 2.01485)
 visible = false
 
 [node name="masterinbed" parent="." instance=ExtResource("3_nsnw3")]
-transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 0, 0, 0)
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -1.66445, 0, -4.97436)
+
+[node name="ExitMaster" parent="." instance=ExtResource("4_i286q")]
+transform = Transform3D(0.89463, 0, -0.446807, 0, 1, 0, 0.446807, 0, 0.89463, 0, 0, 9.01215)
+
+[node name="TalkMaster" parent="." instance=ExtResource("5_0ucam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8699, 0.48209, -5.69178)

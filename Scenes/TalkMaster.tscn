@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://6k7eot8bg7y7"]
+
+[ext_resource type="Script" uid="uid://f7sueo3lcapc" path="res://Scripts/talk_master.gd" id="1_ehysi"]
+[ext_resource type="AudioStream" uid="uid://bm88pe1580j7y" path="res://Sounds/mumbling.wav" id="2_hbv2f"]
+[ext_resource type="Script" uid="uid://br6tk6p3w5jfq" path="res://Scripts/talking.gd" id="3_kn0dj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvrje"]
+size = Vector3(3.935, 1.37415, 4.45612)
+
+[sub_resource type="Animation" id="Animation_ce3w2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1ehe0"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n45e2"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n45e2"]
+_data = {
+&"RESET": SubResource("Animation_ce3w2"),
+&"fade_in": SubResource("Animation_1ehe0"),
+&"fade_out": SubResource("Animation_n45e2")
+}
+
+[node name="TalkMaster" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_ehysi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4675, 0.187073, 1.41458)
+shape = SubResource("BoxShape3D_hvrje")
+
+[node name="TeleportTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27924, 0.162743, 1.46492)
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n45e2")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
+offset_right = 1167.0
+offset_bottom = 671.0
+color = Color(0, 0, 0, 1)
+
+[node name="LookTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87638, 0, -0.453015)
+
+[node name="MasterTalking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_hbv2f")
+
+[node name="DialoguePanel" type="Panel" parent="."]
+visible = false
+offset_left = 90.0
+offset_top = 73.0
+offset_right = 313.0
+offset_bottom = 270.0
+script = ExtResource("3_kn0dj")
+
+[node name="DialogueLabel" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 216.0
+offset_bottom = 189.0
+autowrap_mode = 2

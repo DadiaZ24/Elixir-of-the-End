@@ -33,6 +33,8 @@ var water_drag = 4.0
 var swim_up_speed = 2.0
 var inventory_is_open := false
 var quicksand_drag = 4.0
+var is_enabled := true
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory_open") and tutorial.is_action_allowed("inventory_open"):
@@ -60,7 +62,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 
+func set_enabled(enable: bool) -> void:
+	is_enabled = enable
+
 func _physics_process(delta: float) -> void:
+	if not is_enabled:
+		return 
 	var direction = Vector3.ZERO
 	var input_vector = Vector2.ZERO
 	var camera_y = camera.global_transform.origin.y
@@ -75,15 +82,15 @@ func _physics_process(delta: float) -> void:
 	
 	if is_inside_quicksand:
 		velocity += quicksand_gravity * delta
-		if Input.is_action_pressed("ui_up") and tutorial.is_action_allowed("ui_up"):
+		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_up"))):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down") and tutorial.is_action_allowed("ui_down"):
+		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_down"))):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_right") and tutorial.is_action_allowed("ui_right"):
+		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_right"))):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_left") and tutorial.is_action_allowed("ui_left"):
+		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_left"))):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_just_pressed("ui_accept") and tutorial.is_action_allowed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
 			velocity.y = quicksamd_jump_trace
 		
 		var is_moving := direction.length_squared() > 0.01
@@ -102,17 +109,17 @@ func _physics_process(delta: float) -> void:
 	if is_inside_water:
 		velocity += swim_gravity * delta
 		# Full 3D movement for swimming
-		if Input.is_action_pressed("ui_up") and tutorial.is_action_allowed("ui_up"):
+		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_up"))):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down") and tutorial.is_action_allowed("ui_down"):
+		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_down"))):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_left") and tutorial.is_action_allowed("ui_left"):
+		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_left"))):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_right") and tutorial.is_action_allowed("ui_right"):
+		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_right"))):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_accept") and tutorial.is_action_allowed("ui_accept"):
+		if Input.is_action_pressed("ui_accept") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
 			direction += Vector3.UP
-		if Input.is_action_pressed("ui_sprint") and tutorial.is_action_allowed("ui_sprint"):
+		if Input.is_action_pressed("ui_sprint") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_sprint"))):
 			direction -= Vector3.UP
 
 		if direction != Vector3.ZERO:
@@ -136,7 +143,7 @@ func _physics_process(delta: float) -> void:
 				velocity += get_gravity() * delta
 
 			# Jumping
-			if Input.is_action_just_pressed("ui_accept") and is_on_floor() and tutorial.is_action_allowed("ui_accept"):
+			if Input.is_action_just_pressed("ui_accept") and is_on_floor() and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
 				velocity.y = JUMP_VELOCITY
 
 			# Ground movement (XZ only)
