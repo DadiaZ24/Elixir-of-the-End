@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://u55rkbqaekvv"]
+
+[ext_resource type="Script" uid="uid://gqm2bnntglvq" path="res://Scripts/inventory/assets/craftingTable.gd" id="1_pnls6"]
+[ext_resource type="Resource" uid="uid://baosxjvy3bklt" path="res://Scripts/inventory/resources/CraftingInventory.tres" id="2_qa5sh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ovn2"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pnls6"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" groups=["crafting_inventory"]]
+collision_layer = 9
+script = ExtResource("1_pnls6")
+inventory_data = ExtResource("2_qa5sh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7ovn2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_pnls6")

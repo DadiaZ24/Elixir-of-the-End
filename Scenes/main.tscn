@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://by3cbnnubqkii" path="res://Scenes/assets/cactus2.tscn" id="20_gt3je"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="21_u50mg"]
 [ext_resource type="PackedScene" uid="uid://cgpumusg3hjjn" path="res://Scenes/assets/flower.tscn" id="22_u50mg"]
-[ext_resource type="PackedScene" uid="uid://do1nyiha7ho7b" path="res://Scenes/alchemy/alchemy_ui.tscn" id="25_u50mg"]
-[ext_resource type="PackedScene" uid="uid://b0wcekuc4x7k8" path="res://Scenes/CraftingUI.tscn" id="26_cbgmd"]
+[ext_resource type="PackedScene" uid="uid://u55rkbqaekvv" path="res://Scenes/teste_box_craft.tscn" id="24_3pmx8"]
+
+[sub_resource type="Resource" id="Resource_u50mg"]
+metadata/__load_path__ = "res://Scripts/inventory/resources/Inventory.tres"
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjvhh")
@@ -52,8 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.7523, -47.1528, -88.8389)
 stream = ExtResource("5_kry3j")
 volume_db = 30.0
 autoplay = true
-
-[node name="InventoryUI" parent="." instance=ExtResource("9_ynf5e")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("11_fdnlq")
@@ -124,6 +124,7 @@ stream = ExtResource("12_jkdf5")
 
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.8206, 7.21525, -45.2964)
+inventory_data = SubResource("Resource_u50mg")
 
 [node name="Assets" type="Node" parent="."]
 
@@ -219,9 +220,10 @@ transform = Transform3D(0.353074, 0, -3.98439, 0, 4, 0, 3.98439, 0, 0.353074, -6
 [node name="flower" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
 transform = Transform3D(1.45618, -0.232951, -0.274347, 0.00381382, 1.15333, -0.959066, 0.359886, 0.930353, 1.12024, -6.75203, 5.84344, -78.1705)
 
-[node name="AlchemyUI" parent="." instance=ExtResource("25_u50mg")]
+[node name="StaticBody3D" parent="." instance=ExtResource("24_3pmx8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -45.5243, 5.20228, -45.5226)
 
-[node name="CraftingUi" parent="." instance=ExtResource("26_cbgmd")]
+[node name="InventoryUI" parent="." instance=ExtResource("9_ynf5e")]
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]

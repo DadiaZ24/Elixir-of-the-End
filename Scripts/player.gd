@@ -5,6 +5,7 @@ signal toggle_alchemy()
 
 @export var inventory_data: InventoryData
 @onready var tutorial: CanvasLayer = $"../UI"
+@onready var interact_ray: RayCast3D = $Neck/Camera3D/InteractRay
 
 
 const SPEED = 10
@@ -46,6 +47,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 		
 	if inventory_is_open:
+		return
+	
+	if Input.is_action_just_pressed("ui_interact"):
+		inventory_is_open = !inventory_is_open
+		if inventory_is_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		interact()
 		return
 		
 	if event is InputEventMouseButton:
@@ -189,3 +199,7 @@ func _on_quick_sand_body_entered(body: Node3D) -> void:
 func _on_quick_sand_body_exited(body: Node3D) -> void:
 	if body == self:
 		is_inside_quicksand = false
+
+func interact():
+	if interact_ray.is_colliding():
+		interact_ray.get_collider().player_interact()

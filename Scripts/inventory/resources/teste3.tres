@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cmreuny1l1oql"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_sp4op"]
+[ext_resource type="Texture2D" uid="uid://c008chwhhhxwe" path="res://Texture/food/raw burger.png" id="2_f3g2l"]
+
+[resource]
+script = ExtResource("1_sp4op")
+name = "ING3"
+stackable = true
+texture = ExtResource("2_f3g2l")
+metadata/_custom_type_script = "uid://cgp68evkesany"
