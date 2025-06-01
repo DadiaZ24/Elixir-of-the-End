@@ -54,6 +54,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.097, -46.854, -31.6306)
 [node name="QuickSand" parent="Terrain" instance=ExtResource("10_hptm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.7523, -47.1528, -88.8389)
 
+[node name="StaticBody3D" parent="Terrain" instance=ExtResource("32_e08e2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -55.9324, 4.09222, 13.7575)
+
 [node name="Ambient Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_kry3j")
 volume_db = 30.0
@@ -394,9 +397,6 @@ transform = Transform3D(0.912199, 0, 0.409748, 0, 1, 0, -0.409748, 0, 0.912199, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.636, 3.89917, 51.8979)
 
 [node name="InventoryUI" parent="." instance=ExtResource("31_kltya")]
-
-[node name="StaticBody3D" parent="." instance=ExtResource("32_e08e2")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -74.0626, 5.25728, -10.1499)
 
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]

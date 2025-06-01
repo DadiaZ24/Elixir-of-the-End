@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://b0kxmjbbe7kap"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_wqgj8"]
+
+[resource]
+script = ExtResource("1_wqgj8")
+name = "Elixir of Immortality"
+stackable = true
+metadata/_custom_type_script = "uid://cgp68evkesany"

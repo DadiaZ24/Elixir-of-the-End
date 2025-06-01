@@ -8,6 +8,8 @@ var external_inventory_owner
 @onready var crafting_inventory: PanelContainer = $Crafting
 @onready var craft_button: Button = $Crafting/MarginContainer/VBoxContainer/Button
 @onready var crafting_manager: CraftingManager = preload("res://Scripts/inventory/Crafting/CraftingManager.gd").new()
+signal crafting_completed(success: bool)
+
 
 func _ready() -> void:
 	add_child(crafting_manager)
@@ -48,6 +50,8 @@ func _on_crafting_result(success: bool, result: ItemData) -> void:
 			for i in range(input_data.slot_datas.size()):
 				input_data.slot_datas[i] = null
 			input_data.inventory_updated.emit(input_data)
+		clear_external_inventory()
+		crafting_completed.emit(success)
 	else:
 		print("Crafting failed.")
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=6 format=3 uid="uid://b0uwojd80n0uc"]
+
+[ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_85w1r"]
+[ext_resource type="Resource" uid="uid://dgdar46wbhqn3" path="res://Scripts/inventory/resources/Ingredients/gem.tres" id="2_ckteo"]
+[ext_resource type="Script" uid="uid://b0migxxigoxnt" path="res://Scripts/inventory/Crafting/CraftingRecipe.gd" id="2_t8bk7"]
+[ext_resource type="Resource" uid="uid://o3rut5cc66uo" path="res://Scripts/inventory/resources/Ingredients/mineral.tres" id="3_mdo6a"]
+[ext_resource type="Resource" uid="uid://pfb7ny7s3nrv" path="res://Scripts/inventory/resources/Ingredients/flower.tres" id="4_hu33w"]
+
+[resource]
+script = ExtResource("2_t8bk7")
+name = "Philosopher's Stone"
+input_items = Array[ExtResource("1_85w1r")]([ExtResource("2_ckteo"), ExtResource("3_mdo6a"), ExtResource("4_hu33w")])
+output_quantity = 1
+metadata/_custom_type_script = "uid://b0migxxigoxnt"
