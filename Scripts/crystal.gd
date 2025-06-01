@@ -1,9 +1,9 @@
 extends StaticBody3D
 
 @onready var area = $Area3D
-@onready var flower_mesh = $Flower
-@onready var flower_scene = preload("res://Scenes/assets/flower.tscn")
-@onready var normal_material = flower_mesh.get_surface_override_material(0)
+@onready var crystal_mesh = $Crystal2
+@onready var crystal_scene = "res://Scenes/assets/crystal.tscn"
+@onready var normal_material = crystal_mesh.get_surface_override_material(0)
 
 var player_near = false
 
@@ -18,7 +18,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_near = false
-		flower_mesh.set_surface_override_material(0, normal_material)
+		crystal_mesh.set_surface_override_material(0, normal_material)
 
 func _process(delta):
 	if not player_near:
