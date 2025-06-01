@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Elixir of the End"
-run/main_scene="uid://buxhnvoqqd2k4"
+run/main_scene="uid://bqobyow56dehj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*res://Scripts/GameState.gd"
+Quest="*res://Scripts/quest.gd"
 
 [editor_plugins]
 

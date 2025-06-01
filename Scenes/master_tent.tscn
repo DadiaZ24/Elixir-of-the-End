@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsawrovf7bf66"]
+[gd_scene load_steps=20 format=3 uid="uid://dsawrovf7bf66"]
 
 [ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="1_628xc"]
 [ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_fpsl4"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="4_i286q"]
 [ext_resource type="PackedScene" uid="uid://6k7eot8bg7y7" path="res://Scenes/TalkMaster.tscn" id="5_0ucam"]
 [ext_resource type="PackedScene" uid="uid://dmpr3ii6fcnw2" path="res://Scenes/assets/floor_triangle.tscn" id="8_ks51a"]
-[ext_resource type="PackedScene" uid="uid://c1pdep0g8ndnn" path="res://Scenes/assets/vaso_3.tscn" id="9_xr1dy"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="9_xr1dy"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="10_a8npd"]
-[ext_resource type="PackedScene" uid="uid://x6la88yaxhhu" path="res://Scenes/assets/potions_table.tscn" id="11_fu6rl"]
+[ext_resource type="PackedScene" path="res://Scenes/assets/potions_table.tscn" id="11_fu6rl"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="12_ldusd"]
+[ext_resource type="PackedScene" uid="uid://uawou5qy8m1" path="res://Scenes/pop_ups.tscn" id="14_xr1dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sutf"]
 albedo_texture = ExtResource("1_fpsl4")
@@ -98,3 +99,5 @@ transform = Transform3D(0.00682415, 0, -0.999977, 0, 1, 0, 0.999977, 0, 0.006824
 transform = Transform3D(0.00481704, 0, 0.799986, 0, 0.8, 0, -0.799986, 0, 0.00481704, 1.43123, -2.18187, -6.58714)
 
 [node name="InventoryUI" parent="." instance=ExtResource("12_ldusd")]
+
+[node name="PopUps" parent="." instance=ExtResource("14_xr1dy")]

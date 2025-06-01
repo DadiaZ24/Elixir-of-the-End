@@ -3,7 +3,7 @@ extends CanvasLayer
 #tutorial
 @onready var tutorial_panel = $"TutorialPanel"
 @onready var tutorial_label = tutorial_panel.get_node("Label")
-@onready var tutorial_finished = $"QuestFinished"
+@onready var tutorial_finished = $QuestPanel/QuestFinished
 
 var tutorial_steps = [
 	{"text": "Press [b]W[/b] to move forward", "action": "ui_up"},
@@ -28,6 +28,9 @@ func is_action_allowed(action_name: String) -> bool:
 
 
 func _ready():
+	if GameState.tutorial_completed:
+		queue_free()
+		return
 	show_current_tutorial_step()
 
 func _process(_delta):
@@ -63,10 +66,13 @@ func show_current_tutorial_step():
 		await get_tree().create_timer(3.0).timeout
 		tutorial_finished.play()
 		tutorial_panel.visible = false
-		var time_bar = get_node("/root/Main/UI/TimeBar")
+		var time_bar = $TimeBar
 		time_bar.visible = true
 		time_bar.timer_active = true
 		GameState.tutorial_completed = true
+		var quest_panel = $QuestPanel
+		quest_panel.visible = true
+		quest_panel.populate_quests()
 	
 func _unhandled_input(event):
 	if not tutorial_active:
