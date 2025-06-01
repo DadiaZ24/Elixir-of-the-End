@@ -10,7 +10,7 @@ var book_ui: Control = null
 const SPEED = 10
 const SPRINT_MULTIPLIER:= 5
 const JUMP_VELOCITY = 3
-@onready var world_env: WorldEnvironment = $"../WorldEnvironment"
+var world_env = get_node_or_null("../WorldEnvironment")
 var default_env = preload("res://Resources/DefaultEnv.tres")
 var underwater_env = preload("res://Resources/UnderWaterEnv.tres")
 @onready var neck: Node3D = $Neck
@@ -105,10 +105,12 @@ func _physics_process(delta: float) -> void:
 
 	if currently_submerged and not is_underwater:
 		is_underwater = true
-		world_env.environment = underwater_env
+		if world_env:
+			world_env.environment = underwater_env
 	elif not currently_submerged and is_underwater:
 		is_underwater = false
-		world_env.environment = default_env
+		if world_env:
+			world_env.environment = default_env
 	
 	if is_inside_quicksand:
 		velocity += quicksand_gravity * delta
@@ -221,7 +223,8 @@ func _on_water_body_exited(body: Node3D) -> void:
 	if body == self:
 		is_inside_water = false
 		is_underwater = false
-		world_env.environment = default_env
+		if world_env:
+			world_env.environment = default_env
 
 
 func _on_quick_sand_body_entered(body: Node3D) -> void:
