@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://cs5kyxwcorigy"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cs5kyxwcorigy"]
 
 [ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_410ld"]
+[ext_resource type="Texture2D" uid="uid://c3jod7x3p2hcp" path="res://Texture/Items/knife.png" id="2_axatp"]
 
 [resource]
 script = ExtResource("1_410ld")
-name = ""
+name = "Knife"
 stackable = false
+texture = ExtResource("2_axatp")
 metadata/_custom_type_script = "uid://cgp68evkesany"

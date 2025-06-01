@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://b0kxmjbbe7kap"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b0kxmjbbe7kap"]
 
 [ext_resource type="Script" uid="uid://cgp68evkesany" path="res://Scripts/inventory/ItemData.gd" id="1_wqgj8"]
+[ext_resource type="Texture2D" uid="uid://c1fmxlvwryumi" path="res://Texture/Items/ElixirOfImmortality.png" id="2_50287"]
 
 [resource]
 script = ExtResource("1_wqgj8")
 name = "Elixir of Immortality"
 stackable = true
+texture = ExtResource("2_50287")
 metadata/_custom_type_script = "uid://cgp68evkesany"
