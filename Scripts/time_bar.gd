@@ -1,6 +1,7 @@
 extends ProgressBar
 
-@onready var time_label = $TimeLabel  # Reference to the child Label
+
+@onready var time_label: Label = $TimeLabel if has_node("TimeLabel") else null
 
 var total_time := 900.0  # 15 minutes
 var current_time := total_time
@@ -21,7 +22,8 @@ func _process(delta):
 		value = current_time
 
 		# Update label text
-		time_label.text = "Time Left: %s" % format_time(current_time)
+		if time_label:
+			time_label.text = "Time Left: %s" % format_time(current_time)
 
 		if current_time <= 0.0:
 			timer_active = false

@@ -4,10 +4,8 @@ signal toggle_inventory()
 signal toggle_alchemy()
 
 @export var inventory_data: InventoryData
-@onready var tutorial: CanvasLayer = $"../UI"
 @onready var interact_ray: RayCast3D = $Neck/Camera3D/InteractRay
-
-@onready var book_2: Control = $"../Book2/Control"
+var book_ui: Control = null
 
 const SPEED = 10
 const SPRINT_MULTIPLIER:= 5
@@ -62,7 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if interact_ray.is_colliding():
 			var collider = interact_ray.get_collider()
 			if collider.is_in_group("book"):
-				book_2.toogle()
+				if book_ui:
+					book_ui.toogle()
 		if interact_ray.is_colliding():
 			var collider = interact_ray.get_collider()
 			# Check if collider is in the right group
@@ -79,10 +78,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
-		if book_2.get_if_visible:
-			book_2.hide()
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if book_ui:
+			if book_ui.get_if_visible:
+				book_ui.hide()
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -112,15 +112,15 @@ func _physics_process(delta: float) -> void:
 	
 	if is_inside_quicksand:
 		velocity += quicksand_gravity * delta
-		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_up"))):
+		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_down"))):
+		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_right"))):
+		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_left"))):
+		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_just_pressed("ui_accept") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
+		if Input.is_action_just_pressed("ui_accept") and (GameState.tutorial_completed):
 			velocity.y = quicksamd_jump_trace
 		
 		var is_moving := direction.length_squared() > 0.01
@@ -139,17 +139,17 @@ func _physics_process(delta: float) -> void:
 	if is_inside_water:
 		velocity += swim_gravity * delta
 		# Full 3D movement for swimming
-		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_up"))):
+		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed):
 			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_down"))):
+		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed):
 			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_left"))):
+		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed):
 			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_right"))):
+		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed):
 			direction += neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_accept") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
+		if Input.is_action_pressed("ui_accept") and (GameState.tutorial_completed):
 			direction += Vector3.UP
-		if Input.is_action_pressed("ui_sprint") and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_sprint"))):
+		if Input.is_action_pressed("ui_sprint") and (GameState.tutorial_completed):
 			direction -= Vector3.UP
 
 		if direction != Vector3.ZERO:
@@ -173,7 +173,7 @@ func _physics_process(delta: float) -> void:
 				velocity += get_gravity() * delta
 
 			# Jumping
-			if Input.is_action_just_pressed("ui_accept") and is_on_floor() and (GameState.tutorial_completed or (tutorial and tutorial.is_action_allowed("ui_accept"))):
+			if Input.is_action_just_pressed("ui_accept") and is_on_floor() and (GameState.tutorial_completed):
 				velocity.y = JUMP_VELOCITY
 
 			# Ground movement (XZ only)
