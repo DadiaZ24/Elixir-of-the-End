@@ -9,7 +9,7 @@ signal toggle_alchemy()
 
 
 const SPEED = 10
-const SPRINT_MULTIPLIER:= 5
+const SPRINT_MULTIPLIER:= 1.5
 const JUMP_VELOCITY = 3
 @onready var world_env: WorldEnvironment = $"../WorldEnvironment"
 var default_env = preload("res://Resources/DefaultEnv.tres")
@@ -58,11 +58,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("ui_interact"):
 		if interact_ray.is_colliding():
-			inventory_is_open = !inventory_is_open
 			var collider = interact_ray.get_collider()
-			print("Collided with: ", collider.name)
 			# Check if collider is in the right group
 			if collider.is_in_group("crafting_inventory"):  # Change "interactable" to your group name
+				inventory_is_open = !inventory_is_open
 				if inventory_is_open:
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				else:
