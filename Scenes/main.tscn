@@ -174,16 +174,13 @@ transform = Transform3D(-3.14918, 0, -3.88364, 0, 5, 0, 3.88364, 0, -3.14918, -5
 [node name="Flower" type="Node" parent="Assets"]
 
 [node name="flower" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(1.45618, -0.232951, -0.274347, 0.00381382, 1.15333, -0.959066, 0.359886, 0.930353, 1.12024, -6.75203, 5.84344, -78.1705)
-script = null
+transform = Transform3D(1, 0, 0, 0, 0.708808, -0.705402, 0, 0.705402, 0.708808, -6.78584, 5.78523, -78.0954)
 
 [node name="flower2" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(0.595914, 0.878972, 1.05939, 0.00381382, 1.15333, -0.959066, -1.37654, 0.383708, 0.455958, -66.3846, 5.84344, -19.4187)
-script = null
+transform = Transform3D(0.193686, 0.692044, 0.695385, 0, 0.708808, -0.705402, -0.981063, 0.136627, 0.137286, -66.3731, 5.78523, -19.4264)
 
 [node name="flower3" parent="Assets/Flower" instance=ExtResource("22_u50mg")]
-transform = Transform3D(1.49323, -0.0938935, -0.106974, 0.00381386, 1.15333, -0.959066, 0.142286, 0.954467, 1.14837, -26.8323, 5.84344, 35.8004)
-script = null
+transform = Transform3D(1, 0, 0, 0, 0.708808, -0.705402, 0, 0.705402, 0.708808, -26.9403, 5.78523, 35.9511)
 
 [node name="PalmTree" type="Node" parent="Assets"]
 
