@@ -2,8 +2,11 @@ extends Node3D
 
 @onready var player: CharacterBody3D = $Player
 @onready var inventory_interface: Control = $InventoryUI/InventoryInterface
-
+const TimeBar = preload("res://Scripts/time_bar.gd")
 func _ready() -> void:
+	var player = $Player
+	var book_control = $Book2/Control
+	player.book_ui = book_control
 	GameState.next_spawn_point_name = "potion"
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)

@@ -3,8 +3,8 @@ class_name Inventory
 
 const Slot = preload("res://Scenes/Inventory/Slot.tscn")
 
-@onready var item_grid: GridContainer = $MarginContainer/ItemGrid
-@onready var item_grid_craft: GridContainer = $MarginContainer/VBoxContainer/ItemGrid
+@onready var item_grid = get_node_or_null("MarginContainer/ItemGrid")
+@onready var item_grid_craft: = get_node_or_null("MarginContainer/VBoxContainer/ItemGrid")
 
 var current_inventory_data: InventoryData
 

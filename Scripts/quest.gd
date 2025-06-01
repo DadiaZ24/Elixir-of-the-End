@@ -1,8 +1,8 @@
 extends Panel
 
+@onready var quest_finished = get_node_or_null("QuestFinished")
 @onready var quest_panel = $"."
-@onready var quest_container = $VBoxContainer
-@onready var quest_finished = $QuestFinished
+@onready var quest_container: VBoxContainer = get_node_or_null("VBoxContainer")
 
 var quest_steps = [
 	{ "text": "Find the Philosopher's Stone", "completed": false },
@@ -33,8 +33,9 @@ func reveal_secret_quest():
 
 func populate_quests():
 	# Limpa os antigos
-	for child in quest_container.get_children():
-		child.queue_free()
+	if quest_container:
+		for child in quest_container.get_children():
+			child.queue_free()
 
 	# Adiciona novamente
 	for step in quest_steps:
@@ -44,14 +45,16 @@ func populate_quests():
 		checkbox.text = step["text"]
 		checkbox.button_pressed = step["completed"]
 		checkbox.disabled = true
-		quest_container.add_child(checkbox)
+		if quest_container:
+			quest_container.add_child(checkbox)
 
 func complete_quest(index: int):
 	if index >= 0 and index < quest_steps.size():
 		quest_steps[index]["completed"] = true
 		visible = true  # mostra o painel se for a primeira vez
 		populate_quests()
-		quest_finished.play()
+		if quest_finished:
+			quest_finished.play()
 
 		if all_required_quests_completed():
 			reveal_secret_quest()
