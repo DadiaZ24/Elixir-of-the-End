@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://byhn47boaqr0v"]
+[gd_scene load_steps=4 format=3 uid="uid://byhn47boaqr0v"]
 
 [ext_resource type="Script" uid="uid://c5avxi7tlcwrn" path="res://Scripts/end_cutscene_1.gd" id="1_ddpj5"]
+[ext_resource type="Texture2D" uid="uid://bukv3thfructq" path="res://Texture/GameOver.png" id="2_0kvdh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ddpj5"]
 font_size = 50
@@ -27,3 +28,9 @@ offset_bottom = 407.0
 text = "You saved the village and your master.
                           You win"
 label_settings = SubResource("LabelSettings_ddpj5")
+
+[node name="WinImage" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 653.0
+texture = ExtResource("2_0kvdh")
+expand_mode = 1

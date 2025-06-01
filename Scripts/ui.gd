@@ -13,7 +13,8 @@ var tutorial_steps = [
 	{"text": "Move your [b]mouse[/b] to look around", "action": "mouse_move"},
 	{"text": "Press [b]Space[/b] to jump", "action": "ui_accept"},
 	{"text": "Press [b]SHIFT[/b] to sprint", "action": "ui_sprint"},
-	{"text": "[color=lime][b]Tutorial Complete! Go talk to your master.[/b][/color]", "action": ""}
+	{"text": "Press [b]E[/b] to interact with items", "action" : "ui_interact"},
+	{"text": "[color=lime][b]Tutorial Complete! Go talk to your master in his tent.[/b][/color]", "action": ""}
 ]
 
 var current_step = 0

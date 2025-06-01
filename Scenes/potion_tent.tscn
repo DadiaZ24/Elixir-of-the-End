@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1pjnomy0xhml"]
+[gd_scene load_steps=15 format=3 uid="uid://c1pjnomy0xhml"]
 
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="1_5xvxh"]
 [ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_300no"]
+[ext_resource type="Script" uid="uid://bvvp7bxj8de48" path="res://Scripts/potion_tent.gd" id="1_hrnhq"]
 [ext_resource type="Texture2D" uid="uid://cp64a735vpwml" path="res://assets/texturas/tentwall.png" id="2_53nf5"]
 [ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="2_qnixp"]
 [ext_resource type="PackedScene" uid="uid://u11lhke67aas" path="res://Scenes/assets/book_table.tscn" id="3_l3da3"]
@@ -21,6 +22,7 @@ albedo_texture = ExtResource("1_300no")
 albedo_texture = ExtResource("2_53nf5")
 
 [node name="PotionTent" type="Node3D"]
+script = ExtResource("1_hrnhq")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0335979, -0.0271306, 0.00384712)
