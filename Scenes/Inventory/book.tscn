@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm42nup8imjqp"]
+
+[ext_resource type="Script" uid="uid://ksdg4dfmr441" path="res://Scripts/book.gd" id="1_m773g"]
+[ext_resource type="Texture2D" uid="uid://bm6xairu12b33" path="res://Texture/Book.png" id="1_xqpyy"]
+
+[node name="Book" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_m773g")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 166.0
+offset_top = 18.0
+offset_right = 985.0
+offset_bottom = 562.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xqpyy")
+expand_mode = 1
+stretch_mode = 4
