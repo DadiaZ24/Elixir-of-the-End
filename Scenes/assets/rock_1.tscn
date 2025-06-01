@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://8oq3ynxkkn5u"]
+[gd_scene load_steps=6 format=3 uid="uid://8oq3ynxkkn5u"]
 
 [ext_resource type="ArrayMesh" uid="uid://03t3k6fhvget" path="res://assets/rock1.obj" id="1_8v63b"]
+[ext_resource type="Script" uid="uid://rmqclpaeaw4a" path="res://Scripts/rock_1.gd" id="1_p6uuc"]
 [ext_resource type="Material" uid="uid://db1jrej7vnp5k" path="res://assets/material/rock_material.tres" id="2_2s1kn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fc3kr"]
 size = Vector3(1.46423, 1.07031, 1.33051)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6uuc"]
+size = Vector3(2.53224, 1.48242, 2.45154)
+
 [node name="rock1" type="StaticBody3D"]
+script = ExtResource("1_p6uuc")
 
 [node name="Rock1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6477, 0.35949, 0.0451059)
@@ -16,3 +21,9 @@ surface_material_override/0 = ExtResource("2_2s1kn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0414062, 0.394646, 0.0740671)
 shape = SubResource("BoxShape3D_fc3kr")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191608, 0.228244, 0.25713)
+shape = SubResource("BoxShape3D_p6uuc")

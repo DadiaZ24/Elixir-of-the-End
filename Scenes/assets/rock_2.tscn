@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dclfvtqeleick"]
+[gd_scene load_steps=5 format=3 uid="uid://dclfvtqeleick"]
 
 [ext_resource type="Material" uid="uid://db1jrej7vnp5k" path="res://assets/material/rock_material.tres" id="1_8w4dn"]
 [ext_resource type="ArrayMesh" uid="uid://pb3n4ddo71t0" path="res://assets/rock2.obj" id="2_fydjx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_65jpr"]
 size = Vector3(1.04459, 1.36418, 1.331)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cfgh"]
+size = Vector3(1.16907, 1.3009, 1.34399)
 
 [node name="rock2" type="StaticBody3D"]
 
@@ -16,3 +19,9 @@ mesh = ExtResource("2_fydjx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.126274, 0.14709, -1)
 shape = SubResource("BoxShape3D_65jpr")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0845337, 0.150452, -1.00616)
+shape = SubResource("BoxShape3D_8cfgh")
