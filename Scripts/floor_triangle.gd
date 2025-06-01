@@ -3,6 +3,8 @@ extends Node3D
 @onready var ingredient1 = $Ingredient1Area
 @onready var ingredient2 = $Ingredient1Area2
 @onready var trigger_area = $Ingredient1Area3
+@onready var red_rock = $Ingredient1Area/red_rock
+@onready var elixir = $Ingredient1Area2/elixir
 @onready var player = "res://Scenes/Player.tscn"
 
 var player_near_1 = false
@@ -52,10 +54,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_interact"):
 		if player_near_1 and not has_delivered_1:
 			#colocar a verificacao dos itme sno inventario
+			red_rock.visible = true
+			red_rock.set_collision_layer_value(1, true)
 			has_delivered_1 = true
 
 		if player_near_2 and not has_delivered_2:
 			#colocar a verificacao dos itme sno inventario
+			elixir.visible = true
+			elixir.set_collision_layer_value(1, true)
 			has_delivered_2 = true
 
 		check_activation()
