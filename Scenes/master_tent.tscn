@@ -1,35 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsawrovf7bf66"]
+[gd_scene load_steps=17 format=3 uid="uid://dsawrovf7bf66"]
 
 [ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="1_628xc"]
+[ext_resource type="Texture2D" uid="uid://caiqhltjo0rjx" path="res://assets/texturas/tentfloor.png" id="1_fpsl4"]
 [ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="2_gv6tn"]
+[ext_resource type="Texture2D" uid="uid://cp64a735vpwml" path="res://assets/texturas/tentwall.png" id="2_ldusd"]
 [ext_resource type="PackedScene" uid="uid://s1deu52hbnkc" path="res://Scenes/assets/masterinbed.tscn" id="3_nsnw3"]
 [ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="4_i286q"]
 [ext_resource type="PackedScene" uid="uid://6k7eot8bg7y7" path="res://Scenes/TalkMaster.tscn" id="5_0ucam"]
+[ext_resource type="PackedScene" uid="uid://o3ki1l4sxilj" path="res://Scenes/assets/floor_triangle.tscn" id="8_ks51a"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="9_xr1dy"]
+[ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="10_a8npd"]
+[ext_resource type="PackedScene" uid="uid://x6la88yaxhhu" path="res://Scenes/assets/potions_table.tscn" id="11_fu6rl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sutf"]
+albedo_texture = ExtResource("1_fpsl4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xc34p"]
+albedo_texture = ExtResource("2_ldusd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ltym"]
+albedo_texture = ExtResource("2_ldusd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s13yf"]
+albedo_texture = ExtResource("2_ldusd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7y6tb"]
+albedo_texture = ExtResource("2_ldusd")
 
 [node name="MasterTent" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0967947, 0)
+material_override = SubResource("StandardMaterial3D_8sutf")
 use_collision = true
 size = Vector3(10, 0.2, 15)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.786946, -0.617022, 0, 0.617022, 0.786946, 0, 0, 0, 1, 2.9492, 2.94602, 0)
+material_override = SubResource("StandardMaterial3D_xc34p")
 use_collision = true
 size = Vector3(0.5, 10, 15)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.786935, 0.617036, -8.74228e-08, 0.617036, 0.786935, 0, 6.8796e-08, -5.3943e-08, -1, -2.61029, 2.94602, 0)
+material_override = SubResource("StandardMaterial3D_3ltym")
 use_collision = true
 size = Vector3(0.5, 10, 15)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373526, 2.1965, -7.23092)
+material_override = SubResource("StandardMaterial3D_s13yf")
 use_collision = true
 size = Vector3(10, 8, 0.5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373526, 2.1965, 7.20139)
+material_override = SubResource("StandardMaterial3D_7y6tb")
 use_collision = true
 size = Vector3(10, 8, 0.5)
 
@@ -52,3 +78,18 @@ transform = Transform3D(0.89463, 0, -0.446807, 0, 1, 0, 0.446807, 0, 0.89463, 0,
 
 [node name="TalkMaster" parent="." instance=ExtResource("5_0ucam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8699, 0.48209, -5.69178)
+
+[node name="floor_triangle" parent="." instance=ExtResource("8_ks51a")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.158508, 0.0032052, 0.691536)
+
+[node name="vaso3" parent="." instance=ExtResource("9_xr1dy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.2747, 0.00320496, -6.35383)
+
+[node name="vaso4" parent="." instance=ExtResource("9_xr1dy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.2747, 0.00320496, 5.59698)
+
+[node name="rug1" parent="." instance=ExtResource("10_a8npd")]
+transform = Transform3D(0.00682415, 0, -0.999977, 0, 1, 0, 0.999977, 0, 0.00682415, 0.114383, 0.00320496, 5.27931)
+
+[node name="potions_table" parent="." instance=ExtResource("11_fu6rl")]
+transform = Transform3D(0.00481704, 0, 0.799986, 0, 0.8, 0, -0.799986, 0, 0.00481704, 1.43123, -2.18187, -6.58714)
