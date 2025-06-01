@@ -219,6 +219,9 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -68.1479, 3.26309, 5.49426)
 [node name="cactus8" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
 transform = Transform3D(0.353074, 0, -3.98439, 0, 4, 0, 3.98439, 0, 0.353074, -66.1556, 3.2151, -11.6419)
 
+[node name="cactus9" parent="Assets/Cactus" instance=ExtResource("20_gt3je")]
+transform = Transform3D(-0.0805812, 0, -1.09704, 0, 1.1, 0, 1.09704, 0, -0.0805812, -7.96529, 3.07876, -78.4347)
+
 [node name="Cactus5" parent="Assets/Cactus" instance=ExtResource("19_ee4r6")]
 transform = Transform3D(-3.14918, 0, -3.88364, 0, 5, 0, 3.88364, 0, -3.14918, -31.1065, 3.09598, -74.0274)
 

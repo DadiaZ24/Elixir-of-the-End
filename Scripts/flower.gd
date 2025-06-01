@@ -24,7 +24,7 @@ func _process(delta):
 	if not player_near:
 		return
 
-	if Input.is_action_just_pressed("ui_grab"):
+	if Input.is_action_just_pressed("ui_interact"):
 		var camera = get_node("/root/Main/Player/Neck/Camera3D")
 		var ray = camera.get_node("InteractRay")
 		queue_free()
