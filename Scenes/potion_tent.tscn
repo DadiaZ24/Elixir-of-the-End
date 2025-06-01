@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3kye0lbwqsfn"]
+
+[ext_resource type="PackedScene" uid="uid://dsm8dyfxdlsiv" path="res://Scenes/Player.tscn" id="1_5xvxh"]
+[ext_resource type="PackedScene" uid="uid://b8m4nvei8bg8r" path="res://Scenes/assets/door.tscn" id="2_qnixp"]
+
+[node name="PotionTent" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0335979, -0.0271306, 0.00384712)
+use_collision = true
+size = Vector3(10, 0.5, 10)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0335979, 5.09325, 0.00384712)
+visible = false
+use_collision = true
+size = Vector3(10, 0.5, 10)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.39239, 4.73596)
+use_collision = true
+size = Vector3(10, 0.5, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.38067, -4.73935)
+visible = false
+use_collision = true
+size = Vector3(10, 0.5, 5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -4.74513, 2.39927, -0.0376887)
+use_collision = true
+size = Vector3(10, 0.5, 5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 4.74151, 2.39927, -0.0376887)
+visible = false
+use_collision = true
+size = Vector3(10, 0.5, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_5xvxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906777, 1.78677, 1.5216)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.202856, 0.979209, 0, -0.979209, 0.202856, 0, 4.00425, 0)
+light_energy = 0.5
+
+[node name="door" parent="." instance=ExtResource("2_qnixp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56594, 0.258198, -0.0941725)
