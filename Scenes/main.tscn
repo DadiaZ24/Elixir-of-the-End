@@ -440,6 +440,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.636, 3.89917, 51.8979)
 
 [node name="InventoryUI" parent="." instance=ExtResource("31_kltya")]
 
+[node name="StaticBody3D" parent="." instance=ExtResource("32_e08e2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -74.0626, 5.25728, -10.1499)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="SpawnPointOutsideMaster" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.5255, 4.70937, 57.063)
+
+[node name="SpawnPointOutsidePotion" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.2248, 4.53741, 63.7382)
+
+[node name="SpawnPoint_Default" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8023, 5.43249, 22.9672)
+
 [connection signal="body_entered" from="Terrain/Water" to="Player" method="_on_water_body_entered"]
 [connection signal="body_exited" from="Terrain/Water" to="Player" method="_on_water_body_exited"]
 [connection signal="body_entered" from="Terrain/QuickSand" to="Player" method="_on_quick_sand_body_entered"]

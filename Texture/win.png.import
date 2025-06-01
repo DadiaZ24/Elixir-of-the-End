@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddg02konfsrip"
-valid=false
+uid="uid://d3tyfrd2obx83"
+path="res://.godot/imported/win.png-27f5805465791b18589b8e5f77dfd324.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Texture/Win.png"
+source_file="res://Texture/win.png"
+dest_files=["res://.godot/imported/win.png-27f5805465791b18589b8e5f77dfd324.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@ extends Node
 
 @onready var camera: Camera3D = $ZoomCamera
 @onready var fade: ColorRect = $Fade
-@onready var win_message: Control = $WinMessage
+@onready var win_message: Control = $WinImage
 
 func _ready():
 	fade.visible = false
@@ -29,4 +29,5 @@ func start_cutscene():
 
 	win_message.visible = true
 	await get_tree().create_timer(3.0).timeout
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

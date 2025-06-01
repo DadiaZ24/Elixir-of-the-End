@@ -23,4 +23,8 @@ func _on_body_entered(body):
 func _on_animation_finished(anim_name):
 	if anim_name == "fade_out":
 		colorRect.visible = false;
+		if GameState.next_spawn_point_name == "master":
+			GameState.next_spawn_point_name = "SpawnPointOutsideMaster"
+		elif GameState.next_spawn_point_name == "potion":
+			GameState.next_spawn_point_name = "SpawnPointOutsidePotion"
 		get_tree().change_scene_to_packed(main_scene)
