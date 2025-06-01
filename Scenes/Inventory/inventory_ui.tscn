@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d1emsyijc83gn" path="res://Scripts/inventory/InventoryInterface.gd" id="1_s1kqi"]
 [ext_resource type="PackedScene" uid="uid://bpk7l30y3ug2c" path="res://Scenes/Inventory/Inventory.tscn" id="2_jrgvc"]
 [ext_resource type="PackedScene" uid="uid://erf743ynmnls" path="res://Scenes/Inventory/Slot.tscn" id="3_0cyxv"]
-[ext_resource type="PackedScene" uid="uid://clnsi52nqko25" path="res://Scenes/Crafting.tscn" id="3_s1kqi"]
+[ext_resource type="PackedScene" path="res://Scenes/Crafting.tscn" id="3_s1kqi"]
 
 [node name="InventoryUI" type="CanvasLayer"]
 

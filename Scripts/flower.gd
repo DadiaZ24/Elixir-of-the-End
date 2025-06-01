@@ -1,9 +1,9 @@
 extends StaticBody3D
 
 @onready var area = $Area3D
-@onready var nenufar_mesh = $Onthewater
-@onready var nenufar_scene = "res://Scenes/assets/nenufar.tscn"
-@onready var normal_material = nenufar_mesh.get_surface_override_material(0)
+@onready var flower_mesh = $Flower
+@onready var flower_scene = preload("res://Scenes/assets/flower.tscn")
+@onready var normal_material = flower_mesh.get_surface_override_material(0)
 
 var player_near = false
 
@@ -18,7 +18,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_near = false
-		nenufar_mesh.set_surface_override_material(0, normal_material)
+		flower_mesh.set_surface_override_material(0, normal_material)
 
 func _process(delta):
 	if not player_near:
