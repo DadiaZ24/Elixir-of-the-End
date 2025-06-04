@@ -8,7 +8,7 @@ signal toggle_alchemy()
 var book_ui: Control = null
 
 const SPEED = 10
-const SPRINT_MULTIPLIER:= 1.5
+const SPRINT_MULTIPLIER:= 5
 const JUMP_VELOCITY = 3
 @onready var world_env = get_node_or_null("../WorldEnvironment")
 var default_env = preload("res://Resources/DefaultEnv.tres")

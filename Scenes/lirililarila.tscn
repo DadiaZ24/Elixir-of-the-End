@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://huq63u02m6mt"]
+
+[ext_resource type="PackedScene" uid="uid://g81hxovpbq00" path="res://assets/lirili_larila_game_ready_3d_model_free_download.glb" id="1_bx7r3"]
+[ext_resource type="Script" uid="uid://diort28r8apes" path="res://Scripts/lirililarila.gd" id="2_sra4o"]
+[ext_resource type="AudioStream" uid="uid://kekitwp3m8mc" path="res://Sounds/Lirili larila (joke video) #memes #butifyoucloseyoureyes #nothingimposibleinthisworld #funny #edit.mp3" id="3_dke6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bx7r3"]
+size = Vector3(49.7055, 41.3501, 56.5586)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_bx7r3")]
+script = ExtResource("2_sra4o")
+
+[node name="Area3D2" type="Area3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5675, -0.545312, 0.968671)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" index="0"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("BoxShape3D_bx7r3")
+
+[node name="Area3D3" type="Area3D" parent="." index="2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.5675, -0.545312, 0.968671)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" index="0"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("BoxShape3D_bx7r3")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5675, -0.545312, 0.968671)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_bx7r3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5675, -0.545312, 0.968671)
+visible = false
+stream = ExtResource("3_dke6x")
+volume_db = 1.524

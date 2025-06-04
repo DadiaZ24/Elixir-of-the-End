@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kekitwp3m8mc"
+path="res://.godot/imported/Lirili larila (joke video) #memes #butifyoucloseyoureyes #nothingimposibleinthisworld #funny #edit.mp3-8060b3aa9c448114fc13899717916656.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Lirili larila (joke video) #memes #butifyoucloseyoureyes #nothingimposibleinthisworld #funny #edit.mp3"
+dest_files=["res://.godot/imported/Lirili larila (joke video) #memes #butifyoucloseyoureyes #nothingimposibleinthisworld #funny #edit.mp3-8060b3aa9c448114fc13899717916656.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
