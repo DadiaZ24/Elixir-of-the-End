@@ -43,36 +43,37 @@ func _ready() -> void:
 	if inventory_ui.has_signal("crafting_completed"):
 		inventory_ui.crafting_completed.connect(_on_crafting_completed)
 
+func open_inventory() -> void:
+	inventory_is_open = !inventory_is_open
+	if inventory_is_open:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	toggle_inventory.emit()
+
+func make_interaction() -> void:
+	if interact_ray.is_colliding():
+		var collider = interact_ray.get_collider()
+		if collider.is_in_group("book"):
+			book_ui.toogle()
+		elif collider.is_in_group("crafting_inventory"): 
+			inventory_is_open = !inventory_is_open
+			if inventory_is_open:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			interact()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory_open"):
-		inventory_is_open = !inventory_is_open
-		if inventory_is_open:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		toggle_inventory.emit()
+		open_inventory()
 		return
 		
 	if inventory_is_open:
 		return
 	
 	if Input.is_action_just_pressed("ui_interact"):
-		if interact_ray.is_colliding():
-			var collider = interact_ray.get_collider()
-			if collider.is_in_group("book"):
-				if book_ui:
-					book_ui.toogle()
-		if interact_ray.is_colliding():
-			var collider = interact_ray.get_collider()
-			# Check if collider is in the right group
-			if collider.is_in_group("crafting_inventory"): 
-				print("ENTREIII!!")
-				inventory_is_open = !inventory_is_open
-				if inventory_is_open:
-					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				else:
-					Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-				interact()
+		make_interaction()
 		return
 		
 	if event is InputEventMouseButton:
@@ -81,28 +82,26 @@ func _unhandled_input(event: InputEvent) -> void:
 		if book_ui:
 			if book_ui.get_if_visible:
 				book_ui.hide()
-			else:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		elif book_ui == null:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.004)
-			camera.rotate_x(-event.relative.y * 0.004)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
+		rotation_view(event)
 
+func rotation_view(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		neck.rotate_y(-event.relative.x * 0.004)
+		camera.rotate_x(-event.relative.y * 0.004)
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 
 func set_enabled(enable: bool) -> void:
 	is_enabled = enable
 
-func _physics_process(delta: float) -> void:
-	if not is_enabled:
-		return 
-	var direction = Vector3.ZERO
-	var input_vector = Vector2.ZERO
+func water_physics(delta: float, direction: Vector3) -> void:
 	var camera_y = camera.global_transform.origin.y
 	var currently_submerged = is_inside_water and camera_y < water_surface_y
-
+	
 	if currently_submerged and not is_underwater:
 		is_underwater = true
 		if world_env:
@@ -112,6 +111,35 @@ func _physics_process(delta: float) -> void:
 		if world_env:
 			world_env.environment = default_env
 	
+	if is_inside_water:
+		velocity += swim_gravity * delta
+		# Full 3D movement for swimming
+		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed):
+			direction -= neck.global_transform.basis.z
+		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed):
+			direction += neck.global_transform.basis.z
+		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed):
+			direction -= neck.global_transform.basis.x
+		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed):
+			direction += neck.global_transform.basis.x
+		if Input.is_action_pressed("ui_accept") and (GameState.tutorial_completed):
+			direction += Vector3.UP
+		if Input.is_action_pressed("ui_sprint") and (GameState.tutorial_completed):
+			direction -= Vector3.UP
+		
+		if direction != Vector3.ZERO:
+			if not swim.is_playing():
+				swim.play()
+		else:
+			if swim.is_playing():
+				swim.stop()
+		direction = direction.normalized()
+
+		# Apply smooth swimming movement
+		velocity = velocity.lerp(direction * swim_speed, water_drag * delta)
+	
+
+func quicksand_physics(delta: float, direction: Vector3) -> void:
 	if is_inside_quicksand:
 		velocity += quicksand_gravity * delta
 		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed):
@@ -137,35 +165,17 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 		velocity = velocity.lerp(direction * quicksand_mov_speed, quicksand_drag * delta)
 
+func _physics_process(delta: float) -> void:
+	if not is_enabled:
+		return 
+	var direction = Vector3.ZERO
+	var input_vector = Vector2.ZERO
+	
+	water_physics(delta, direction)
+	quicksand_physics(delta, direction)
 
-	if is_inside_water:
-		velocity += swim_gravity * delta
-		# Full 3D movement for swimming
-		if Input.is_action_pressed("ui_up") and (GameState.tutorial_completed):
-			direction -= neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_down") and (GameState.tutorial_completed):
-			direction += neck.global_transform.basis.z
-		if Input.is_action_pressed("ui_left") and (GameState.tutorial_completed):
-			direction -= neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_right") and (GameState.tutorial_completed):
-			direction += neck.global_transform.basis.x
-		if Input.is_action_pressed("ui_accept") and (GameState.tutorial_completed):
-			direction += Vector3.UP
-		if Input.is_action_pressed("ui_sprint") and (GameState.tutorial_completed):
-			direction -= Vector3.UP
 
-		if direction != Vector3.ZERO:
-			if not swim.is_playing():
-				swim.play()
-		else:
-			if swim.is_playing():
-				swim.stop()
-		direction = direction.normalized()
-
-		# Apply smooth swimming movement
-		velocity = velocity.lerp(direction * swim_speed, water_drag * delta)
-
-	else:
+	if not is_inside_water and not is_inside_quicksand:
 		if not is_inside_quicksand:
 			mud.stop()
 			swim.stop()

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://x6la88yaxhhu" path="res://Scenes/assets/potions_table.tscn" id="4_7ovfn"]
 [ext_resource type="PackedScene" uid="uid://ch8flotprcs7n" path="res://Scenes/assets/rug_1.tscn" id="5_7ovfn"]
 [ext_resource type="PackedScene" uid="uid://p8gotahwy1ky" path="res://Scenes/assets/box.tscn" id="8_siduo"]
-[ext_resource type="PackedScene" uid="uid://c1pdep0g8ndnn" path="res://Scenes/assets/vaso_3.tscn" id="9_chmtw"]
+[ext_resource type="PackedScene" uid="uid://dantnmg6s1yjc" path="res://Scenes/assets/vaso_3.tscn" id="9_chmtw"]
 [ext_resource type="PackedScene" uid="uid://cdd0qmlk3u2uw" path="res://Scenes/ExitMaster.tscn" id="10_chmtw"]
 [ext_resource type="PackedScene" uid="uid://cdfy2bykqjbnr" path="res://Scenes/Inventory/inventory_ui.tscn" id="12_v18ds"]
 [ext_resource type="PackedScene" uid="uid://u55rkbqaekvv" path="res://Scenes/teste_box_craft.tscn" id="13_32lrn"]

@@ -13,4 +13,4 @@ func close():
 	visible=false
 
 func toogle():
-	visible=!visible
+	visible = !visible
